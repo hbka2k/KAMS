@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.or.jobkams.repository.tibero.BbsRepository">
+	<select id="selectBbsMstList" parameterType="kr.or.jobkams.model.SearchVo" resultType="kr.or.jobkams.model.BbsMstVo">
+        SELECT * FROM (
+        SELECT ROWNUM AS RNUM, T.* FROM (
+        SELECT
+            A.*
+        FROM
+			BBS_MST A
+        WHERE
+            1=1
+			<if test="searchVal != null and searchVal !=''">
+				<choose>
+					<when test="searchKind == '1'.toString()">
+						AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%')
+					</when>
+					<when test="searchKind == '2'.toString()">
+						AND (UPPER(A.HOME_PATH) like '%'||UPPER(#{searchVal})||'%')
+					</when>
+					<when test="searchKind == 'ALL'.toString()">
+						AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%' OR UPPER(A.HOME_PATH) like '%'||UPPER(#{searchVal})||'%')
+					</when>
+				</choose>
+			</if>
+        ORDER BY A.BBS_IDX ASC
+        ) T WHERE ROWNUM &lt;=#{lastIndex}
+        ) WHERE RNUM &gt;=#{firstIndex}
+	</select>
+
+	<select id="selectBbsMstListTotal" parameterType="kr.or.jobkams.model.SearchVo" resultType="int">
+        SELECT
+            COUNT(A.BBS_IDX)
+        FROM
+            BBS_MST A
+        WHERE
+            1=1
+            <if test="searchVal != null and searchVal !=''">
+                <choose>
+                    <when test="searchKind == '1'.toString()">
+                        AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%')
+                    </when>
+                    <when test="searchKind == '2'.toString()">
+                        AND (UPPER(A.HOME_PATH) like '%'||UPPER(#{searchVal})||'%')
+                    </when>
+                    <when test="searchKind == 'ALL'.toString()">
+                        AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%' OR UPPER(A.HOME_PATH) like '%'||UPPER(#{searchVal})||'%')
+                    </when>
+                </choose>
+            </if>
+	</select>
+
+    <select id="selectBbsCateList" parameterType="kr.or.jobkams.model.SearchVo" resultType="kr.or.jobkams.model.BbsCateVo">
+        SELECT * FROM (
+        SELECT ROWNUM AS RNUM, T.* FROM (
+        SELECT
+        A.*
+        FROM
+            BBS_CATE A
+        WHERE
+            A.BBS_IDX = #{searchVal}
+        ORDER BY A.REG_DT ASC
+        ) T WHERE ROWNUM &lt;=#{lastIndex}
+        ) WHERE RNUM &gt;=#{firstIndex}
+    </select>
+
+    <select id="selectBbsCateListTotal" parameterType="kr.or.jobkams.model.SearchVo" resultType="int">
+        SELECT COUNT(A.CATE_IDX) FROM BBS_CATE A WHERE A.BBS_IDX = #{searchVal}
+    </select>
+
+    <select id="selectBbsCateCount" parameterType="kr.or.jobkams.model.BbsCateVo" resultType="int">
+        SELECT COUNT(A.BBS_DETAIL_IDX) FROM BBS_DETAIL A WHERE A.CATE_IDX = #{cate_idx}
+    </select>
+
+    <select id="selectBbsMstName" parameterType="String" resultType="String">
+        SELECT NAME FROM BBS_MST A WHERE A.BBS_IDX = #{value}
+    </select>
+
+    <select id="selectBbsCateListEx" parameterType="int" resultType="kr.or.jobkams.model.BbsCateVo">
+        SELECT A.* FROM BBS_CATE A WHERE A.BBS_IDX = #{value} ORDER BY REG_DT ASC
+    </select>
+
+    <select id="selectBbsDetailList" parameterType="kr.or.jobkams.model.SearchVo" resultType="kr.or.jobkams.model.BbsDetailVo">
+        SELECT * FROM (
+        SELECT ROWNUM AS RNUM, T.* FROM (
+        SELECT
+        A.*, R.NAME REG_NM
+        FROM
+        BBS_DETAIL A, ADMIN R
+        WHERE
+            1=1 AND A.REG_ID = R.ADMIN_ID
+            <if test="searchKind != null and searchKind !=''">
+                AND A.BBS_IDX = #{searchKind}
+            </if>
+            <if test="searchKind2 != null and searchKind2 !=''">
+                AND A.CATE_IDX = #{searchKind2}
+            </if>
+            <if test="searchVal != null and searchVal !=''">
+                <choose>
+                    <when test="searchKind3 == '1'.toString()">
+                        AND (UPPER(A.TITLE) like '%'||UPPER(#{searchVal})||'%')
+                    </when>
+                    <when test="searchKind3 == '2'.toString()">
+                        AND (UPPER(A.CONT) like '%'||UPPER(#{searchVal})||'%')
+                    </when>
+                    <when test="searchKind3 == '3'.toString()">
+                        AND (UPPER(R.NAME) like '%'||UPPER(#{searchVal})||'%')
+                    </when>
+                    <when test="searchKind3 == 'ALL'.toString()">
+                        AND (UPPER(A.TITLE) like '%'||UPPER(#{searchVal})||'%' OR UPPER(A.CONT) like '%'||UPPER(#{searchVal})||'%' OR UPPER(R.NAME) like '%'||UPPER(#{searchVal})||'%')
+                    </when>
+                </choose>
+            </if>
+            <if test="searchSDate != null and searchSDate !='' and searchEDate != null  and searchEDate !=''">
+                AND ( TO_CHAR(A.REG_DT, 'YYYY-MM-DD') BETWEEN #{searchSDate} AND #{searchEDate})
+            </if>
+        ORDER BY A.TOP_YN DESC, A.REG_DT DESC
+        ) T WHERE ROWNUM &lt;=#{lastIndex}
+        ) WHERE RNUM &gt;=#{firstIndex}
+    </select>
+
+    <select id="selectBbsDetailListTotal" parameterType="kr.or.jobkams.model.SearchVo" resultType="int">
+        SELECT COUNT(A.BBS_DETAIL_IDX) FROM BBS_DETAIL A, ADMIN R
+        WHERE
+        1=1 AND A.REG_ID = R.ADMIN_ID
+        <if test="searchKind != null and searchKind !=''">
+            AND A.BBS_IDX = #{searchKind}
+        </if>
+        <if test="searchKind2 != null and searchKind2 !=''">
+            AND A.CATE_IDX = #{searchKind2}
+        </if>
+        <if test="searchVal != null and searchVal !=''">
+            <choose>
+                <when test="searchKind3 == '1'.toString()">
+                    AND (UPPER(A.TITLE) like '%'||UPPER(#{searchVal})||'%')
+                </when>
+                <when test="searchKind3 == '2'.toString()">
+                    AND (UPPER(A.CONT) like '%'||UPPER(#{searchVal})||'%')
+                </when>
+                <when test="searchKind3 == '3'.toString()">
+                    AND (UPPER(R.NAME) like '%'||UPPER(#{searchVal})||'%')
+                </when>
+                <when test="searchKind3 == 'ALL'.toString()">
+                    AND (UPPER(A.TITLE) like '%'||UPPER(#{searchVal})||'%' OR UPPER(A.CONT) like '%'||UPPER(#{searchVal})||'%' OR UPPER(R.NAME) like '%'||UPPER(#{searchVal})||'%')
+                </when>
+            </choose>
+        </if>
+        <if test="searchSDate != null and searchSDate !='' and searchEDate != null  and searchEDate !=''">
+            AND ( TO_CHAR(A.REG_DT, 'YYYY-MM-DD') BETWEEN #{searchSDate} AND #{searchEDate})
+        </if>
+    </select>
+
+    <select id="selectBbsCateName" parameterType="long" resultType="String">
+        SELECT A.NAME FROM BBS_CATE A WHERE A.CATE_IDX = #{value}
+    </select>
+
+    <select id="selectBbsDetailInfo" parameterType="kr.or.jobkams.model.BbsDetailVo" resultType="kr.or.jobkams.model.BbsDetailVo">
+        SELECT A.* FROM BBS_DETAIL A WHERE A.BBS_DETAIL_IDX = #{bbs_detail_idx}
+    </select>
+
+    <select id="selectBbsMst" parameterType="kr.or.jobkams.model.BbsMstVo" resultType="kr.or.jobkams.model.BbsMstVo">
+        SELECT A.* FROM BBS_MST A WHERE A.BBS_IDX = #{bbs_idx}
+    </select>
+
+    <insert id="insertBbsCateInfo" parameterType="kr.or.jobkams.model.BbsCateVo">
+        <selectKey resultType="int" keyProperty="cate_idx" order="BEFORE">
+            SELECT nvl(MAX(CATE_IDX),0)+1 AS CATE_IDX  FROM BBS_CATE
+        </selectKey>
+        INSERT INTO BBS_CATE (
+        CATE_IDX
+        ,BBS_IDX
+        ,NAME
+        ,REG_ID
+        ,REG_DT
+        ) VALUES (
+        #{cate_idx}
+        ,#{bbs_idx}
+        ,#{name}
+        ,#{reg_id}
+        ,SYSDATE
+        )
+    </insert>
+
+    <insert id="insertBbsDetailInfo" parameterType="kr.or.jobkams.model.BbsDetailVo">
+        <selectKey resultType="int" keyProperty="bbs_detail_idx" order="BEFORE">
+            SELECT nvl(MAX(BBS_DETAIL_IDX),0)+1 AS BBS_DETAIL_IDX  FROM BBS_DETAIL
+        </selectKey>
+        INSERT INTO BBS_DETAIL (
+        BBS_DETAIL_IDX
+        ,BBS_IDX
+        ,CATE_IDX
+        ,TOP_YN
+        ,USE_YN
+        ,TITLE
+        ,CONT
+        ,ATCH_FILE_ID
+        ,CNT
+        ,THUMB_FILE_ID
+        ,ALT_TXT
+        ,REG_ID
+        ,REG_DT
+        ) VALUES (
+        #{bbs_detail_idx}
+        ,#{bbs_idx}
+        ,#{cate_idx}
+        ,#{top_yn}
+        ,#{use_yn}
+        ,#{title}
+        ,#{cont}
+        ,#{atch_file_id}
+        ,#{cnt}
+        ,#{thumb_file_id}
+        ,#{alt_txt}
+        ,#{reg_id}
+        ,SYSDATE
+        )
+    </insert>
+
+    <update id="updateBbsCateInfo" parameterType="kr.or.jobkams.model.BbsCateVo">
+        UPDATE BBS_CATE SET
+            NAME = #{name_u}
+           , UP_ID = #{up_id}
+           , UP_DT = SYSDATE
+        WHERE CATE_IDX = #{cate_idx}
+    </update>
+
+    <update id="updateBbsDetailViewCnt" parameterType="kr.or.jobkams.model.BbsDetailVo">
+        UPDATE BBS_DETAIL SET CNT = CNT + 1 WHERE BBS_DETAIL_IDX = #{bbs_detail_idx}
+    </update>
+
+    <update id="updateBbsDetailInfo" parameterType="kr.or.jobkams.model.BbsDetailVo">
+        UPDATE BBS_DETAIL SET
+            CATE_IDX = #{cate_idx}
+          , TOP_YN = #{top_yn}
+          , USE_YN = #{use_yn}
+          , TITLE = #{title}
+          , CONT = #{cont}
+            <if test="atch_file_id != null and atch_file_id !=''">
+                ,ATCH_FILE_ID = #{atch_file_id}
+            </if>
+            <if test="thumb_file_id != null and thumb_file_id !=''">
+                ,THUMB_FILE_ID = #{thumb_file_id}
+            </if>
+          , ALT_TXT = #{alt_txt}
+          , UP_ID = #{up_id}
+          , UP_DT = SYSDATE
+        WHERE BBS_DETAIL_IDX = #{bbs_detail_idx}
+    </update>
+
+    <update id="updateBbsMst" parameterType="kr.or.jobkams.model.BbsMstVo">
+        UPDATE BBS_MST SET
+            GBN_CD = #{gbn_cd}
+           , USE_YN = #{use_yn}
+           , CATE_YN = #{cate_yn}
+           , NEW_DAY = #{new_day}
+           , LIST_SIZE = #{list_size}
+        WHERE BBS_IDX = #{bbs_idx}
+    </update>
+
+    <delete id="deleteBbsCateInfo" parameterType="kr.or.jobkams.model.BbsCateVo">
+        DELETE FROM BBS_CATE WHERE CATE_IDX = #{cate_idx}
+    </delete>
+
+    <delete id="deleteBbsDetail" parameterType="int">
+        DELETE FROM BBS_DETAIL WHERE BBS_DETAIL_IDX = #{value}
+    </delete>
+
+    <delete id="deleteBbsDetailInfo" parameterType="kr.or.jobkams.model.BbsDetailVo">
+        DELETE FROM BBS_DETAIL WHERE BBS_DETAIL_IDX = #{bbs_detail_idx}
+    </delete>
+</mapper>

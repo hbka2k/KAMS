@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.or.jobkams.repository.tibero.AppRepository">
+    <select id="seletTopMenuList" parameterType="kr.or.jobkams.model.MenuVo" resultType="kr.or.jobkams.model.MenuVo">
+		SELECT
+			*
+		FROM
+			MENU_MST
+		WHERE
+			P_MENU_IDX = 0
+			AND
+			USE_YN = #{yn_use}
+			AND
+			LANG = #{lang}
+			AND
+			TYPE = #{type}
+		ORDER BY
+			ORD ASC
+	</select>
+
+    <select id="selectMenu" parameterType="String" resultType="kr.or.jobkams.model.MenuVo">
+		SELECT * FROM MENU_MST WHERE URL=#{value} AND KIND != 'NON' AND USE_YN = 'Y'
+	</select>
+
+    <select id="selectMenuByIdx" parameterType="int" resultType="kr.or.jobkams.model.MenuVo">
+		SELECT * FROM MENU_MST WHERE MENU_IDX=#{value}
+	</select>
+
+    <select id="selectSubMenuList" parameterType="int" resultType="kr.or.jobkams.model.MenuVo">
+		SELECT * FROM MENU_MST WHERE P_MENU_IDX=#{value} AND USE_YN = 'Y' ORDER BY ORD ASC
+	</select>
+
+    <select id="selectMenuUrl" parameterType="int" resultType="String">
+		SELECT
+			URL
+		FROM
+			MENU_MST
+		WHERE
+			MENU_IDX = #{value}
+	</select>
+
+	<select id="selectCodeList" parameterType="String" resultType="kr.or.jobkams.model.CodeVo">
+		SELECT * FROM CODE WHERE P_LV1_CD_IDX = (SELECT CODE_IDX FROM CODE WHERE CD_NM = #{value}) AND USE_YN = 'Y' ORDER BY ORD ASC
+	</select>
+
+	<select id="selectCodeNm" parameterType="int" resultType="String">
+		SELECT CD_NM FROM CODE WHERE CODE_IDX = #{value}
+	</select>
+</mapper>

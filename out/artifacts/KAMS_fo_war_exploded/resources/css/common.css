@@ -1,0 +1,92 @@
+* {margin:0; padding:0; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; word-break: keep-all;}
+html,body{max-width: 100%; min-height: 100%;}
+html{overflow-x: hidden; -webkit-text-size-adjust: none;}
+body{-webkit-print-color-adjust:exact; background: #fff; font-family: 'Jost', 'Noto Sans KR', sans-serif; font-style: normal; font-size: 16px; font-weight: 300; color: #0f0f0f; line-height: 1.5; letter-spacing: -0.5px;}
+ul, li, dl,dt,dd {margin:0;padding:0;list-style:none}
+a{color:#0f0f0f;text-decoration:none;}
+img {border: 0; font-size: 0; max-width: 100%; vertical-align: middle;}
+h1, h2, h3, h4, h5, h6{font-size:1em;font-family: 'Jost', 'Noto Sans KR', sans-serif;}
+textarea, select{font-family: 'Jost', 'Noto Sans KR', sans-serif;font-size:1em}
+input, button{margin:0;padding:0;font-family: 'Jost', 'Noto Sans KR', sans-serif;font-size:1em}
+input[type="submit"], button{cursor:pointer}
+table, tr, td { border-collapse: collapse;}
+p{word-break: keep-all;}
+
+/*sound only*/
+.sound_only{display: inline-block !important; position: absolute; top: 0; left: 0; width: 0; height: 0; margin: 0 !important; padding: 0 !important; font-size: 0; line-height: 0; border: 0 !important; overflow: hidden !important;}
+
+/*컨텐츠 가이드라인*/
+.wrapper{width: 1300px; max-width: 100%; margin: 0 auto;}
+
+/*clearfix*/
+.cf:before,
+.cf:after{content: " "; display: table;}
+.cf:after{clear: both;}
+.cf{*zoom: 1;}
+
+/* arrow symbol */
+i.arrow{display: inline-block; border: solid #000; border-width: 0 1px 1px 0; padding: 10px;}
+i.up{transform: rotate(-135deg); -webkit-transform: rotate(-135deg); -moz-transform: rotate(-135deg); -ms-transform: rotate(-135deg); -o-transform: rotate(-135deg);}
+i.down{transform: rotate(45deg); -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg);}
+i.right{transform: rotate(-45deg); -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg);}
+i.left{transform: rotate(135deg); -webkit-transform: rotate(135deg); -moz-transform: rotate(135deg); -ms-transform: rotate(135deg); -o-transform: rotate(135deg);}
+
+/*form tags style*/
+.i-select{
+  position: relative;
+  height: 40px;
+  padding-left: 15px;
+  padding-right: 40px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  font-weight: 300;
+  color: #666;
+  background: rgba(255,255,255,0.8) url("../images/select_arrow.png") no-repeat center right 20px;
+  appearance: none;
+}
+.i-select::-ms-expand{display: none;}
+
+.i-inpt{height: 40px; padding: 0 5px; border: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #0f0f0f; background: #fff;}
+.i-inpt::placeholder{color: #999;}
+.i-inpt_full{width: 100%;}
+.i-inpt.disabled{color: #666; background: #f8f8f8;}
+
+.date-inpt{height: 40px; padding: 0 5px; border: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #0f0f0f; background: #fff;}
+.date-inpt::placeholder{color: #999;}
+.date-inpt_full{width: 100%;}
+.date-inpt.disabled{color: #666; background: #f8f8f8;}
+.ui-widget-header .ui-icon{background-image: url('../images/ui-icons_444444_256x240.png');}
+
+.i-textar{padding: 5px; border: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #0f0f0f; background: #fff;}
+.i-textar_full{width: 100%;}
+.i-textar.autosize{overflow: hidden; height: 40px;}
+.txtar_byte_num{display: none;}
+
+.i-checks{position: relative;}
+.i-checks input[type="checkbox"]{position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0;}
+.i-checks input[type="checkbox"] + label{display: inline-block; position: relative; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;}
+.i-checks input[type="checkbox"] + label:before{content: ' '; display: inline-block; width: 22px; height: 22px; line-height: 22px; margin: -3px 8px 0 0; text-align: center; vertical-align: middle; background: #fff; border: 1px solid #ddd;}
+.i-checks input[type="checkbox"] + label:active:before,
+.i-checks input[type="checkbox"]:checked + label:active:before{border-color: #e32b07;}
+.i-checks input[type="checkbox"]:checked + label:before{background: #e32b07 url('../images/check_icon01.png') no-repeat center; border-color: #e32b07;}
+
+.i-radio{position: relative;}
+.i-radio input[type="radio"]{position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0;}
+.i-radio input[type="radio"] + label{display: inline-block; position: relative; padding-left: 30px; font-size: 16px; font-weight: 300; color: #666; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;}
+.i-radio input[type="radio"] + label:before{content: ''; position: absolute; left: 0; top: -1px; width: 22px; height: 22px; text-align: center; background: #fff; border: 1px solid #ddd; border-radius: 100%;}
+.i-radio input[type="radio"]:checked + label:before{border-color: #e32b07;}
+.i-radio input[type="radio"]:checked + label:after{content: ''; position: absolute; top: 6px; left: 7px; width: 10px; height: 10px; background: #e32b07; border-radius: 100%;}
+
+.i-radio.disabled input[type="radio"] + label:before{background: #f8f8f8;}
+.i-radio.disabled input[type="radio"]:checked + label:before{border-color: #999;}
+.i-radio.disabled input[type="radio"]:checked + label:after{background: #999;}
+
+/*button*/
+.btn01{display: block; width: 200px; height: 50px; line-height: 50px; border: 0; font-size: 16px; font-weight: 400; color: #fff; text-align: center; background: #222; transition: 0.5s;}
+.btn01:hover{background: #e32b07;}
+
+.btn02{display: block; width: 200px; height: 50px; line-height: 50px; border: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #999; text-align: center; background: #fff; transition: 0.5s;}
+.btn03{display: block; width: 200px; height: 50px; line-height: 50px; border: 1px solid #999; font-size: 16px; font-weight: 300; color: #fff; text-align: center; background: #999; transition: 0.5s;}
+
+/*notosans font class*/
+.noto{font-family: 'Noto Sans KR', sans-serif;}

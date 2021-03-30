@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.or.jobkams.repository.tibero.BasicRepository">
+
+    <select id="selectAdminRuleListEx" parameterType="String" resultType="kr.or.jobkams.model.AdminRuleVo">
+        SELECT A.* FROM ADMIN_RULE A WHERE A.KIND_CD = #{value}
+    </select>
+
+    <select id="selectAdminId" parameterType="String" resultType="int">
+        SELECT COUNT(A.ADMIN_ID) FROM ADMIN A WHERE A.ADMIN_ID = #{value}
+    </select>
+
+    <select id="selectAdminInfo" parameterType="kr.or.jobkams.model.AdminLoginVo" resultType="kr.or.jobkams.model.AdminLoginVo">
+        SELECT A.*, R.MENU_INFO FROM ADMIN A, ADMIN_RULE R WHERE A.ADMIN_RULE_IDX = R.ADMIN_RULE_IDX AND A.ADMIN_ID=#{admin_id} AND crypto.dec('normal', A.PWD)=#{pwd}
+    </select>
+
+    <select id="selectIpConList" parameterType="kr.or.jobkams.model.SearchVo" resultType="kr.or.jobkams.model.IpConVo">
+		SELECT * FROM (
+        SELECT ROWNUM AS RNUM, T.* FROM (
+        SELECT
+            A.*
+        FROM
+        IP_CON A
+        ORDER BY A.REG_DT DESC
+		) T WHERE ROWNUM &lt;=#{lastIndex}
+        ) WHERE RNUM &gt;=#{firstIndex}
+	</select>
+
+    <select id="selectIpConListTotal" parameterType="kr.or.jobkams.model.SearchVo" resultType="int">
+        SELECT
+            COUNT(A.IP_CON_IDX)
+        FROM
+            IP_CON A
+    </select>
+
+	<select id="selectAdminList" parameterType="kr.or.jobkams.model.SearchVo" resultType="kr.or.jobkams.model.AdminVo">
+		SELECT * FROM (
+        SELECT ROWNUM AS RNUM, T.* FROM (
+        SELECT
+			A.*, R.KIND_CD KIND_CD, R.GRP_NM GRP_NM
+        FROM
+			ADMIN A, ADMIN_RULE R
+        WHERE
+        	1=1 AND A.ADMIN_RULE_IDX = R.ADMIN_RULE_IDX
+			<if test="searchKind != null and searchKind !=''">
+				AND R.KIND_CD = #{searchKind}
+			</if>
+			<if test="searchKind2 != null and searchKind2 !=''">
+				AND A.ADMIN_RULE_IDX = #{searchKind2}
+			</if>
+			<if test="searchKind3 != null and searchKind3 !=''">
+				AND A.USE_YN = #{searchKind3}
+			</if>
+			<if test="searchVal != null and searchVal !=''">
+				<choose>
+					<when test="searchKind4 == '1'.toString()">
+						AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%')
+					</when>
+					<when test="searchKind4 == '2'.toString()">
+						AND (UPPER(A.ADMIN_ID) like '%'||UPPER(#{searchVal})||'%')
+					</when>
+					<when test="searchKind4 == 'ALL'.toString()">
+						AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%' OR UPPER(A.ADMIN_ID) like '%'||UPPER(#{searchVal})||'%')
+					</when>
+				</choose>
+			</if>
+        ORDER BY A.REG_DT DESC
+		) T WHERE ROWNUM &lt;=#{lastIndex}
+        ) WHERE RNUM &gt;=#{firstIndex}
+	</select>
+
+    <select id="selectAdminListTotal" parameterType="kr.or.jobkams.model.SearchVo" resultType="int">
+        SELECT
+            COUNT(A.ADMIN_ID)
+        FROM
+			ADMIN A, ADMIN_RULE R
+		WHERE
+			1=1 AND A.ADMIN_RULE_IDX = R.ADMIN_RULE_IDX
+			<if test="searchKind != null and searchKind !=''">
+				AND R.KIND_CD = #{searchKind}
+			</if>
+			<if test="searchKind2 != null and searchKind2 !=''">
+				AND A.ADMIN_RULE_IDX = #{searchKind2}
+			</if>
+			<if test="searchKind3 != null and searchKind3 !=''">
+				AND A.USE_YN = #{searchKind3}
+			</if>
+			<if test="searchVal != null and searchVal !=''">
+				<choose>
+					<when test="searchKind4 == '1'.toString()">
+						AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%')
+					</when>
+					<when test="searchKind4 == '2'.toString()">
+						AND (UPPER(A.ADMIN_ID) like '%'||UPPER(#{searchVal})||'%')
+					</when>
+					<when test="searchKind4 == 'ALL'.toString()">
+						AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%' OR UPPER(A.ADMIN_ID) like '%'||UPPER(#{searchVal})||'%')
+					</when>
+				</choose>
+			</if>
+    </select>
+
+    <select id="selectIpCount" parameterType="String" resultType="int">
+		SELECT COUNT(IP_CON_IDX) FROM IP_CON WHERE IP=#{value}
+	</select>
+
+	<select id="selectAdmin" parameterType="kr.or.jobkams.model.AdminVo" resultType="kr.or.jobkams.model.AdminVo">
+		SELECT A.*, R.KIND_CD KIND_CD, R.GRP_NM GRP_NM FROM ADMIN A, ADMIN_RULE R WHERE A.ADMIN_RULE_IDX = R.ADMIN_RULE_IDX AND A.ADMIN_ID=#{admin_id}
+	</select>
+
+	<select id="selectAdminRuleList" parameterType="kr.or.jobkams.model.SearchVo" resultType="kr.or.jobkams.model.AdminRuleVo">
+		SELECT * FROM (
+        SELECT ROWNUM AS RNUM, T.* FROM (
+        SELECT
+            A.*
+        FROM
+			ADMIN_RULE A
+		WHERE
+        	1=1
+			<if test="searchKind != null and searchKind !=''">
+				AND A.KIND_CD = #{searchKind}
+			</if>
+			<if test="searchKind2 != null and searchKind2 !=''">
+				AND A.ADMIN_RULE_IDX = #{searchKind2}
+			</if>
+			<if test="searchKind3 != null and searchKind3 !=''">
+				AND A.USE_YN = #{searchKind3}
+			</if>
+        ORDER BY A.REG_DT DESC
+		) T WHERE ROWNUM &lt;=#{lastIndex}
+        ) WHERE RNUM &gt;=#{firstIndex}
+	</select>
+
+    <select id="selectAdminRuleListTotal" parameterType="kr.or.jobkams.model.SearchVo" resultType="int">
+        SELECT
+            COUNT(A.ADMIN_RULE_IDX)
+		FROM
+			ADMIN_RULE A
+		WHERE
+			1=1
+			<if test="searchKind != null and searchKind !=''">
+				AND A.KIND_CD = #{searchKind}
+			</if>
+			<if test="searchKind2 != null and searchKind2 !=''">
+				AND A.ADMIN_RULE_IDX = #{searchKind2}
+			</if>
+			<if test="searchKind3 != null and searchKind3 !=''">
+				AND A.USE_YN = #{searchKind3}
+			</if>
+    </select>
+
+	<select id="selectAdminRule" parameterType="kr.or.jobkams.model.AdminRuleVo" resultType="kr.or.jobkams.model.AdminRuleVo">
+		SELECT A.* FROM ADMIN_RULE A WHERE A.ADMIN_RULE_IDX = #{admin_rule_idx}
+	</select>
+
+	<select id="selectAdminName" parameterType="String" resultType="String">
+		SELECT NAME FROM ADMIN WHERE ADMIN_ID=#{value}
+	</select>
+
+	<select id="selectAdminCurPwd" parameterType="String" resultType="int">
+		SELECT COUNT(ADMIN_ID) FROM ADMIN WHERE ADMIN_ID=#{admin_id} AND PWD = crypto.enc('normal', #{pwd_cur})
+	</select>
+
+    <insert id="insertAdminRule" parameterType="kr.or.jobkams.model.AdminRuleVo">
+        <selectKey resultType="int" keyProperty="admin_rule_idx" order="BEFORE">
+            SELECT nvl(MAX(ADMIN_RULE_IDX),0)+1 AS ADMIN_RULE_IDX  FROM ADMIN_RULE
+        </selectKey>
+        INSERT INTO ADMIN_RULE (
+        ADMIN_RULE_IDX
+        ,KIND_CD
+        ,GRP_NM
+        ,GRP_EXP
+        ,MENU_INFO
+        ,USE_YN
+        ,REG_ID
+        ,REG_DT
+        ) VALUES (
+        #{admin_rule_idx}
+        ,#{kind_cd}
+        ,#{grp_nm}
+        ,#{grp_exp}
+        ,#{menu_info}
+        ,#{use_yn}
+        ,#{reg_id}
+        ,SYSDATE
+        )
+    </insert>
+
+    <insert id="insertAdmin" parameterType="kr.or.jobkams.model.AdminVo">
+		INSERT INTO ADMIN (
+		ADMIN_ID
+		,ADMIN_RULE_IDX
+		,CODE_IDX
+		,NAME
+		,PWD
+		,USE_YN
+		,LOGIN_CNT
+		,PWD_MOD_YN
+		,REG_ID
+		,REG_DT
+		) VALUES (
+		#{admin_id}
+		,#{admin_rule_idx}
+		,#{code_idx}
+		,#{name}
+		,crypto.enc('normal', #{pwd})
+		,#{use_yn}
+		,0
+		,'N'
+		,#{reg_id}
+		,SYSDATE
+		)
+	</insert>
+
+    <insert id="insertIpConInfo" parameterType="kr.or.jobkams.model.IpConVo">
+		<selectKey resultType="int" keyProperty="ip_con_idx" order="BEFORE">
+            SELECT nvl(MAX(IP_CON_IDX),0)+1 AS IP_CON_IDX  FROM IP_CON
+		</selectKey>
+		INSERT INTO IP_CON (
+		IP_CON_IDX
+		,IP
+		,CNT
+		,REG_ID
+		,REG_DT
+		) VALUES (
+		#{ip_con_idx}
+		,#{ip}
+		,0
+		,#{reg_id}
+		,SYSDATE
+		)
+	</insert>
+
+    <update id="updateLoginSuccessInfo" parameterType="kr.or.jobkams.model.AdminLoginVo">
+		UPDATE ADMIN SET
+			LAST_LOGIN_DT = SYSDATE
+		   , LAST_LOGIN_IP = #{last_login_ip}
+		   , LOGIN_CNT = LOGIN_CNT + 1
+		   , LOGIN_FAIL_CNT = 0
+		WHERE ADMIN_ID = #{admin_id}
+	</update>
+
+	<update id="updateAdmin" parameterType="kr.or.jobkams.model.AdminVo">
+		UPDATE ADMIN SET
+		ADMIN_RULE_IDX = #{admin_rule_idx}
+		,NAME = #{name}
+		,USE_YN = #{use_yn}
+		,CODE_IDX = #{code_idx}
+		,UP_ID	= #{up_id}
+		,UP_DT = SYSDATE
+		WHERE ADMIN_ID = #{admin_id}
+	</update>
+
+	<update id="updateAdminRule" parameterType="kr.or.jobkams.model.AdminRuleVo">
+		UPDATE ADMIN_RULE SET
+		KIND_CD = #{kind_cd}
+		,GRP_NM = #{grp_nm}
+		,GRP_EXP = #{grp_exp}
+		,MENU_INFO = #{menu_info}
+		,USE_YN = #{use_yn}
+		,UP_ID	= #{up_id}
+		,UP_DT = SYSDATE
+		WHERE ADMIN_RULE_IDX = #{admin_rule_idx}
+	</update>
+
+	<update id="updateAdminPwd" parameterType="kr.or.jobkams.model.AdminVo">
+		UPDATE ADMIN SET
+			PWD = crypto.enc('normal', #{pwd})
+			, PWD_MOD_YN = 'Y'
+			, UP_ID = #{up_id}
+			, UP_DT = SYSDATE
+		WHERE ADMIN_ID = #{admin_id}
+	</update>
+
+    <delete id="deleteIpCon" parameterType="int">
+		DELETE FROM IP_CON WHERE IP_CON_IDX = #{value}
+	</delete>
+
+	<delete id="deleteAdminRule" parameterType="int">
+		DELETE FROM ADMIN_RULE WHERE ADMIN_RULE_IDX = #{value}
+	</delete>
+</mapper>

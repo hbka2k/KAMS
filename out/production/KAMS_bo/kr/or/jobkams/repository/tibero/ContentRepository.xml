@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.or.jobkams.repository.tibero.ContentRepository">
+
+	<select id="selectContent" parameterType="int" resultType="kr.or.jobkams.model.ContMstVo">
+		SELECT A.* FROM CONT_MST A WHERE A.CONT_IDX = #{value}
+	</select>
+
+	<update id="updateContent" parameterType="kr.or.jobkams.model.ContMstVo">
+        UPDATE CONT_MST SET
+            CONT = #{cont}
+           , UP_ID = #{up_id}
+           , UP_DT = SYSDATE
+        WHERE CONT_IDX = #{cont_idx}
+    </update>
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<!--!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd"-->
+
+<tiles-definitions>
+    <!-- 메세지 처리 -->
+    <definition name="blank" template="/WEB-INF/views/layouts/blank/blank_layout.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="body" value="/WEB-INF/views/layouts/blank/body.jsp"/>
+    </definition>
+    <definition name="common/message" extends="blank">
+        <put-attribute name="body" value="/WEB-INF/views/common/message.jsp"/>
+    </definition>
+
+    <!-- 국문 메인 내용 -->
+    <definition name="main_layout" template="/WEB-INF/views/layouts/main/layout.jsp">
+        <put-attribute name="title" value="예술경영지원센터 홈페이지"/>
+        <put-attribute name="header" value="/WEB-INF/views/layouts/main/header.jsp"/>
+        <put-attribute name="left" value="/WEB-INF/views/layouts/main/menu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/layouts/main/body.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/layouts/main/footer.jsp"/>
+    </definition>
+    <definition name="main/main" extends="main_layout">
+        <put-attribute name="body" value="/WEB-INF/views/main/main.jsp"/>
+    </definition>
+
+    <!-- 국문 서브 내용 -->
+    <definition name="sub_layout" template="/WEB-INF/views/layouts/sub/layout.jsp">
+        <put-attribute name="title" value="예술경영지원센터 홈페이지"/>
+        <put-attribute name="header" value="/WEB-INF/views/layouts/sub/header.jsp"/>
+        <put-attribute name="left" value="/WEB-INF/views/layouts/sub/menu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/layouts/sub/body.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/layouts/sub/footer.jsp"/>
+    </definition>
+    <definition name="sub/*/*" extends="sub_layout">
+        <put-attribute name="body" value="/WEB-INF/views/sub/{1}/{2}.jsp"/>
+    </definition>
+</tiles-definitions>

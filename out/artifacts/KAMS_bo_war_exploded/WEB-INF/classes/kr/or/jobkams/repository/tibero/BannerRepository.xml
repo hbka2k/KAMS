@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.or.jobkams.repository.tibero.BannerRepository">
+    <select id="selectBannerList" parameterType="kr.or.jobkams.model.SearchVo" resultType="kr.or.jobkams.model.BannerVo">
+        SELECT * FROM (
+        SELECT ROWNUM AS RNUM, T.* FROM (
+        SELECT
+            A.*
+        FROM
+            BANNER A
+        WHERE
+            1=1
+            <if test="searchKind != null and searchKind !=''">
+                AND A.GBN_CD = #{searchKind}
+            </if>
+            <if test="searchKind2 != null and searchKind2 !=''">
+                AND A.USE_YN = #{searchKind2}
+            </if>
+            <if test="searchVal != null and searchVal !=''">
+                <choose>
+                    <when test="searchKind3 == '1'.toString()">
+                        AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%')
+                    </when>
+                    <when test="searchKind3 == '2'.toString()">
+                        AND (UPPER(A.TITLE) like '%'||UPPER(#{searchVal})||'%')
+                    </when>
+                    <when test="searchKind3 == 'ALL'.toString()">
+                        AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%' OR UPPER(A.TITLE) like '%'||UPPER(#{searchVal})||'%')
+                    </when>
+                </choose>
+            </if>
+            <if test="searchSDate != null and searchSDate !='' and searchEDate != null  and searchEDate !=''">
+                AND (A.START_DT BETWEEN #{searchSDate} AND #{searchEDate} OR A.END_DT BETWEEN #{searchSDate} AND #{searchEDate})
+            </if>
+        ORDER BY A.ORD ASC, A.REG_DT DESC
+        ) T WHERE ROWNUM &lt;=#{lastIndex}
+        ) WHERE RNUM &gt;=#{firstIndex}
+	</select>
+
+	<select id="selectBannerListTotal" parameterType="kr.or.jobkams.model.SearchVo" resultType="int">
+        SELECT
+            COUNT(A.BANNER_IDX)
+        FROM
+            BANNER A
+        WHERE
+            1=1
+            <if test="searchKind != null and searchKind !=''">
+                AND A.GBN_CD = #{searchKind}
+            </if>
+            <if test="searchKind2 != null and searchKind2 !=''">
+                AND A.USE_YN = #{searchKind2}
+            </if>
+            <if test="searchVal != null and searchVal !=''">
+                <choose>
+                    <when test="searchKind3 == '1'.toString()">
+                        AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%')
+                    </when>
+                    <when test="searchKind3 == '2'.toString()">
+                        AND (UPPER(A.TITLE) like '%'||UPPER(#{searchVal})||'%')
+                    </when>
+                    <when test="searchKind3 == 'ALL'.toString()">
+                        AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%' OR UPPER(A.TITLE) like '%'||UPPER(#{searchVal})||'%')
+                    </when>
+                </choose>
+            </if>
+            <if test="searchSDate != null and searchSDate !='' and searchEDate != null  and searchEDate !=''">
+                AND (A.START_DT BETWEEN #{searchSDate} AND #{searchEDate} OR A.END_DT BETWEEN #{searchSDate} AND #{searchEDate})
+            </if>
+	</select>
+
+    <select id="selectBannerOrd" parameterType="kr.or.jobkams.model.BannerVo" resultType="int">
+        SELECT nvl(MAX(A.ORD),0) + 1 FROM BANNER A WHERE A.GBN_CD = #{gbn_cd}
+    </select>
+
+    <select id="selectBannerInfo" parameterType="kr.or.jobkams.model.BannerVo" resultType="kr.or.jobkams.model.BannerVo">
+		SELECT A.* FROM BANNER A WHERE A.BANNER_IDX=#{banner_idx}
+	</select>
+
+	<select id="selectPopupOrd" parameterType="kr.or.jobkams.model.PopupVo" resultType="int">
+        SELECT nvl(MAX(A.ORD),0) + 1 FROM POPUP A
+    </select>
+
+	<select id="selectPopupList" parameterType="kr.or.jobkams.model.SearchVo" resultType="kr.or.jobkams.model.PopupVo">
+        SELECT * FROM (
+        SELECT ROWNUM AS RNUM, T.* FROM (
+        SELECT
+            A.*
+        FROM
+			POPUP A
+        WHERE
+            1=1
+            <if test="searchKind != null and searchKind !=''">
+                AND A.USE_YN = #{searchKind}
+            </if>
+            <if test="searchVal != null and searchVal !=''">
+				AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%')
+            </if>
+        ORDER BY A.ORD ASC, A.REG_DT DESC
+        ) T WHERE ROWNUM &lt;=#{lastIndex}
+        ) WHERE RNUM &gt;=#{firstIndex}
+	</select>
+
+	<select id="selectPopupListTotal" parameterType="kr.or.jobkams.model.SearchVo" resultType="int">
+        SELECT
+            COUNT(A.POPUP_IDX)
+        FROM
+			POPUP A
+		WHERE
+			1=1
+			<if test="searchKind != null and searchKind !=''">
+				AND A.USE_YN = #{searchKind}
+			</if>
+			<if test="searchVal != null and searchVal !=''">
+				AND (UPPER(A.NAME) like '%'||UPPER(#{searchVal})||'%')
+			</if>
+	</select>
+
+	<select id="selectPopup" parameterType="kr.or.jobkams.model.PopupVo" resultType="kr.or.jobkams.model.PopupVo">
+		SELECT A.* FROM POPUP A WHERE A.POPUP_IDX=#{popup_idx}
+	</select>
+
+    <insert id="insertBannerInfo" parameterType="kr.or.jobkams.model.BannerVo">
+		<selectKey resultType="int" keyProperty="banner_idx" order="BEFORE">
+			SELECT nvl(MAX(BANNER_IDX),0)+1 AS BANNER_IDX  FROM BANNER
+		</selectKey>
+		INSERT INTO BANNER (
+		BANNER_IDX
+		,GBN_CD
+		,NAME
+		,TITLE
+		,USE_YN
+		,START_DT
+		,END_DT
+		,ORD
+		,ATCH_FILE_ID
+		,ALT_TXT
+		,LINK_URL
+		,LINK_TGT
+		,REG_ID
+		,REG_DT
+		,CNT
+		) VALUES (
+		#{banner_idx}
+		,#{gbn_cd}
+		,#{name}
+		,#{title}
+		,#{use_yn}
+		,#{start_dt}
+		,#{end_dt}
+		,#{ord}
+		,#{atch_file_id}
+		,#{alt_txt}
+		,#{link_url}
+		,#{link_tgt}
+		,#{reg_id}
+		,SYSDATE
+		,0
+		)
+	</insert>
+
+    <insert id="insertPopup" parameterType="kr.or.jobkams.model.PopupVo">
+		<selectKey resultType="int" keyProperty="popup_idx" order="BEFORE">
+			SELECT nvl(MAX(POPUP_IDX),0)+1 AS POPUP_IDX  FROM POPUP
+		</selectKey>
+		INSERT INTO POPUP (
+        POPUP_IDX
+		,GBN_CD
+		,NAME
+		,START_DT
+		,END_DT
+		,ALL_YN
+		,WIDTH
+		,HEIGHT
+		,LEFT
+		,TOP
+		,USE_YN
+		,CONT
+		,LINK_URL
+		,LINK_TGT
+		,ORD
+		,REG_ID
+		,REG_DT
+		) VALUES (
+		#{popup_idx}
+		,#{gbn_cd}
+		,#{name}
+		,#{start_dt}
+		,#{end_dt}
+		,#{all_yn}
+		,#{width}
+		,#{height}
+		,#{left}
+		,#{top}
+		,#{use_yn}
+		,#{cont}
+		,#{link_url}
+		,#{link_tgt}
+	    ,#{ord}
+		,#{reg_id}
+		,SYSDATE
+		)
+	</insert>
+
+    <update id="updateBannerOrd" parameterType="kr.or.jobkams.model.OrdVo">
+		UPDATE BANNER SET ORD = #{val} WHERE BANNER_IDX = #{idx}
+	</update>
+
+    <update id="updateBannerView" parameterType="kr.or.jobkams.model.BannerVo">
+		UPDATE BANNER SET CNT = CNT + 1 WHERE BANNER_IDX = #{banner_idx}
+	</update>
+
+    <update id="updateBannerInfo" parameterType="kr.or.jobkams.model.BannerVo">
+		UPDATE BANNER SET
+			NAME = #{name}
+			,TITLE = #{title}
+			,USE_YN = #{use_yn}
+			,START_DT= #{start_dt}
+			,END_DT= #{end_dt}
+            <if test="atch_file_id != null and atch_file_id !=''">
+				,ATCH_FILE_ID = #{atch_file_id}
+     		</if>
+			,ALT_TXT = #{alt_txt}
+			,LINK_URL = #{link_url}
+			,LINK_TGT = #{link_tgt}
+			,UP_ID	= #{up_id}
+			,UP_DT = SYSDATE
+		WHERE BANNER_IDX = #{banner_idx}
+	</update>
+
+	<update id="updatePopupOrd" parameterType="kr.or.jobkams.model.OrdVo">
+		UPDATE POPUP SET ORD = #{val} WHERE POPUP_IDX = #{idx}
+	</update>
+
+	<update id="updatePopup" parameterType="kr.or.jobkams.model.PopupVo">
+		UPDATE POPUP SET
+			NAME = #{name}
+			,GBN_CD = #{gbn_cd}
+			,START_DT= #{start_dt}
+			,END_DT= #{end_dt}
+			,ALL_YN= #{all_yn}
+			,WIDTH= #{width}
+			,HEIGHT= #{height}
+			,LEFT= #{left}
+			,TOP= #{top}
+			,USE_YN = #{use_yn}
+			,CONT = #{cont}
+			,LINK_URL = #{link_url}
+			,LINK_TGT = #{link_tgt}
+			,UP_ID	= #{up_id}
+			,UP_DT = SYSDATE
+		WHERE POPUP_IDX = #{popup_idx}
+	</update>
+
+    <delete id="deleteBanner" parameterType="int">
+		DELETE FROM BANNER WHERE BANNER_IDX = #{value}
+	</delete>
+
+    <delete id="deleteBannerInfo" parameterType="kr.or.jobkams.model.BannerVo">
+		DELETE FROM BANNER WHERE BANNER_IDX = #{banner_idx}
+	</delete>
+
+	<delete id="deletePopup" parameterType="int">
+		DELETE FROM POPUP WHERE POPUP_IDX = #{value}
+	</delete>
+
+	<delete id="deletePopupInfo" parameterType="kr.or.jobkams.model.PopupVo">
+		DELETE FROM POPUP WHERE POPUP_IDX = #{popup_idx}
+	</delete>
+</mapper>
