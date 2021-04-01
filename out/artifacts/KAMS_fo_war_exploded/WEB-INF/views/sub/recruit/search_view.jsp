@@ -16,8 +16,8 @@
             new Morris.Donut({
                 element: 'jobs_career_chart',
                 data: [
-                    {label: "", value: 50},
-                    {label: "", value: 50}
+                    {label: "", value: 40},
+                    {label: "", value: 60}
                 ],
                 colors: [
                     '#74b8fb',
@@ -25,41 +25,56 @@
                 ]
             });
 
-            new Morris.Bar({
+            new Morris.Donut({
                 element: 'jobs_education_chart',
                 data: [
-                    { y: '고졸미만', a: 10},
-                    { y: '고졸(예정)', a: 7},
-                    { y: '초대졸(예정)', a: 5},
-                    { y: '대졸(예정)', a: 5},
-                    { y: '석박사(예정)', a: 2}
+                    {label: "고졸 미만", value: 0},
+                    {label: "고등학교 졸업", value: 20},
+                    {label: "대학교(2~3년)졸업", value: 0},
+                    {label: "대학교(4년)졸업", value: 80},
+                    {label: "대학원 이상", value: 0}
+                ],
+                colors: [
+                    '#ffd458',
+                    '#fb7d64',
+                    '#26eab6',
+                    '#74b8fb',
+                    '#d092ff'
+                ]
+                /*
+                data: [
+                  { y: '고졸미만', a: 10},
+                  { y: '고졸(예정)', a: 7},
+                  { y: '초대졸(예정)', a: 5},
+                  { y: '대졸(예정)', a: 5},
+                  { y: '석박사(예정)', a: 2}
                 ],
                 xkey: 'y',
                 ykeys: ['a'],
                 labels: ['인원수']
+                */
             });
         });
     });
 </script>
 
 
-<!--Contents {-->
 <div id="jobs_view" class="sub">
     <div class="sub_visual sub_visual02">
         <div class="wrapper">
-            <p class="sub_vs_title">채용정보</p>
+            <p class="sub_vs_title">일자리정보</p>
 
             <div class="sub_location">
                 <ul class="sub_location_ul">
-                    <li><a href="/"><img src="/resources/images/home_icon01.png" alt="홈으로"></a></li>
+                    <li><a href="../main/main.html"><img src="/resources/images/home_icon01.png" alt="홈으로"></a></li>
                     <li>
                         <select class="sub_location_sel">
-                            <option value="">채용정보</option>
+                            <option value="">일자리정보</option>
                         </select>
                     </li>
                     <li>
                         <select class="sub_location_sel">
-                            <option value="">채용정보 상세검색</option>
+                            <option value="">일자리 상세보기</option>
                         </select>
                     </li>
                 </ul>
@@ -89,16 +104,12 @@
                             <p class="jobs_dt_summary_title">지원자격</p>
                             <ul class="jobs_dt_summary_cont">
                                 <li>
-                                    <span class="jobs_dt_summary_stitle">경력</span>
-                                    <span class="jobs_dt_summary_expl">경력무관</span>
+                                    <div class="jobs_dt_summary_stitle">경력</div>
+                                    <div class="jobs_dt_summary_expl">경력무관</div>
                                 </li>
                                 <li>
-                                    <span class="jobs_dt_summary_stitle">학력</span>
-                                    <span class="jobs_dt_summary_expl">학력무관</span>
-                                </li>
-                                <li>
-                                    <span class="jobs_dt_summary_stitle">우대</span>
-                                    <span class="jobs_dt_summary_expl">-</span>
+                                    <div class="jobs_dt_summary_stitle">학력</div>
+                                    <div class="jobs_dt_summary_expl">학력무관</div>
                                 </li>
                             </ul>
                         </div>
@@ -107,41 +118,66 @@
                             <p class="jobs_dt_summary_title">근무조건</p>
                             <ul class="jobs_dt_summary_cont">
                                 <li>
-                                    <span class="jobs_dt_summary_stitle">지역</span>
-                                    <span class="jobs_dt_summary_expl">서울시 종로구 대학로</span>
+                                    <div class="jobs_dt_summary_stitle">고용형태</div>
+                                    <div class="jobs_dt_summary_expl">정규직</div>
                                 </li>
                                 <li>
-                                    <span class="jobs_dt_summary_stitle">급여</span>
-                                    <span class="jobs_dt_summary_expl">월급 200만원</span>
+                                    <div class="jobs_dt_summary_stitle">급여조건</div>
+                                    <div class="jobs_dt_summary_expl">연봉 2,000만원 ~ 3,000만원 (면접 후 결정)</div>
+                                </li>
+                                <li>
+                                    <div class="jobs_dt_summary_stitle">근무형태</div>
+                                    <div class="jobs_dt_summary_expl">주5일</div>
+                                </li>
+                                <li>
+                                    <div class="jobs_dt_summary_stitle">근무지역</div>
+                                    <div class="jobs_dt_summary_expl">서울시 종로구 대학로 57 (연건동) 홍익대학교 대학로 캠퍼스 교육동 3층, 12층</div>
                                 </li>
                             </ul>
                         </div>
                     </div><!--jobs_dt_summary_list-->
 
-                    <div class="jobs_dt_summary_list">
-                        <div class="jobs_dt_summary_col">
-                            <p class="jobs_dt_summary_title">지원자격</p>
-                            <ul class="jobs_dt_summary_cont">
-                                <li>
-                                    <span class="jobs_dt_summary_stitle">고용형태</span>
-                                    <span class="jobs_dt_summary_expl">정규직</span>
-                                </li>
-                                <li>
-                                    <span class="jobs_dt_summary_stitle">근무형태</span>
-                                    <span class="jobs_dt_summary_expl">주5일 근무</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="jobs_dt_summary_col">
-                            <p class="jobs_dt_summary_title">복리후생</p>
-                            <ul class="jobs_dt_summary_cont">
-                                <li>
-                                    <span class="jobs_dt_summary_stitle">내용01</span>
-                                    <span class="jobs_dt_summary_expl">내용01</span>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="jobs_dt_summary_list jobs_dt_summary_list_add">
+                        <p class="jobs_dt_summary_title">장르,업종, 지역</p>
+                        <ul class="jobs_dt_summary_cont">
+                            <li>
+                                <div class="jobs_dt_summary_stitle">장르</div>
+                                <div class="jobs_dt_summary_expl">
+                                    <ul class="jobs_sch_option_result_ul">
+                                        <li>
+                                            <span>공연예술</span>
+                                            <span>연극뮤지컬분야</span>
+                                            <span>자영예술업</span>
+                                            <span>연극 및 뮤지컬 배우, 안무가, 마술사</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="jobs_dt_summary_stitle">업종</div>
+                                <div class="jobs_dt_summary_expl">
+                                    <ul class="jobs_sch_option_result_ul">
+                                        <li>
+                                            <span>자영예술업</span>
+                                            <span>연극뮤지컬분야</span>
+                                            <span>연극 및 뮤지컬 배우, 안무가, 마술사</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="jobs_dt_summary_stitle">지역</div>
+                                <div class="jobs_dt_summary_expl">
+                                    <ul class="jobs_sch_option_result_ul">
+                                        <li>
+                                            <span>서울</span>
+                                            <span>전체, 경기</span>
+                                            <span>성남시</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
                     </div><!--jobs_dt_summary_list-->
                 </div>
 
@@ -154,32 +190,40 @@
 
                     <ul class="jobs_dt_comp_cont">
                         <li>
-                            <span class="jobs_dt_comp_stitle">기업명</span>
-                            <span class="jobs_dt_comp_expl">예술경영지원센터</span>
+                            <div class="jobs_dt_comp_stitle">기업명</div>
+                            <div class="jobs_dt_comp_expl">예술경영지원센터</div>
                         </li>
                         <li>
-                            <span class="jobs_dt_comp_stitle">업종</span>
-                            <span class="jobs_dt_comp_expl">자영예술업</span>
+                            <span class="jobs_dt_comp_stitle">장르</span>
+                            <div class="jobs_dt_comp_expl">
+                                <ul class="jobs_sch_option_result_ul">
+                                    <li>
+                                        <span>공연예술</span>
+                                        <span>연극/뮤지컬 분야</span>
+                                        <span>성남시</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li>
-                            <span class="jobs_dt_comp_stitle">기업규모</span>
-                            <span class="jobs_dt_comp_expl">중소기업</span>
+                            <div class="jobs_dt_comp_stitle">업종</div>
+                            <div class="jobs_dt_comp_expl">자영예술업</div>
                         </li>
                         <li>
-                            <span class="jobs_dt_comp_stitle">설립년도</span>
-                            <span class="jobs_dt_comp_expl">-년</span>
+                            <div class="jobs_dt_comp_stitle">기업형태</div>
+                            <div class="jobs_dt_comp_expl">공공</div>
                         </li>
                         <li>
-                            <span class="jobs_dt_comp_stitle">연매출액</span>
-                            <span class="jobs_dt_comp_expl">-원</span>
+                            <div class="jobs_dt_comp_stitle">연매출액</div>
+                            <div class="jobs_dt_comp_expl">-</div>
                         </li>
                         <li>
-                            <span class="jobs_dt_comp_stitle">홈페이지</span>
-                            <span class="jobs_dt_comp_expl">www.homepage.com</span>
+                            <div class="jobs_dt_comp_stitle">홈페이지</div>
+                            <div class="jobs_dt_comp_expl">www.homepage.com</div>
                         </li>
                         <li>
-                            <span class="jobs_dt_comp_stitle">근로자수</span>
-                            <span class="jobs_dt_comp_expl">10 명</span>
+                            <div class="jobs_dt_comp_stitle">근로자수</div>
+                            <div class="jobs_dt_comp_expl">10명</div>
                         </li>
                     </ul>
                 </div>
@@ -187,6 +231,9 @@
 
             <div class="jobs_dt_summary_btn">
                 <ul class="jobs_dt_summary_btn_ul">
+                    <li>
+                        <a href="./jobs.html" class="btn02 jobs_dt_list_btn">목록보기</a>
+                    </li>
                     <li>
                         <button type="button" class="btn02 jobs_dt_summary_scrap"><span class="summary_scrap_icon"></span>스크랩</button>
                         <!--활성화버튼-class: active
@@ -206,7 +253,7 @@
                         <thead>
                             <tr>
                                 <th>경력조건</th>
-                                <th>학력</th>
+                                <th>학력조건</th>
                                 <th>고용형태</th>
                                 <th>모집인원</th>
                                 <th>근무예정지</th>
@@ -214,11 +261,11 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>신입/경력(1년 이상)</td>
-                                <td>학력무관</td>
-                                <td>정규직</td>
-                                <td>1명</td>
-                                <td>서울 종로구 대학로</td>
+                                <td class="rp_tb_tit" data-tit="경력조건">신입/경력(1년 이상)</td>
+                                <td class="rp_tb_tit" data-tit="학력">학력무관</td>
+                                <td class="rp_tb_tit" data-tit="고용형태">정규직</td>
+                                <td class="rp_tb_tit" data-tit="모집인원">1명</td>
+                                <td class="rp_tb_tit" data-tit="근무예정지">서울 종로구 대학로</td>
                             </tr>
                         </tbody>
                     </table>
@@ -247,16 +294,20 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>월급 200만원</td>
-                                <td>(월~금) 오전 9시 ~ 오후 6시</td>
-                                <td>주 5일 근무</td>
-                                <td>
-                                    국민연금<br>
-                                    고용보험<br>
-                                    산재보험<br>
-                                    건강보험
+                                <td class="rp_tb_tit" data-tit="급여조건">
+                                    <p>월급 200만원 ~ 250만원</p>
+                                    <p>(면접 후 결정)</p>
+                                    <p>(회사 내규에 따름)</p>
                                 </td>
-                                <td>퇴직연금</td>
+                                <td class="rp_tb_tit" data-tit="근무조건">(오전) 09시00분 ~ (오후) 06시00분</td>
+                                <td class="rp_tb_tit" data-tit="근무형태">주 5일</td>
+                                <td class="rp_tb_tit" data-tit="사회보험">
+                                    <p>국민연금</p>
+                                    <p>고용보험</p>
+                                    <p>산재보험</p>
+                                    <p>건강보험</p>
+                                </td>
+                                <td class="rp_tb_tit" data-tit="퇴직금 지급 방법">퇴직연금</td>
                             </tr>
                         </tbody>
                     </table>
@@ -277,10 +328,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>채용시까지</td>
-                                <td>서류, 면접</td>
-                                <td>아트모아 이력서</td>
-                                <td>이력서, 자기소개서</td>
+                                <td class="rp_tb_tit" data-tit="접수마감일">
+                                    <p>채용시까지</p>
+                                    <p>(~2021-04-30)</p>
+                                </td>
+                                <td class="rp_tb_tit" data-tit="전형방법">서류, 면접</td>
+                                <td class="rp_tb_tit" data-tit="접수방법">아트모아</td>
+                                <td class="rp_tb_tit" data-tit="제출서류 준비물">이력서, 자기소개서</td>
                             </tr>
                         </tbody>
                     </table>
@@ -302,20 +356,31 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
-                                    전산학<br>
-                                    컴퓨터공학
-                                </td>
-                                <td>자동차운전면허</td>
-                                <td>
+                                <td class="rp_tb_tit" data-tit="전공">전산학, 컴퓨터공학</td>
+                                <td class="rp_tb_tit" data-tit="자격">자동차운전면허</td>
+                                <td class="rp_tb_tit" data-tit="컴퓨터 활용능력">
                                     문서작성<br>
                                     파워포인트
                                 </td>
-                                <td>
+                                <td class="rp_tb_tit" data-tit="우대조건">
                                     우대조건1<br>
                                     우대조건2
                                 </td>
-                                <td>장애인 병행채용</td>
+                                <td class="rp_tb_tit" data-tit="장애인 채용 희망">장애인 병행채용</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="board_tb tb_lay_fix mt">
+                        <thead>
+                            <tr>
+                                <th>우대조건</th>
+                                <th>기타우대사항</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="rp_tb_tit" data-tit="우대조건">청년층</td>
+                                <td class="rp_tb_tit" data-tit="기타우대사항">영어 우수자, 운전 가능자</td>
                             </tr>
                         </tbody>
                     </table>
@@ -350,16 +415,16 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
+                                <td class="rp_tb_tit" data-tit="부서/담당자">
                                     홍길동 과장/인사부
                                     <button type="button" class="inq_talk_btn" onclick="popUp('inq_talk_pop')">1:1톡 문의</button>
                                 </td>
-                                <td>
-                                    00-000-0000<br>
-                                    00-000-0000
+                                <td class="rp_tb_tit" data-tit="전화번호">
+                                    <p>02-000-0000</p>
+                                    <p>010-0000-0000</p>
                                 </td>
-                                <td>00-000-0000</td>
-                                <td>-</td>
+                                <td class="rp_tb_tit" data-tit="팩스번호">00-000-0000</td>
+                                <td class="rp_tb_tit" data-tit="이메일">-</td>
                             </tr>
                         </tbody>
                     </table>
@@ -373,7 +438,7 @@
                         <p class="jobs_dt_current_in_tit">지원자 수</p>
                         <div class="jobs_dt_current_in_cont">
                             <img src="/resources/images/applicant_icon01.png" alt="">
-                            <p class="jobs_dt_appc_cnt"><b>5</b>명</p>
+                            <p class="jobs_dt_appc_cnt"><b>100</b>명</p>
                         </div>
                     </div>
                     <div class="jobs_dt_current_in">
@@ -383,11 +448,11 @@
                                 <div id="jobs_career_chart"></div>
                                 <div class="jobs_career_chart_cnt1">
                                     <p class="jobs_career_chart_cnt_txt1">신입</p>
-                                    <p class="jobs_career_chart_cnt_txt2"><b>2</b>명</p>
+                                    <p class="jobs_career_chart_cnt_txt2"><b>60</b>%</p>
                                 </div>
                                 <div class="jobs_career_chart_cnt2">
                                     <p class="jobs_career_chart_cnt_txt1">경력</p>
-                                    <p class="jobs_career_chart_cnt_txt2"><b>2</b>명</p>
+                                    <p class="jobs_career_chart_cnt_txt2"><b>40</b>%</p>
                                 </div>
                             </div>
                         </div>
@@ -418,13 +483,21 @@
                                     <div class="jobs_dt_addr_map">
                                         <img src="/resources/images/t-addr_map.jpg" alt="">
                                     </div>
-                                    <a href="" class="btn02 jobs_dt_addr_map_btn"><img src="/resources/images/map_icon01.png" alt="">빠른길 찾기</a>
+                                    <a href="https://map.kakao.com/?urlX=497140.0&urlY=1129894.0&name=%EC%84%9C%EC%9A%B8%EA%B3%A0%EC%9A%A9%EC%84%BC%ED%84%B0" class="btn02 jobs_dt_addr_map_btn" target="_blank"><img src="/resources/images/map_icon01.png" alt="">빠른길 찾기</a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div><!--jobs_dt_cont-->
+
+            <div class="jobs_dt_summary_btn">
+                <ul class="jobs_dt_summary_btn_ul">
+                    <li>
+                        <a href="/sub/recruit/search_list.do" class="btn02 jobs_dt_list_btn">목록보기</a>
+                    </li>
+                </ul>
+            </div>
 
             <div class="jobs_dt_cont jobs_dt_relevant">
                 <p class="jobs_dt_cont_tit">진행중인 다른 채용공고</p>
@@ -452,14 +525,6 @@
                                 </td>
                                 <td class="ta_l">
                                     <a href="/sub/recruit/search_view.do" class="jobs_title">경리사무원 모집<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_icon02.png" alt=""></button></a>
-
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
 
                                     <div class="jobs_dtl_box">
                                         <span class="jobs_career">경력1년</span>
@@ -490,298 +555,6 @@
                                 </td>
                                 <td class="ta_l">
                                     <a href="/sub/recruit/search_view.do" class="jobs_title">예약실 및 캐셔 구인(신입/경력)<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_ov_icon02.png" alt=""></button></a>
-
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
-
-                                    <div class="jobs_dtl_box">
-                                        <span class="jobs_career">경력무관</span>
-                                        <span class="jobs_edu">대졸(2~3년)~대졸(4년)</span>
-                                        <span class="jobs_wkplace">서울 서초구</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_salary">월급 200만원 ~ 220만원</p>
-                                    <div class="jobs_emptype">
-                                        <span class="jobs_regular">계약</span>
-                                        <span class="jobs_wkday">주5일</span>
-                                    </div>
-                                    <p class="jobs_wktime">09:00 ~ 18:00</p>
-                                </td>
-                                <td>
-                                    <p class="jobs_d-day">채용시까지</p>
-                                    <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <p class="jobs_cname">재 중구문화재단<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_icon.png" alt=""></button></p>
-                                </td>
-                                <td class="ta_l">
-                                    <a href="/sub/recruit/search_view.do" class="jobs_title">경리사무원 모집<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_icon02.png" alt=""></button></a>
-
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
-
-                                    <div class="jobs_dtl_box">
-                                        <span class="jobs_career">경력1년</span>
-                                        <span class="jobs_edu">학력무관</span>
-                                        <span class="jobs_wkplace">서울 서초구</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_salary">연봉 2,400만원 ~ 2,500만원</p>
-                                    <div class="jobs_emptype">
-                                        <span class="jobs_regular">정규</span>
-                                        <span class="jobs_wkday">주5일</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_d-day">D-15</p>
-                                    <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                    <p class="jobs_regi_end-time">2021.01.18 마감</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <p class="jobs_cname">리만머핀<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_ov_icon.png" alt=""></button></p>
-                                    <div class="jobs_site">
-                                        <span><img src="/resources/images/worknet_logo.png" alt=""></span>
-                                    </div>
-                                </td>
-                                <td class="ta_l">
-                                    <a href="/sub/recruit/search_view.do" class="jobs_title">예약실 및 캐셔 구인(신입/경력)<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_ov_icon02.png" alt=""></button></a>
-
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
-
-                                    <div class="jobs_dtl_box">
-                                        <span class="jobs_career">경력무관</span>
-                                        <span class="jobs_edu">대졸(2~3년)~대졸(4년)</span>
-                                        <span class="jobs_wkplace">서울 서초구</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_salary">월급 200만원 ~ 220만원</p>
-                                    <div class="jobs_emptype">
-                                        <span class="jobs_regular">계약</span>
-                                        <span class="jobs_wkday">주5일</span>
-                                    </div>
-                                    <p class="jobs_wktime">09:00 ~ 18:00</p>
-                                </td>
-                                <td>
-                                    <p class="jobs_d-day">채용시까지</p>
-                                    <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <p class="jobs_cname">재 중구문화재단<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_icon.png" alt=""></button></p>
-                                </td>
-                                <td class="ta_l">
-                                    <a href="/sub/recruit/search_view.do" class="jobs_title">경리사무원 모집<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_icon02.png" alt=""></button></a>
-
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
-
-                                    <div class="jobs_dtl_box">
-                                        <span class="jobs_career">경력1년</span>
-                                        <span class="jobs_edu">학력무관</span>
-                                        <span class="jobs_wkplace">서울 서초구</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_salary">연봉 2,400만원 ~ 2,500만원</p>
-                                    <div class="jobs_emptype">
-                                        <span class="jobs_regular">정규</span>
-                                        <span class="jobs_wkday">주5일</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_d-day">D-15</p>
-                                    <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                    <p class="jobs_regi_end-time">2021.01.18 마감</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <p class="jobs_cname">리만머핀<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_ov_icon.png" alt=""></button></p>
-                                    <div class="jobs_site">
-                                        <span><img src="/resources/images/worknet_logo.png" alt=""></span>
-                                    </div>
-                                </td>
-                                <td class="ta_l">
-                                    <a href="/sub/recruit/search_view.do" class="jobs_title">예약실 및 캐셔 구인(신입/경력)<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_ov_icon02.png" alt=""></button></a>
-
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
-
-                                    <div class="jobs_dtl_box">
-                                        <span class="jobs_career">경력무관</span>
-                                        <span class="jobs_edu">대졸(2~3년)~대졸(4년)</span>
-                                        <span class="jobs_wkplace">서울 서초구</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_salary">월급 200만원 ~ 220만원</p>
-                                    <div class="jobs_emptype">
-                                        <span class="jobs_regular">계약</span>
-                                        <span class="jobs_wkday">주5일</span>
-                                    </div>
-                                    <p class="jobs_wktime">09:00 ~ 18:00</p>
-                                </td>
-                                <td>
-                                    <p class="jobs_d-day">채용시까지</p>
-                                    <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <p class="jobs_cname">재 중구문화재단<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_icon.png" alt=""></button></p>
-                                </td>
-                                <td class="ta_l">
-                                    <a href="/sub/recruit/search_view.do" class="jobs_title">경리사무원 모집<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_icon02.png" alt=""></button></a>
-
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
-
-                                    <div class="jobs_dtl_box">
-                                        <span class="jobs_career">경력1년</span>
-                                        <span class="jobs_edu">학력무관</span>
-                                        <span class="jobs_wkplace">서울 서초구</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_salary">연봉 2,400만원 ~ 2,500만원</p>
-                                    <div class="jobs_emptype">
-                                        <span class="jobs_regular">정규</span>
-                                        <span class="jobs_wkday">주5일</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_d-day">D-15</p>
-                                    <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                    <p class="jobs_regi_end-time">2021.01.18 마감</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <p class="jobs_cname">리만머핀<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_ov_icon.png" alt=""></button></p>
-                                    <div class="jobs_site">
-                                        <span><img src="/resources/images/worknet_logo.png" alt=""></span>
-                                    </div>
-                                </td>
-                                <td class="ta_l">
-                                    <a href="/sub/recruit/search_view.do" class="jobs_title">예약실 및 캐셔 구인(신입/경력)<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_ov_icon02.png" alt=""></button></a>
-
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
-
-                                    <div class="jobs_dtl_box">
-                                        <span class="jobs_career">경력무관</span>
-                                        <span class="jobs_edu">대졸(2~3년)~대졸(4년)</span>
-                                        <span class="jobs_wkplace">서울 서초구</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_salary">월급 200만원 ~ 220만원</p>
-                                    <div class="jobs_emptype">
-                                        <span class="jobs_regular">계약</span>
-                                        <span class="jobs_wkday">주5일</span>
-                                    </div>
-                                    <p class="jobs_wktime">09:00 ~ 18:00</p>
-                                </td>
-                                <td>
-                                    <p class="jobs_d-day">채용시까지</p>
-                                    <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <p class="jobs_cname">재 중구문화재단<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_icon.png" alt=""></button></p>
-                                </td>
-                                <td class="ta_l">
-                                    <a href="/sub/recruit/search_view.do" class="jobs_title">경리사무원 모집<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_icon02.png" alt=""></button></a>
-
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
-
-                                    <div class="jobs_dtl_box">
-                                        <span class="jobs_career">경력1년</span>
-                                        <span class="jobs_edu">학력무관</span>
-                                        <span class="jobs_wkplace">서울 서초구</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_salary">연봉 2,400만원 ~ 2,500만원</p>
-                                    <div class="jobs_emptype">
-                                        <span class="jobs_regular">정규</span>
-                                        <span class="jobs_wkday">주5일</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_d-day">D-15</p>
-                                    <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                    <p class="jobs_regi_end-time">2021.01.18 마감</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <p class="jobs_cname">리만머핀<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_ov_icon.png" alt=""></button></p>
-                                    <div class="jobs_site">
-                                        <span><img src="/resources/images/worknet_logo.png" alt=""></span>
-                                    </div>
-                                </td>
-                                <td class="ta_l">
-                                    <a href="/sub/recruit/search_view.do" class="jobs_title">예약실 및 캐셔 구인(신입/경력)<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_ov_icon02.png" alt=""></button></a>
-
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
 
                                     <div class="jobs_dtl_box">
                                         <span class="jobs_career">경력무관</span>
@@ -834,14 +607,6 @@
                                 <td class="ta_l">
                                     <a href="/sub/recruit/search_view.do" class="jobs_title">경리사무원 모집<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_icon02.png" alt=""></button></a>
 
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
-
                                     <div class="jobs_dtl_box">
                                         <span class="jobs_career">경력1년</span>
                                         <span class="jobs_edu">학력무관</span>
@@ -871,85 +636,6 @@
                                 </td>
                                 <td class="ta_l">
                                     <a href="/sub/recruit/search_view.do" class="jobs_title">예약실 및 캐셔 구인(신입/경력)<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_ov_icon02.png" alt=""></button></a>
-
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
-
-                                    <div class="jobs_dtl_box">
-                                        <span class="jobs_career">경력무관</span>
-                                        <span class="jobs_edu">대졸(2~3년)~대졸(4년)</span>
-                                        <span class="jobs_wkplace">서울 서초구</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_salary">월급 200만원 ~ 220만원</p>
-                                    <div class="jobs_emptype">
-                                        <span class="jobs_regular">계약</span>
-                                        <span class="jobs_wkday">주5일</span>
-                                    </div>
-                                    <p class="jobs_wktime">09:00 ~ 18:00</p>
-                                </td>
-                                <td>
-                                    <p class="jobs_d-day">채용시까지</p>
-                                    <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <p class="jobs_cname">재 중구문화재단<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_icon.png" alt=""></button></p>
-                                </td>
-                                <td class="ta_l">
-                                    <a href="/sub/recruit/search_view.do" class="jobs_title">경리사무원 모집<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_icon02.png" alt=""></button></a>
-
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
-
-                                    <div class="jobs_dtl_box">
-                                        <span class="jobs_career">경력1년</span>
-                                        <span class="jobs_edu">학력무관</span>
-                                        <span class="jobs_wkplace">서울 서초구</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_salary">연봉 2,400만원 ~ 2,500만원</p>
-                                    <div class="jobs_emptype">
-                                        <span class="jobs_regular">정규</span>
-                                        <span class="jobs_wkday">주5일</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="jobs_d-day">D-15</p>
-                                    <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                    <p class="jobs_regi_end-time">2021.01.18 마감</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <p class="jobs_cname">리만머핀<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_ov_icon.png" alt=""></button></p>
-                                    <div class="jobs_site">
-                                        <span><img src="/resources/images/worknet_logo.png" alt=""></span>
-                                    </div>
-                                </td>
-                                <td class="ta_l">
-                                    <a href="/sub/recruit/search_view.do" class="jobs_title">예약실 및 캐셔 구인(신입/경력)<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_ov_icon02.png" alt=""></button></a>
-
-                                    <div class="jobs_sector_box cf">
-                                        <span class="jobs_sector_text">담당업무 :</span>
-                                        <div class="jobs_sector">
-                                            <span>경리업무</span>
-                                            <span>일반 사무업무(문서작업)</span>
-                                        </div>
-                                    </div><!--jobs_sector_box-->
 
                                     <div class="jobs_dtl_box">
                                         <span class="jobs_career">경력무관</span>
@@ -1039,11 +725,11 @@
                 <div class="popup_cont_inner">
                     <p class="jobs_apply_compl_txt01">예술경영지원센터에서 직원 모집합니다.</p>
                     <p class="jobs_apply_compl_txt01">채용 공고에 입사 지원 했습니다.</p>
-                    <a href="" id="" class="btn01 jobs_apply_compl_btn">입사지원현황</a>
+                    <a href="/sub/mypage/application_list.do" id="" class="btn01 jobs_apply_compl_btn">입사지원현황</a>
                 </div>
             </div>
         </div>
     </div>
     <!--} 입사 지원 완료 팝업-->
 
-</div><!--sub-->
+</div>

@@ -1,16 +1,21 @@
-/* 추가 { */
+/* 임시 추가 { */
 
-  /* (마이페이지) 공통 */
-  .rp_td_txt{position: relative;}
-  .rp_td_txt:before{display: none; content: attr(data-th); font-size: 15px; color: #999; font-weight: 300; vertical-align: middle; margin-right: 10px; line-height: 1;}
-  
-  /* (마이페이지) 개인 > 나의캘린더 */
-  .mp_calendar_wr{}
-  .mp_calendar_scr_txt{display: none;}
+  .pf_photo_comp.pf_photo_wrap{padding: 0;}
+  .pf_photo_comp .pf_photo{position: relative; width: 100%; height: 120px; margin: 0 auto; border-bottom: 1px solid #ddd; background: url('../images/comp_pf_img.png') no-repeat center;}
+  .pf_photo_comp .filebox{width: 100%; height: 100%;}
+  .pf_photo_comp .filebox input[type="file"]{position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0;}
+  .pf_photo_comp .filebox label{display: block; position: absolute; bottom: -15px; right: 12px; z-index: 10; width: 30px; height: 30px; border-radius: 50%; background: #999 url('../images/camera_icon01.png') no-repeat center; cursor: pointer;}
+  .pf_photo_comp .filebox label:hover{background: #e32b07 url('../images/camera_icon01.png') no-repeat center;}
+  .pf_photo_comp .filebox .upload-display{display: block; overflow: hidden; position: relative; width: 100%; height: 100%;}
+  .pf_photo_comp .filebox .upload-thumb-wrap{display: block;}
+  .pf_photo_comp .filebox .upload-display img{display: block; position: absolute; top: 50%; left: 50%; z-index: 1; transform: translate(-50%, -50%); max-width: 100%; width: 100%; height: auto;}
+  .pf_photo_comp .pf_info{padding-bottom: 10px;}
 
+  .pf_photo_btn{text-align: center; margin-top: 10px;}
+  .pf_photo_upload{width: 80px; height: 30px; line-height: 30px; font-size: 14px; font-weight: 300; color: #fff; border: none; background: #999; margin: 0 1px; display: none; vertical-align: middle;}
+  .pf_photo_save{margin: 0 1px; display: inline-block; vertical-align: middle;}
 
-
-/* } 추가 */
+/* } 임시 추가 */
 
 @media screen and (max-width:1700px){
 
@@ -93,6 +98,15 @@
   /* (채용정보) 채용검색 목록 */
   .jobs_sch_li{width: 300px;}
 
+  /* (채용정보) 채용검색 상세 */
+  .jobs_dt_summary_lt{width: calc(100% - 375px);}
+  .jobs_dt_summary_rt{width: 375px;}
+
+  .jobs_dt_cont{margin-top: 35px;}
+  .jobs_dt_current_in:nth-child(1){width: 25%;}
+  .jobs_dt_current_in:nth-child(2){width: 35%;}
+  .jobs_dt_current_in:nth-child(3){width: 40%;}
+
   /* (기업직업정보) 기업정보 */
   .em_comp_sch_box{width: 50%; display: inline-block; vertical-align: middle;}
   .em_comp_sch_box.em_comp_schbar{width: 100%;}
@@ -106,7 +120,52 @@
 
   /* (마이페이지) 공통 */
   .mp_join_list_manage_btn {position: relative; top: inherit; left: inherit; margin-top: 10px;}
+  
+  /*>(마이페이지) 공통 LNB */
+  .mp_lnb{float: none; width: 100%; font-size: 0; margin-bottom: 30px;}
+  .mp_cont{float: none; width: 100%; padding-left: 0;}
+  .pf_name {margin-top: 0; font-size: 16px;}
+  .pf_name span {font-size: 18px;}
+  .pf_photo_upload{display: inline-block;}
+  
+  /*>(마이페이지) 개인 LNB */
+  .pf_photo_indv.pf_photo_wrap {width: 320px; display: inline-block; vertical-align: top; font-size: 0;  border: none; padding: 10px 20px;
+    box-shadow:   1px 0 0 0 #ddd, 
+    0 1px 0 0 #ddd, 
+    1px 1px 0 0 #ddd,
+    1px 0 0 0 #ddd inset, 
+    0 1px 0 0 #ddd inset;}
+  .pf_photo_indv .pf_photo {height: 82px; width: 82px; display: inline-block; vertical-align: middle; }
+  .pf_photo_indv .pf_info {width: calc(100% - 82px); display: inline-block; vertical-align: middle; padding-bottom: 0; padding-left: 20px;}
+  .pf_photo_indv .filebox label {display: none;}
 
+  .mp_lnb_indv .mp_navi {margin-top: 0; display: inline-block; vertical-align: top; width: calc(100% - 320px); border: none;}
+  .mp_lnb_indv .mp_navi > li {width: 20%; display: inline-block; vertical-align: top; border-bottom: none; box-shadow: 1px 0 0 0 #ddd, 0 1px 0 0 #ddd, 1px 1px 0 0 #ddd, 1px 0 0 0 #ddd inset, 0 1px 0 0 #ddd inset;}
+  .mp_lnb_indv .mp_navi > li > a{padding: 14px 0 13px; text-align: center; color: #666;}
+  .mp_lnb_indv .mp_navi_dp2 {display: none; position: absolute; width: 100%; background: #fff; border: 1px solid #ddd; z-index: 5; padding: 10px 0 8px;}
+  .mp_lnb_indv .mp_navi_dp2 > li > a {padding-left: 0; text-align: center;}
+
+  /*>(마이페이지) 기업 LNB */
+  .pf_photo_comp.pf_photo_wrap {width: 412px; display: inline-block; vertical-align: top; font-size: 0; border: none; box-shadow:   1px 0 0 0 #ddd, 
+    0 1px 0 0 #ddd, 
+    1px 1px 0 0 #ddd,
+    1px 0 0 0 #ddd inset, 
+    0 1px 0 0 #ddd inset;}
+  .pf_photo_comp .pf_photo {width: 190px; height: 100px; display: inline-block; vertical-align: middle; border-bottom: none; border-right: 1px solid #ddd;}
+  .pf_photo_comp .pf_info {width: 220px; display: inline-block; vertical-align: middle; padding-bottom: 0;}
+  .pf_photo_comp .filebox label {display: none;}
+
+  .mp_lnb_comp .mp_navi {margin-top: 0; display: inline-block; vertical-align: top; width: calc(100% - 412px); border: none;}
+  .mp_lnb_comp .mp_navi > li {width: 25%; display: inline-block; vertical-align: top; border-bottom: none; 
+    box-shadow:   1px 0 0 0 #ddd, 
+    0 1px 0 0 #ddd, 
+    1px 1px 0 0 #ddd,
+    1px 0 0 0 #ddd inset, 
+    0 1px 0 0 #ddd inset;}
+  .mp_lnb_comp .mp_navi > li > a{padding: 13px 0; text-align: center; color: #666;}
+  .mp_lnb_comp .mp_navi_dp2 {display: none; position: absolute; width: 100%; background: #fff; border: 1px solid #ddd; z-index: 5; padding: 10px 0 8px;}
+  .mp_lnb_comp .mp_navi_dp2 > li > a {padding-left: 0; text-align: center;}
+  
   /* (마이페이지) 개인 > 이력서등록 */
   #mypage_resume .i-inpt{width: 150px;}
   #mypage_resume #mp_resume_subj{width: 100%;}
@@ -137,14 +196,12 @@
   .mypage .i-inpt.self_introd_expl{width: calc(100% - 350px);}
 
 
-  
 
 
 
 }/* end 1700px */
 
 @media screen and (max-width:1279px){
-
   /* 공통 */
   .wrapper {padding-left: 10px; padding-right: 10px;}
   .hide_screen02{display: none !important;}
@@ -153,6 +210,7 @@
   #header {width: 100%; height: 60px; padding-top: 0; overflow: hidden; border-right: none; border-bottom: 1px solid #fff; padding: 0 10px;}
   #header.black_fix {border-right: none; border-bottom: 1px solid #ddd;}
   #header.sub_header {border-right: none;}
+  .sub_hd_logo{position: fixed;}
 
   .hd_logo {top: 12px !important; width: 144px;}
   .gnb_btn {position: absolute; left: 10px; top: 19px; display: inline-block; vertical-align: middle;}
@@ -272,7 +330,23 @@
   .jobs_sch_option_ul li{padding: 5px 10px;}
 
   /* (채용정보) 채용검색 상세 */
+  .jobs_dt_summary_lt{width: calc(100% - 313px);}
+  .jobs_dt_summary_rt{width: 313px;}
+  .jobs_dt_summary_list{margin-top: 0;}
+  .jobs_dt_summary_list:first-child .jobs_dt_summary_col:first-child{margin-top: 0;}
+  .jobs_dt_summary_list.jobs_dt_summary_list_add{padding: 0 25px; margin-top: 30px;}
+  .jobs_dt_summary_col{width: 100%; max-width: 100%; padding: 0 25px; margin-top: 30px;}
+  .jobs_dt_summary_cont{margin-top: 5px;}
+
   .jobs_dt_current_in{padding: 20px 15px;}
+
+  /* (기업직업정보) 기업정보 */  
+  .comp_inf_v_pf{padding: 20px 25px;}
+  .comp_inf_v_pf_img{display: block;}
+  .comp_inf_v_pf_text{display: block; margin: 10px 0 0;}
+  .comp_inf_v_pf_scrap_btn{top: 10px; margin-top: 0;}
+
+  .comp_inf_v_jobs_subj{padding-left: 25px;}
 
   /* (뉴스/자료) 취업뉴스-고용복지 정책안내 */
   .card_list_inner {padding: 20px;}
@@ -293,12 +367,18 @@
 
   /* (취업도우미) 어학점수 변환 */
   .score_output{padding: 30px 40px;}
-
+  
   /* (마이페이지) 공통 */
-  .mp_lnb{float: none; width: 100%; display: none;} /**************** 임시 숨김 처리 ****************/
-
-  /* (마이페이지) 개인 > 홈 */
-  .mp_cont{float: none; width: 100%; padding-left: 0;}
+  /*>(마이페이지) 개인 LNB */
+  .pf_photo_indv.pf_photo_wrap {width: 100%; display: block; text-align: center;}
+  .pf_photo_indv .pf_info {width: 75%;}
+  .mp_lnb_indv .mp_navi {display: block; width: 100%;}
+  
+  /*>(마이페이지) 기업 LNB */
+  .pf_photo_comp.pf_photo_wrap {width: 100%; display: block;}
+  .pf_photo_comp .pf_photo {width: 25%;}
+  .pf_photo_comp .pf_info {width: 75%;}
+  .mp_lnb_comp .mp_navi {display: block; width: 100%;}
 
   /* (마이페이지) 기업 > 홈 */
   .mp_comp_quick_inner{text-align: center; padding: 25px 0 15px;}
@@ -321,7 +401,6 @@
 
   /* (마이페이지) 기업 > 채용공고목록 */
   .mp_announce_list_state_register {bottom: inherit; top: 0; width: auto; height: 40px; line-height: 40px; padding: 0 30px;}
-  
 
 
 
@@ -451,9 +530,56 @@
   .jobs_regi_end-time{margin: 0; padding-left: 10px; display: inline-block; vertical-align: middle; font-size: 16px;}
   
   /* (채용정보) 채용검색 상세 */
-  .jobs_dt_summary_lt{width: 100%; float: none; display: block;}
-  .jobs_dt_summary_rt{width: 100%; float: none; display: block; border-left: none; border-top: 1px solid #ddd;}
-  .jobs_dt_summary_col{width: 50%;}
+  .jobs_dt_summary_lt{width: 100%; display: block; float: none;}
+  .jobs_dt_summary_rt{width: 100%; float: none; display: block; border-left: none; border-top: 1px solid #ddd; padding: 10px 0;}
+  
+  .jobs_dt_top .sub_title{float: none; width: 100%; display: block; margin-bottom: 0;}
+  .jobs_dt_scrap{float: none; width: 100%; margin-bottom: 10px;}
+  .jobs_dt_scrap_ul{margin: 15px -2px 0;}
+
+  .jobs_dt_summary_title{font-size: 18px;}
+  .jobs_dt_summary_list.jobs_dt_summary_list_add{margin-top: 20px;}
+  .jobs_dt_summary_col{margin-top: 20px;}
+
+  .jobs_dt_comp_cont{margin: 0; padding: 25px 25px 10px;}
+  .jobs_dt_comp_cont > li{margin-top: 7px;}
+  .jobs_dt_comp_img{border-bottom: none; height: 98px; line-height: 98px;}
+  #interest_comp_btn{width: 100%; margin-top: 0;}
+
+  .jobs_dt_cont_tit{font-size: 20px;}
+  #jobs_view .board_tb.tb_lay_fix {width: 100%; display: block;}
+  #jobs_view .board_tb.tb_lay_fix thead {display: none;}
+  #jobs_view .board_tb.tb_lay_fix tbody{width: 100%; display: block;}
+  #jobs_view .board_tb.tb_lay_fix tr{width: 100%; display: block; font-size: 0;}
+  #jobs_view .board_tb.tb_lay_fix td {width: 50%; display: inline-block; vertical-align: top; border-bottom: none; word-break: break-all;}
+  #jobs_view .board_tb.tb_lay_fix td.rp_tb_tit {text-align: left; padding: 0 10px 13px}
+  #jobs_view .board_tb.tb_lay_fix tbody tr:hover{background: #fff;}
+  #jobs_view .board_tb.tb_lay_fix tbody tr:hover td{color: #666;}
+  .rp_tb_tit:before{display: block; border-top: 1px solid #ddd;}
+
+  .jobs_dt_expl_wrap{padding: 15px 10px; min-height: 150px;}
+  .inq_talk_btn{margin: 0 0 0 5px; display: inline-block;}
+
+  .jobs_dt_current_in:nth-child(1){width: 100%; display: table; border-bottom: 1px solid #ddd; padding: 0; font-size: 0;}
+  .jobs_dt_current_in:nth-child(2){width: 47%; border-left: none;}
+  .jobs_dt_current_in:nth-child(3){width: 53%;}
+
+  .jobs_dt_current_in:nth-child(1) .jobs_dt_current_in_tit {display: table-cell; vertical-align: middle; width: 200px; text-align: left; background: #f8f8f8; padding: 10px 20px;}
+  .jobs_dt_current_in:nth-child(1) .jobs_dt_current_in_cont {display: table-cell; vertical-align: middle; width: calc(100% - 200px); text-align: left; margin-top: 0; padding-left: 20px;}
+  .jobs_dt_current_in:nth-child(1) .jobs_dt_current_in_cont img{display: none;}
+  .jobs_dt_appc_cnt{margin-top: 0;}
+  .jobs_dt_appc_cnt b{line-height: 1; font-size: 24px;}
+
+  .jobs_dt_current_in_tit{font-size: 16px;}
+  
+  #jobs_view .board_tb2 thead {display: none;}
+  #jobs_view .board_tb2 table, 
+  #jobs_view .board_tb2 tbody, 
+  #jobs_view .board_tb2 tr,  
+  #jobs_view .board_tb2 th {width: 100%; display: block;}
+  #jobs_view .board_tb2 td {width: 100%; display: block; word-break: break-all;}
+  #jobs_view .board_tb2 th {height: auto; padding: 13px 10px;}
+  #jobs_view .board_tb2 td {height: auto; padding: 13px 10px;}
 
   /* (인재정보) 인재정보 목록 */
   .person_sch_tb tr{border-bottom: 1px solid #ddd; padding: 15px; display: block; position: relative;}
@@ -466,11 +592,41 @@
   .person_tb_wkplace{margin-top: 0;}
   .person_tb_major{margin-top: 0;}
   
+  /* (인재정보) 인재정보 상세 */
+  #person_view .board_tb.tb_lay_fix {width: 100%; display: block;}
+  #person_view .board_tb.tb_lay_fix thead {display: none;}
+  #person_view .board_tb.tb_lay_fix tbody{width: 100%; display: block;}
+  #person_view .board_tb.tb_lay_fix tr {width: 100%; display: block; font-size: 0;}
+  #person_view .board_tb.tb_lay_fix td {width: 50%; display: inline-block; vertical-align: top; border-bottom: none; word-break: break-all;}
+  #person_view .board_tb.tb_lay_fix td.rp_tb_tit {text-align: left; padding: 0 10px 13px}
+  #person_view .board_tb.tb_lay_fix tbody tr{border-bottom: 1px solid #0f0f0f;}
+  #person_view .board_tb.tb_lay_fix tbody tr:last-child{border-bottom: none;}
+  #person_view .board_tb.tb_lay_fix tbody tr:hover{background: #fff;}
+  #person_view .board_tb.tb_lay_fix tbody tr:hover td{color: #666;}
+  #person_view .board_tb.person_sch_tb td.tdv_md{position: absolute; bottom: 15px; right: 15px; width: auto;}
+
+  .person_dt_profile {padding: 12px 0;}
+  .person_dt_pf_info {padding: 15px 0 0 30px;}
+  
   /* (기업직업정보) 기업정보 */
   .em_comp_sch_cont{padding-left: 15px;}
 
   .card2_list_wrap {margin: 10px -7px -15px;}
   .card2_list {width: 33.3333%; padding: 0px 7px 15px;}
+
+  .comp_inf_v_pf{padding: 20px 10px;}
+  .comp_inf_v_pf_img{min-height: 100px;}
+  .comp_inf_v_pf_img img{max-height: 100%;}
+  .comp_inf_v_inf{padding: 20px 10px;}
+
+  .comp_inf_v_tb{position: relative;}
+  .comp_inf_v_tb thead {display: none; padding: 0;}
+  .board_tb.comp_inf_v_tb tr {display: block; width: 100%; padding: 15px 0 13px; border-bottom: 1px solid #ddd;}
+  .board_tb.comp_inf_v_tb td{width: 100%; display: block; text-align: left; padding: 0; border: none; position: relative;}
+  .comp_inf_v_jobs_subj{padding-left: 0; font-weight: 400; color: #0f0f0f;}
+
+  /* (기업직업정보) 직업정보 */
+  .em_jobs_sel_ul li{width: 50%;}
 
   /* (뉴스/자료) 취업뉴스-취업최신동향뉴스 */
   .webzine_list {padding: 20px;}
@@ -535,6 +691,13 @@
   
   td.mp_join_td_subj {font-weight: 400; color: #0f0f0f;}
   td.mp_join_td_subj .mp_join_list_txt01{font-weight: 400; color: #0f0f0f;}
+
+  /*>(마이페이지) 공통 LNB */
+  .mp_navi {display: block; width: 100%;}
+
+  /*>(마이페이지) 기업 LNB */
+  .pf_photo_comp .pf_photo {width: 35%;}
+  .pf_photo_comp .pf_info {width: 65%;}
   
   /* (마이페이지) 개인 > 홈 */
   .mp_notification{padding: 25px 0 20px;}
@@ -602,6 +765,11 @@
   .calendar_month {padding: 20px;}
   .calendar_month_current {font-size: 28px;}
 
+  .calendar_regiter_tb th{width: 160px;}
+  #calendar_regiter_popup .i-select,
+  #calendar_regiter_popup .calendar_regiter_date {margin-bottom: 4px;}
+  #calendar_regiter_popup .calendar_regiter_tb td.pd_tbr0 {padding-bottom: 6px;}
+
   /* (마이페이지) 개인 > 1:1톡 목록 */
   .mp_talk_tb{position: relative;}
   .mp_talk_tb thead {display: none; padding: 0;}
@@ -644,6 +812,21 @@
 
   /* (마이페이지) 기업 > 1:1톡 상세 */
   .mp_comp_talk_view_bot #mp_talk_view_list_btn{margin-top: 0;}
+  
+  /* (마이페이지) 기업 > 채용담당자 정보관리 > 채용담당자 변경(본인확인)*/
+  #mypage_comp_mn_check #signup_manager_name{margin-bottom: 3px;}
+
+  /* 통합검색 > 결과 */
+  .sch_rst_sch {padding: 15px;}
+  .sch_rst_tot {font-size: 20px;}
+  #sch_rst_tot_num {font-size: 30px;}
+
+  .sch_rst_top {padding: 15px;}
+
+  .sch_rst_job_date{top: inherit; transform: none; bottom: 20px; text-align: right;}
+  .sch_rst_job_date_txt01 {font-size: 16px;}
+  .sch_rst_job_date_txt02 {margin-top: 0;}
+  .sch_rst_job_info {margin: 3px -12px -3px;}
 
   
 
@@ -909,23 +1092,62 @@
   .jobs_sch_result{padding: 0; border: none;}
   
   /* (채용정보) 채용검색 상세 */
-  .jobs_dt_top .sub_title{float: none; width: 100%; display: block; margin-bottom: 0;}
-  .jobs_dt_scrap{float: none; width: 100%; margin-bottom: 10px;}
-  .jobs_dt_scrap_ul > li{width: 38px;}
-
   .jobs_title{margin-top: 0;}
+  .jobs_dt_scrap_ul{margin: 10px -2px 0;}
+  .jobs_dt_scrap_ul > li{width: 39px;}
 
-  .jobs_dt_summary_lt{padding: 5px 0;}
-  .jobs_dt_summary_rt{padding: 15px;}
-  .jobs_dt_summary_list{margin-top: 0;}
-  .jobs_dt_summary_list:last-child .jobs_dt_summary_col:last-child{border-bottom: none;}
-  .jobs_dt_summary_col{width: 100%; max-width: 100%; float: none; padding: 15px; border-bottom: 1px solid #eaeaea;}
-  .jobs_dt_summary_col:first-child{margin-top: 0;}
-  .jobs_dt_summary_title{font-size: 18px;}
-  .jobs_dt_summary_cont{margin-top: 5px;}
+  .jobs_dt_summary{border-bottom: none;}
+  .jobs_dt_summary_lt{padding: 15px 0;}
+  .jobs_dt_summary_list.jobs_dt_summary_list_add{padding: 0; margin-top: 15px;}
+  .jobs_dt_summary_col{padding: 0; margin-top: 15px;}
+  .jobs_dt_summary_title{font-size: 16px;}
+  .jobs_dt_summary_stitle{font-size: 14px; width: 70px;}
+  .jobs_dt_summary_expl{font-size: 14px; width: calc(100% - 70px);}
 
-  .jobs_dt_current_in{width: 100%; border-left: none; border-top: 1px solid #ddd;}
-  .jobs_dt_current_in:first-child{border-top: none;}
+  .jobs_dt_current_in{width: 100% !important; border-left: none; border-bottom: 1px solid #ddd;}
+  .jobs_dt_current_in:last-child{border-bottom: none;}
+  #interest_comp_btn{height: 40px; line-height: 40px; font-size: 14px;}
+  .jobs_dt_comp_cont{padding: 10px 0 0;}
+  .jobs_dt_comp_cont > li{margin-top: 3px;}
+  .jobs_dt_comp_stitle{font-size: 14px; width: 70px;}
+  .jobs_dt_comp_expl{font-size: 14px; width: calc(100% - 70px);}
+
+  .jobs_dt_summary_btn_ul {margin: 0;}
+  .jobs_dt_summary_btn_ul > li{display: block; padding: 0; margin-top: 5px;}
+  .jobs_dt_summary_btn{margin-top: 0;}
+  .jobs_dt_list_btn{width: 100%; font-size: 14px; line-height: 40px; height: 40px;}
+  .jobs_dt_summary_scrap{width: 100%; font-size: 14px; line-height: 40px; height: 40px;}
+  .jobs_dt_summary_apply{width: 100%; font-size: 14px; line-height: 40px; height: 40px;}
+
+  .jobs_dt_cont{margin-top: 20px;}
+  .jobs_dt_cont_tit{font-size: 18px;}
+  .rp_tb_tit:before{font-size: 14px;}
+
+  #jobs_view .board_tb{margin-top: 5px;}
+  #jobs_view .board_tb2{margin-top: 5px;}
+  #jobs_view .board_tb td{font-size: 14px;}
+  #jobs_view .board_tb2 td{font-size: 14px;}
+  .jobs_dt_expl_wrap{font-size: 14px; margin-top: 5px;}
+  .inq_talk_btn{margin: 5px 0 0; display: block; font-size: 14px; width: 90px; height: 30px; line-height: 30px;}
+
+  .jobs_dt_current_wrap{margin-top: 5px;}
+  .jobs_dt_current_in{padding: 13px 0 15px;}
+  .jobs_dt_current_in:nth-child(1) .jobs_dt_current_in_tit{width: 130px; max-width: 45%; font-size: 14px;}
+  .jobs_dt_current_in_tit{font-size: 14px;}
+  .jobs_dt_appc_cnt{font-size: 16px;}
+  .jobs_dt_appc_cnt b{font-size: 20px;}
+  .jobs_dt_current_in_cont{margin-top: 5px;}
+  #jobs_view .board_tb2 table, #jobs_view .board_tb2 tbody, #jobs_view .board_tb2 tr, #jobs_view .board_tb2 th, #jobs_view .board_tb2 td{font-size: 14px;}
+  .jobs_dt_addr_map_btn{font-size: 14px;}
+
+  /* (채용정보) 채용캘린더 */
+  .calendar_month{padding: 15px;}
+
+  .jobs_calendar_subj{font-size: 14px;}
+  .jobs_calendar_wrap .calendar_month_ul{float: none;}
+  .jobs_calendar_filter{float: none;}
+  .jobs_calendar_filter > li > a{font-size: 14px;}
+  .jobs_calendar_filter > li.jobs_calendar_datepick{margin-left: 10px;}
   
   /* (인재정보) 인재정보 목록 */
   .person_sch_tb_wrap{margin-top: 15px;}
@@ -940,6 +1162,14 @@
   .person_tb_education{font-size: 14px; margin-top: 0;}
   .person_tb_major{font-size: 14px;}
   .person_tb_regi-time{font-size: 14px;}
+
+  .jobs_sch_detail_box{display: none !important;}
+
+  /* (인재정보) 인재정보 상세 */
+  #person_view .board_tb{margin-top: 5px;}
+  #person_view .board_tb td{font-size: 14px;}
+  
+  .person_dt_summary_apply{width: 100%; font-size: 14px; line-height: 40px; height: 40px;}
   
   /* (기업직업정보) 기업정보 */
   .em_comp_sch_box {width: 100%; float: none;}
@@ -950,10 +1180,33 @@
   .card2_list {width: 50%; padding: 0px 4px 8px;}
   .card2_title {padding: 0 0 15px; font-size: 16px;}
 
+  .comp_inf_v_pf{padding: 20px 0;}
+  .comp_inf_v_pf_img{max-width: 100%; min-height: 70px;}
+  .comp_inf_v_pf_img img{max-height: 100%;}
+  .comp_inf_v_pf_cname{font-size: 18px;}
+  .comp_inf_v_pf_ctype{font-size: 14px;}
+  .comp_inf_v_pf_addr{font-size: 14px;}
+  .comp_inf_v_pf_scrap_btn{position: inherit; top: inherit; right: inherit; margin-top: 10px; font-size: 15px;}
+
+  .comp_inf_v_inf{padding: 20px 0;}
+  .comp_inf_v_inf_inner{float: none; width: 100%;}
+  .comp_inf_v_inf_cont > li{margin-top: 7px;}
+  .comp_inf_v_inf_stitle{font-size: 15px; float: none; width: 100%;}
+  .comp_inf_v_inf_expl{margin-top: 3px; font-size: 15px; float: none; width: 100%;}
+  .comp_inf_v_genre > li{font-size: 14px;}
+
+  .comp_inf_v_introd{padding: 20px 0;}
+  .comp_inf_v_introd_expl{margin-top: 3px; font-size: 15px;}
+  
+  .board_tb.comp_inf_v_tb tr {padding: 15px 0 13px;}
+
   /* (기업직업정보) 직업정보 */
-  .notice_tb thead, .notice_tb td:first-child, .notice_tb td:last-child {display: none;}
-  .notice_tb.board_tb td:nth-child(2) {width: 80%;}
-  .notice_tb.board_tb td:nth-child(3) {width: 20%;}
+  .em_jobs_sel_ul li{display: block; width: 100%;}
+
+  .em_job_v_name{padding: 15px; font-size: 18px;}
+  .em_job_v_summary{padding: 15px 0;}
+  .em_jobs_v_subtitle{font-size: 16px;}
+  .em_jobs_v_expl{font-size: 14px;}
 
   /* (뉴스/자료) 취업뉴스-취업최신동향뉴스 */
   .webzine_list {padding: 20px 10px;}
@@ -1045,10 +1298,6 @@
   /* (마이페이지) 공통 */
   .mp_sec_tit {margin-bottom: 3px; font-size: 18px;}
   .mp_title {font-size: 22px;}
-
-  .mo_scr_txt{font-size: 16px; font-weight: 300; text-align: center; color: #999; margin-bottom: 5px; display: block !important;}
-  .mo_scr_cont{overflow-x: auto;}
-  .mo_scr_cont > div{width: 800px;}
   
   .mypage .i-select{font-size: 14px;}
   .mypage .i-inpt{font-size: 14px;}
@@ -1057,6 +1306,22 @@
 
   .rp_td_767{padding: 0 !important;}
   .rp_td_767 .rp_td_txt:before{display: inline-block;}
+  
+  /*>(마이페이지) 공통 LNB */
+  .pf_name {font-size: 14px;}
+  .pf_name span {font-size: 16px;}
+  .mp_navi_dp2 > li > a {font-size: 13px;}
+
+  /*>(마이페이지) 개인 LNB */
+  .pf_photo_indv .pf_photo {width: 69px; height: 69px; background-size: 50%;}
+  .pf_photo_indv .pf_info {width: calc(100% - 69px); padding-left: 10px;}
+  .mp_lnb_indv .mp_navi > li {width: 33.3333%;}
+  .mp_lnb_indv .mp_navi > li > a {font-size: 14px; font-weight: 300; padding: 12px 0 8px;}
+
+  /*>(마이페이지) 기업 LNB */
+  .pf_photo_comp .pf_photo {height: 90px; background-size: 20%;}
+  .mp_lnb_comp .mp_navi > li {width: 33.3333%;}
+  .mp_lnb_comp .mp_navi > li > a {font-size: 14px; font-weight: 300; padding: 12px 0 8px;}
   
   /* (마이페이지) 개인 > 홈 */
   .mp_notification{padding: 0; background: none;}
@@ -1078,6 +1343,45 @@
   .mp_resume_photo_box .filebox .mp_resume_photo_inpt{font-size: 14px;}
 
   .mp_resume_tb td{font-size: 14px;}
+  
+  #mypage_resume .mp_resume_tb,
+  #mypage_resume .mp_resume_tb tbody,
+  #mypage_resume .mp_resume_tb tr,
+  #mypage_resume .mp_resume_tb th,
+  #mypage_resume .mp_resume_tb td{display: block; width: 100% !important;}
+  #mypage_resume .mp_resume_tb th{padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+  #mypage_resume .mp_resume_tb td.mp_resume_photo{border-right: none; border-bottom: 1px solid #ddd;}
+  #mypage_resume .mp_resume_photo_box{width: 150px;}
+  #mypage_resume .mp_resume_tb tr{position: relative;}
+  #mypage_resume .mp_control_btnbox{float: none; position: absolute; top: 0; right: 0;}
+  #mypage_resume .mp_control_btn{width: 45px; height: 45px;}
+
+  #mypage_resume .i-inpt,
+  #mypage_resume .i-txtar,
+  #mypage_resume .i-select,
+  #mypage_resume .i-radio,
+  #mypage_resume .i-checks,
+  #mypage_resume .mp_resume_month-inpt,
+  #mypage_resume .mp_resume_date-inpt{margin-bottom: 4px;}
+
+  #mypage_resume .mp_resume_tb td.pd_tbr0{padding-top: 10px; padding-bottom: 10px; padding-right: 10px; }
+  #mypage_resume .i-select.mt10,
+  #mypage_resume .i-inpt.mt10,
+  #mypage_resume .mp_resume_fm_add_inf.mt10,
+  #mypage_resume .mp_resume_pop_btn.mt10{margin-top: 0;}
+
+  .mp_resume_keyword_box{margin: 0 -1px;}
+  .mp_resume_keyword_box > li{padding: 0 1px;}
+
+  #mypage_resume .mp_control{height: 45px;}
+  #mypage_resume .mp_control_txtbox{padding: 10px 0 0 15px;}
+
+  #mypage_resume #mp_resume_addr2{width: 100%; margin-left: 0;}
+  .mp_resume_fm_addr_ul > li{margin-top: 0;}
+  .mp_resume_fm_add_inf{margin-left: 0;}
+  .mp_resume_chk{margin-right: 6px;}
+  .mp_resume_offer_method_chkbox{margin: 0 -13px;}
+  .mp_resume_condition_career_year02{margin-left: 3px;}
 
   /* (마이페이지) 개인 > 이력서등록 > 이미지등록 팝업 */
   #upload_pop .popup_wrap{width: 70%; min-height: auto;}
@@ -1102,6 +1406,20 @@
   /* (마이페이지) 개인 > 이력서등록 > 전공선택 팝업 */
   #person_major_pop #person_major_pop_sch_inpt{width: calc(100% - 102px);}
   .person_major_pop_sch_btn{font-size: 14px; width: 100px;}
+
+  /* (마이페이지) 개인 >자기소개서 등록 */
+  #mypage_self_introd .mp_resume_tb,
+  #mypage_self_introd .mp_resume_tb tbody,
+  #mypage_self_introd .mp_resume_tb tr,
+  #mypage_self_introd .mp_resume_tb th,
+  #mypage_self_introd .mp_resume_tb td{display: block; width: 100% !important;}
+  #mypage_self_introd .mp_resume_tb{position: relative;}
+  #mypage_self_introd .mp_resume_tb th{padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+  #mypage_self_introd .mp_resume_tb td.pd_tbr0{padding: 10px;}
+  .mypage .i-select.self_introd_sel{width: 100% !important;}
+  .mypage .i-inpt.self_introd_expl{width: 100% !important;}
+  #mypage_self_introd .mp_control_btnbox{float: none; position: absolute; top: 0; right: 0;}
+  #mypage_self_introd .mp_control_btn{width: 45px; height: 45px;}
   
   /* (마이페이지) 개인 > 이력서등록 > 자격면허찾기 팝업 */
   #license_pop .popup_wrap{height: inherit;}
@@ -1180,9 +1498,22 @@
   .calendar_data_txt {font-size: 14px;}
 
   .calendar_more_tb thead{display: none;}
-  .calendar_more_tb tr{display: block; width: 100%; border-bottom: 1px solid #ddd; padding: 10px;}
-  .calendar_more_tb td{display: block; width: 100%; border-bottom: none; padding: 0 !important; text-align: left;}
-  .calendar_more_tb td:last-child{margin-top: 3px;}
+  .calendar_more_tb tr{display: block; width: 100%; border-bottom: 1px solid #ddd; padding: 15px 0;}
+  .calendar_more_tb td{display: block; width: 100%; border-bottom: none; padding: 0 !important; text-align: left; font-size: 14px;}
+  .calendar_more_tb td:last-child{margin-top: 0;}
+  .jobs_calendar_td_title{margin-left: 0; margin-top: 5px; color: #0f0f0f; font-weight: 400;}
+
+  .calendar_regiter_tb,
+  .calendar_regiter_tb tbody,
+  .calendar_regiter_tb tr,
+  .calendar_regiter_tb th,
+  .calendar_regiter_tb td{display: block; width: 100% !important;}
+  .calendar_regiter_tb th {padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+  .calendar_regiter_date {font-size: 14px;}
+
+  .calendar_regiter_btn {margin-top: 10px;}
+  #calendar_regiter_del {font-size: 14px;}
+  #calendar_regiter_submit {top: inherit; left: inherit; position: relative; display: block; margin: 10px auto 0; font-size: 14px;}
   
   /* (마이페이지) 개인 > 1:1톡 목록 */
   .mp_talk_list_tb_wrap {margin-top: 10px;}
@@ -1192,6 +1523,18 @@
   .mp_talk_view_state {font-size: 14px; height: 30px; line-height: 30px;}
   .mp_talk_view_btn_ul > li button {font-size: 14px;}
   #mp_talk_view_list_btn {/*float: none;*/ margin: 15px auto 0;}
+  
+  .mp_talk_view_inf{float: none; display: block; width: 100%; margin-top: 5px;}
+  .mp_talk_view_a .mp_talk_view_inf{float: none; display: block; width: 100%; margin-top: 0;}
+  .mp_talk_view_state{float: none; display: block; margin-top: 5px;}
+
+  .inq_talk_write_tb,
+  .inq_talk_write_tb tbody,
+  .inq_talk_write_tb tr,
+  .inq_talk_write_tb th,
+  .inq_talk_write_tb td{display: block; width: 100% !important;}
+  .inq_talk_write_tb th{padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+  .mp_talk_write_tb_wrap .inq_talk_write_tb td{padding: 10px;}
 
   /* (마이페이지) 기업 > 홈 */
   .mp_comp_quick_ul > li {padding: 8px 10px; box-shadow: 0 0 0 1px #ddd; background: #f8f8f8; text-align: left;}
@@ -1223,6 +1566,33 @@
   #mypage_announce_list .paging {padding-top: 50px; margin-top: 15px;}
   .mp_announce_list_state_register {top: inherit; bottom: 55px; font-size: 14px;}
 
+  #mp_annc_subj {height: 60px;}
+  #mypage_announce .mp_resume_fm_btn{margin-right: 2px; margin-bottom: 4px;}
+  #mypage_announce #mp_resume_addr1{margin-left: 0; margin-right: 2px;}
+  #mypage_announce #mp_resume_addr2{margin-left: 0; margin-right: 2px;}
+  #mypage_announce .mp_resume_keyword_box > li{width: auto;}
+  #mypage_announce .mp_annc_week_wktime {margin-left: 0;}
+  #mypage_announce .mp_resume_fm_add_inf.ml0 {margin-right: 10px;}
+  #mp_annc_paytype {display: block;}
+  #mypage_announce .mp_annc_agree_radio {margin: 0 -13px;}
+  .mp_annc_exam {padding-left: 0; display: block; font-size: 14px;}
+  .mp_annc_addr_optbox {padding: 5px 0;}
+  
+  /* (마이페이지) 기업 > 채용공고 등록 */
+  #mypage_announce .mp_resume_tb,
+  #mypage_announce .mp_resume_tb tbody,
+  #mypage_announce .mp_resume_tb tr,
+  #mypage_announce .mp_resume_tb th,
+  #mypage_announce .mp_resume_tb td{display: block; width: 100% !important;}
+  #mypage_announce .mp_resume_tb th{padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+
+  #mypage_announce .i-inpt,
+  #mypage_announce .i-txtar,
+  #mypage_announce .i-select,
+  #mypage_announce .i-radio,
+  #mypage_announce .i-checks{margin-bottom: 4px;}
+  #mypage_announce .mp_resume_keyword_box > li{width: 50%;}
+  
   /* (마이페이지) 기업 > 지원자관리 */
   .board_mng_btn_box{margin-top: 10px;}
   #mypage_applicant_list .bo_view_type_ul > li {display: inline-block; vertical-align: middle; width: 50%;}
@@ -1245,6 +1615,77 @@
   /* (마이페이지) 기업 > 1:1톡 상세 */
   .mp_comp_talk_view_bot .mp_comp_talk_view_btn > li > *{font-size: 14px;}
 
+  /* (마이페이지) 기업 > 기업정보 관리*/
+  .mp_compedit_tb,
+  .mp_compedit_tb tbody,
+  .mp_compedit_tb tr,
+  .mp_compedit_tb th,
+  .mp_compedit_tb td{display: block; width: 100% !important;}
+  .mp_compedit_tb th{padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+
+  /* (마이페이지) 기업 > 회사소개 관리*/
+  .mp_comp_introd_tb,
+  .mp_comp_introd_tb tbody,
+  .mp_comp_introd_tb tr,
+  .mp_comp_introd_tb th,
+  .mp_comp_introd_tb td{display: block; width: 100% !important;}
+  .mp_comp_introd_tb th{padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+  .mp_comp_introd_tb td.mp_comp_introd_logo{border-right: 0; border-bottom: 1px solid #ddd;}
+
+  /* (마이페이지) 기업 > 기업정보 > 비밀번호 재확인*/
+  .mp_mbedit_tb,
+  .mp_mbedit_tb tbody,
+  .mp_mbedit_tb tr,
+  .mp_mbedit_tb th,
+  .mp_mbedit_tb td{display: block; width: 100% !important;}
+  .mp_mbedit_tb th{padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+
+  /* (마이페이지) 기업 > 비밀번호 변경*/
+  .find_pw_result_caution_title{font-size: 14px;}
+  .find_pw_result_caution_txt{padding-left: 8px; text-indent: -8px; font-size: 14px;}
+  
+  /* 통합검색 > 결과 */
+  .sch_rst_tot {float: none; display: block; margin-bottom: 5px;}
+  .sch_rst_sch_f {float: none; display: block;}
+  .sch_rst_sch_wrap label {margin-right: 0; display: block; margin-bottom: 3px;}
+  #sch_rst_sch_keyword {width: calc(100% - 102px);}
+  #sch_rst_sch_btn {width: 100px; font-size: 14px; margin-left: 2px;}
+
+  .sch_rst_keyword {font-size: 16px;}
+  .sch_rst_keyword b {font-size: 18px;}
+  .sch_rst_sort > li .btn02 {width: 100px; font-size: 14px;}
+
+  .tab_wrap_ul > li > a {font-size: 14px;}
+  .tab_wrap_ul.child4 > li {width: 50%;}
+  .tab_wrap_ul.child6 > li{width: 50%; border-bottom: none;}
+  .tab_wrap_ul.child6 > li:nth-child(3),
+  .tab_wrap_ul.child6 > li:nth-child(5) {border-left: 1px solid #ddd;}
+  .tab_wrap_ul.child6 > li:nth-child(5),
+  .tab_wrap_ul.child6 > li:nth-child(6) {border-bottom: 1px solid #ddd;}
+  #sch_rst .tab_wrap_ul.child4 > li {width: 50%;}
+
+  .sch_rst_cont_tit {font-size: 18px;}
+  .sch_rst_job_inner {padding: 15px 0;}
+  .sch_rst_job_subj {font-size: 16px;}
+  .sch_rst_job_info {margin: 0 -7px;}
+  .sch_rst_job_info > li {padding: 0 7px; font-size: 14px;}
+  .sch_rst_job_info > li:last-child{display: block;}
+  .sch_rst_job_info > li:last-child::after {display: none;}
+  .sch_rst_job_addr {font-size: 14px; margin-top: 0;}
+  .sch_rst_job_date {position: relative; bottom: inherit; right: inherit; text-align: left; line-height: 1;}
+  .sch_rst_job_date_txt01 {display: inline-block; vertical-align: middle; font-size: 14px;}
+  .sch_rst_job_date_txt02 {display: inline-block; vertical-align: middle; padding-left: 10px; font-size: 14px;} 
+
+  .sch_rst_bo_inner {padding: 15px 0;}
+  .sch_rst_bo_subj {font-size: 16px;}
+  .sch_rst_bo_date {font-size: 14px;}
+  .sch_rst_bo_content {font-size: 14px; margin-top: 5px;}
+
+  .sch_rst_data_ul {padding: 15px 0; padding-left: 3px;}
+  .sch_rst_data_ul > li {margin-top: 3px;}
+  .sch_rst_data_ul > li > a {font-size: 15px;}
+
+
 
   
 }/* end 767px */
@@ -1252,7 +1693,7 @@
 @media screen and (max-width:480px){
   
   /* (공통) 서브 */
-  .sub_title {font-size: 26px; margin-bottom: 10px;}
+  .sub_title {font-size: 24px; margin-bottom: 10px;}
   .sub_title::before {top: 18px;}
   .sub_title::after {top: 10px;}
   
@@ -1327,8 +1768,12 @@
   #jobs_sch_detail_btn{position: relative; top: inherit; right: inherit; margin-top: 10px; width: 100%; padding: 13px 0;}
   #jobs_sch_detail_btn span{display: inline-block; vertical-align: middle; margin: 0 0 7px 10px;}
   
-  /* (채용정보) 채용검색 상세 */
-  .jobs_dt_summary_apply{width: 120px;}
+  /* (채용정보) 채용검색 상세 */  
+  #jobs_view .board_tb.tb_lay_fix td {width: 100%; display: block;}
+  #jobs_view .board_tb.tb_lay_fix td:nth-child(2n) {border-left: none;}
+  
+  /* (채용정보) 채용캘린더 */
+  .jobs_calendar_filter > li.jobs_calendar_datepick{margin-left: 0; display: block; margin-top: 5px;}
 
   /* (인재정보) 인재정보 목록 */
   .person_sch_tb tr{padding: 10px 0;}
@@ -1397,11 +1842,20 @@
   /* (마이페이지) 공통 */
   .mp_title_box{overflow: hidden;}
   
+  /*>(마이페이지) 기업 LNB */
+  .pf_photo_comp .pf_photo {background-size: 30%;}
+  
   /* (마이페이지) 개인 > 이력서 등록 */
   .mp_resume_btn_ul > li{width: 50%;}
   .mp_resume_btn_ul .btn01{width: 100%; font-size: 14px;}
   .mp_resume_btn_ul .btn02{width: 100%; font-size: 14px;}
   .mp_resume_proof{padding: 15px;}
+  
+  .mp_resume_tb th,
+  .mp_resume_tb th label,
+  .mp_talk_write_tb_wrap th label,
+  #mypage_announce .mp_resume_th_txt,
+  .signup_fm_tb th .signup_fm_tb_subtit{font-size: 14px;}
 
   /* (마이페이지) 개인 > 이력서등록 > 이미지등록 팝업 */
   #upload_pop .popup_wrap{width: 85%;}
@@ -1462,6 +1916,11 @@
   .mp_comp_talk_view_bot .mp_talk_view_btn {float: none;}
   .mp_comp_talk_view_bot .mp_comp_talk_view_btn > li {width: 50%;}
   .mp_comp_talk_view_bot .mp_comp_talk_view_btn > li > *{width: 100%;}
+  
+  /* 통합검색 > 결과 */
+  .sch_rst_top {text-align: center;}
+  .sch_rst_keyword {float: none; display: block; padding-top: 0;}
+  .sch_rst_sort {float: none; display: inline-block; margin-top: 5px;}
   
 
 

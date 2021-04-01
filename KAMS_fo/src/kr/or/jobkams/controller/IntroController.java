@@ -14,9 +14,9 @@ public class IntroController extends CommonController {
     }
 
     /* 01 모아안내 */
-    @RequestMapping(value = "/sub/intro/aboutArtmore.do", method = RequestMethod.GET)
-    public String sub_intro_aboutArtmore(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/intro/aboutArtmore";
+    @RequestMapping(value = "/sub/intro/about_artmore.do", method = RequestMethod.GET)
+    public String sub_intro_about_artmore(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/intro/about_artmore";
 
         return ret_url;
     }
@@ -35,9 +35,9 @@ public class IntroController extends CommonController {
         return ret_url;
     }
 
-    @RequestMapping(value = "/sub/intro/useInfo.do", method = RequestMethod.GET)
-    public String sub_intro_useInfo(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/intro/useInfo";
+    @RequestMapping(value = "/sub/intro/use_info.do", method = RequestMethod.GET)
+    public String sub_intro_use_info(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/intro/use_info";
 
         return ret_url;
     }

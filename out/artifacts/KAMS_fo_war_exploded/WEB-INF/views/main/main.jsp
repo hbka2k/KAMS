@@ -82,7 +82,7 @@
                         </div>
                         <div class="main_sch_keyword_box">
                             <input type="text" class="main_sch_inpt" placeholder="검색 키워드를 입력하세요.">
-                            <button class="main_sch_btn"><img src="/resources/images/sch_icon01.png" alt="검색버튼"></button>
+                            <button type="button" class="main_sch_btn" onclick="location.href='/sub/recruit/search_list.do'"><img src="/resources/images/sch_icon01.png" alt="검색버튼"></button>
                         </div>
                     </form>
                 </div>
@@ -268,7 +268,7 @@
                     </div>
                 </div>
             </div><!--main_board_cont-->
-            <a href="" class="main_board_more">
+            <a href="/sub/community/notice_list.do" class="main_board_more">
                 <span class="main_board_more_icon"></span>
                 <span class="main_board_more_txt">더보기</span>
             </a>
@@ -313,37 +313,37 @@
                 <div class="main_emp_cont">
                     <div class="main_emp_cont_wr">
                         <div class="main_emp_list">
-                            <a href="/sub/news/helpCal.do" class="main_emp_list_inner">
+                            <a href="/sub/news/help_cal.do" class="main_emp_list_inner">
                                 <img src="/resources/images/emp_icon01.png" alt="">
                                 <p class="main_emp_list_txt">연봉계산기</p>
                             </a>
                         </div>
                         <div class="main_emp_list">
-                            <a href="/sub/news/helpSpell.do" class="main_emp_list_inner">
+                            <a href="/sub/news/help_spell.do" class="main_emp_list_inner">
                                 <img src="/resources/images/emp_icon02.png" alt="">
                                 <p class="main_emp_list_txt">맞춤법 검사</p>
                             </a>
                         </div>
                         <div class="main_emp_list">
-                            <a href="/sub/news/helpJobWork.do" class="main_emp_list_inner">
+                            <a href="/sub/news/help_job_work.do" class="main_emp_list_inner">
                                 <img src="/resources/images/emp_icon03.png" alt="">
                                 <p class="main_emp_list_txt">취업활동 증명서</p>
                             </a>
                         </div>
                         <div class="main_emp_list">
-                            <a href="/sub/news/helpGrade.do" class="main_emp_list_inner">
+                            <a href="/sub/news/help_grade.do" class="main_emp_list_inner">
                                 <img src="/resources/images/emp_icon04.png" alt="">
                                 <p class="main_emp_list_txt">학점 변환</p>
                             </a>
                         </div>
                         <div class="main_emp_list">
-                            <a href="/sub/news/helpLang.do" class="main_emp_list_inner">
+                            <a href="/sub/news/help_lang.do" class="main_emp_list_inner">
                                 <img src="/resources/images/emp_icon05.png" alt="">
                                 <p class="main_emp_list_txt">이수학점 변환</p>
                             </a>
                         </div>
                         <div class="main_emp_list">
-                            <a href="/sub/news/helpWord.do" class="main_emp_list_inner">
+                            <a href="/sub/news/help_word.do" class="main_emp_list_inner">
                                 <img src="/resources/images/emp_icon06.png" alt="">
                                 <p class="main_emp_list_txt">글자 수 세기</p>
                             </a>

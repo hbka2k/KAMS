@@ -49,14 +49,14 @@
                 </a>
             </li>
             <li class="hd_quick_menu_li hide_screen02">
-                <a href="../mypage/individual/home.html"><!--(기업)마이페이지 홈 링크: ../mypage/company/home.html-->
+                <a href="/sub/mypage/main.do"><!--(기업)마이페이지 홈 링크: ../mypage/company/home.html-->
                     <img src="/resources/images/hd_mypage_icon.png" alt="" class="hd_quick_icon_w">
                     <img src="/resources/images/hd_mypage_ov_icon.png" alt="" class="hd_quick_icon_b">
                     <p class="hd_quick_menu_txt">마이페이지</p>
                 </a>
             </li>
             <li class="hd_quick_menu_li hide_screen04">
-                <a href="../mypage/company/home.html">
+                <a href="/sub/mypage/com_main.do">
                     <img src="/resources/images/hd_members_icon.png" alt="" class="hd_quick_icon_w">
                     <img src="/resources/images/hd_members_ov_icon.png" alt="" class="hd_quick_icon_b">
                     <p class="hd_quick_menu_txt">기업회원</p>
@@ -73,9 +73,9 @@
                 <li>
                     <a href="">모아안내</a>
                     <ul class="gnb2_ul">
-                        <li><a href="/sub/intro/aboutArtmore.do">아트모아는?</a></li>
+                        <li><a href="/sub/intro/about_artmore.do">아트모아는?</a></li>
                         <li><a href="/sub/intro/matching_list.do">매칭 스토리</a></li>
-                        <li><a href="/sub/intro/useInfo.do">이용안내</a></li>
+                        <li><a href="/sub/intro/use_info.do">이용안내</a></li>
                     </ul>
                 </li>
                 <li>
@@ -202,18 +202,19 @@
                 <li>
                     <a href="">기업/직업 정보</a>
                     <ul class="gnb2_ul">
-                        <li><a href="/sub/comJob/comInfo_list.do">기업정보</a></li>
-                        <li><a href="/sub/comJob/comVisit_list.do">기업탐방</a></li>
-                        <li><a href="/sub/comJob/jobInfo_list.do">직업정보</a></li>
-                        <li><a href="/sub/comJob/jobCuration_list.do">직업 큐레이션</a></li>
+                        <li><a href="/sub/comJob/com_info_list.do">기업정보</a></li>
+                        <li><a href="/sub/comJob/com_visit_list.do">기업탐방</a></li>
+                        <li><a href="/sub/comJob/job_info_list.do">직업정보</a></li>
+                        <li><a href="/sub/comJob/job_curation_list.do">직업 큐레이션</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="">뉴스/자료</a>
                     <ul class="gnb2_ul">
-                        <li><a href="/sub/news/news_list.do">취업뉴스</a></li>
-                        <li><a href="/sub/news/dataRoom_list.do">자료실</a></li>
-                        <li><a href="/sub/news/helpCal.do">취업 도우미</a></li>
+                        <li><a href="/sub/news/news_list.do">취업 최신동향 뉴스</a></li>
+                        <li><a href="/sub/news/employ_list.do">고용복지 정책안내</a></li>
+                        <li><a href="/sub/news/data_room_list.do">자료실</a></li>
+                        <li><a href="/sub/news/help_cal.do">취업 도우미</a></li>
                     </ul>
                 </li>
                 <li>
@@ -221,7 +222,7 @@
                     <ul class="gnb2_ul">
                         <li><a href="/sub/community/talk_list.do">취업 톡톡</a></li>
                         <li><a href="/sub/community/faq.do">자주하는 질문 </a></li>
-                        <li><a href="/sub/community/oneToOne_list.do">1:1 온라인 문의</a></li>
+                        <li><a href="/sub/community/one_to_one_list.do">1:1 온라인 문의</a></li>
                         <li><a href="/sub/community/notice_list.do">공지사항</a></li>
                     </ul>
                 </li>
@@ -240,10 +241,12 @@
         <div class="popup_cont">
             <div class="popup_cont_inner">
                 <div class="total_search_wrap">
-                    <form action="../etc/search_result.html">
+                    <form action="/sub/total/total.do">
                         <label for="" class="sound_only">통합검색 입력</label>
                         <input type="text" name="" id="" class="total_search_inpt" placeholder="검색 내용을 입력하세요">
-                        <button type="button" class="total_search_btn"><img src="/resources/images/search-icon.png" srcset="/resources/images/search-icon@2x.png 2x,/resources/images/search-icon@3x.png 3x" class="search_icon"></button>
+                        <button type="button" class="total_search_btn" onclick="location.href='/sub/total/total.do'">
+                            <img src="/resources/images/search-icon.png" srcset="/resources/images/search-icon@2x.png 2x,/resources/images/search-icon@3x.png 3x" class="search_icon">
+                        </button>
                     </form>
                 </div>
                 <div class="total_search_keyword_wrap">

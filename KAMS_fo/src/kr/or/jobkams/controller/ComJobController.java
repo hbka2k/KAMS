@@ -14,54 +14,54 @@ public class ComJobController extends CommonController {
     }
 
     /* 04 기업/직업 정보 */
-    @RequestMapping(value = "/sub/comJob/comInfo_list.do", method = RequestMethod.GET)
-    public String sub_comJob_comInfo_list(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/comJob/comInfo_list";
+    @RequestMapping(value = "/sub/comJob/com_info_list.do", method = RequestMethod.GET)
+    public String sub_comJob_com_info_list(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/comJob/com_info_list";
 
         return ret_url;
     }
-    @RequestMapping(value = "/sub/comJob/comInfo_view.do", method = RequestMethod.GET)
-    public String sub_comJob_comInfo_view(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/comJob/comInfo_view";
-
-        return ret_url;
-    }
-
-    @RequestMapping(value = "/sub/comJob/comVisit_list.do", method = RequestMethod.GET)
-    public String sub_comJob_comVisit_list(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/comJob/comVisit_list";
-
-        return ret_url;
-    }
-    @RequestMapping(value = "/sub/comJob/comVisit_view.do", method = RequestMethod.GET)
-    public String sub_comJob_comVisit_view(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/comJob/comVisit_view";
+    @RequestMapping(value = "/sub/comJob/com_info_view.do", method = RequestMethod.GET)
+    public String sub_comJob_com_info_view(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/comJob/com_info_view";
 
         return ret_url;
     }
 
-    @RequestMapping(value = "/sub/comJob/jobInfo_list.do", method = RequestMethod.GET)
-    public String sub_comJob_jobInfo_list(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/comJob/jobInfo_list";
+    @RequestMapping(value = "/sub/comJob/com_visit_list.do", method = RequestMethod.GET)
+    public String sub_comJob_com_visit_list(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/comJob/com_visit_list";
 
         return ret_url;
     }
-    @RequestMapping(value = "/sub/comJob/jobInfo_view.do", method = RequestMethod.GET)
-    public String sub_comJob_jobInfo_view(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/comJob/jobInfo_view";
+    @RequestMapping(value = "/sub/comJob/com_visit_view.do", method = RequestMethod.GET)
+    public String sub_comJob_com_visit_view(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/comJob/com_visit_view";
 
         return ret_url;
     }
 
-    @RequestMapping(value = "/sub/comJob/jobCuration_list.do", method = RequestMethod.GET)
-    public String sub_comJob_jobCuration_list(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/comJob/jobCuration_list";
+    @RequestMapping(value = "/sub/comJob/job_info_list.do", method = RequestMethod.GET)
+    public String sub_comJob_job_info_list(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/comJob/job_info_list";
 
         return ret_url;
     }
-    @RequestMapping(value = "/sub/comJob/jobCuration_view.do", method = RequestMethod.GET)
-    public String sub_comJob_jobCuration_view(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/comJob/jobCuration_view";
+    @RequestMapping(value = "/sub/comJob/job_info_view.do", method = RequestMethod.GET)
+    public String sub_comJob_job_info_view(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/comJob/job_info_view";
+
+        return ret_url;
+    }
+
+    @RequestMapping(value = "/sub/comJob/job_curation_list.do", method = RequestMethod.GET)
+    public String sub_comJob_job_curation_list(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/comJob/job_curation_list";
+
+        return ret_url;
+    }
+    @RequestMapping(value = "/sub/comJob/job_curation_view.do", method = RequestMethod.GET)
+    public String sub_comJob_job_curation_view(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/comJob/job_curation_view";
 
         return ret_url;
     }

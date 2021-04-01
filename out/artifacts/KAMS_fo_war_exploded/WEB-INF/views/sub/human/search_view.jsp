@@ -102,6 +102,9 @@
             <div class="jobs_dt_summary_btn">
                 <ul class="jobs_dt_summary_btn_ul">
                     <li>
+                        <a href="/sub/human/search_list.do" class="btn02 jobs_dt_list_btn">목록보기</a>
+                    </li>
+                    <li>
                         <button type="button" class="btn02 jobs_dt_summary_scrap"><span class="summary_scrap_icon"></span>스크랩</button>
                         <!--활성화버튼-class: active
                         <button type="button" class="btn02 jobs_dt_summary_scrap active"><span class="summary_scrap_icon"></span>스크랩</button>
@@ -366,9 +369,8 @@
             <div class="person_dt_bot_btn_wrap">
                 <ul class="person_dt_bot_btn_ul">
                     <li><a href="" class="person_dt_btn_print"></a></li>
+                    <li><a href="/sub/human/search_list.do" class="btn02 jobs_dt_list_btn">목록보기</a></li>
                     <li><button type="button" class="btn02 person_dt_btn_scrap"><span class="summary_scrap_icon"></span>스크랩</button></li>
-                    <li><button type="button" class="btn02 person_dt_btn_sms"><span class="btn_sms_icon"></span>SMS발송</button></li>
-                    <li><button type="button" class="btn02 person_dt_btn_mail"><span class="btn_mail_icon"></span>메일발송</button></li>
                     <li><button type="button" class="btn01 person_dt_btn_proposal" onclick="popUp('person_mag_pop');">인재에게 연락하기</button></li>
                 </ul>
             </div>
@@ -396,7 +398,7 @@
                             <!--loop {-->
                             <tr>
                                 <td class="ta_l">
-                                    <a href="" class="jobs_cname">홍길동</a>
+                                    <a href="/sub/human/search_view.do" class="jobs_cname">홍길동</a>
                                     <div class="jobs_dtl_box person_tb_inf">
                                         <span>남</span>
                                         <span>45세</span>
@@ -425,231 +427,7 @@
                             <!--} loop-->
                             <tr>
                                 <td class="ta_l">
-                                    <a href="" class="jobs_cname">홍길동</a>
-                                    <div class="jobs_dtl_box person_tb_inf">
-                                        <span>남</span>
-                                        <span>45세</span>
-                                    </div>
-                                    <span class="person_tb_career newcomer">신입</span>
-                                </td>
-                                <td class="ta_l">
-                                    <div class="jobs_dtl_box mt0">
-                                        <span>안무가</span>
-                                        <span>마술사</span>
-                                    </div>
-                                    <div class="jobs_dtl_box">
-                                        <span>연봉 3,000만원 이상</span>
-                                        <span>면접 후 결정</span>
-                                    </div>
-                                    <p class="person_tb_wkplace">서울 송파구</p>
-                                </td>
-                                <td>
-                                    <p class="person_tb_education">고등학교 졸업</p>
-                                    <p class="person_tb_major">전공영역</p>
-                                </td>
-                                <td class="tdv_md">
-                                    <p class="person_tb_regi-time">2021.01.01</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <a href="" class="jobs_cname">홍길동</a>
-                                    <div class="jobs_dtl_box person_tb_inf">
-                                        <span>남</span>
-                                        <span>45세</span>
-                                    </div>
-                                    <span class="person_tb_career experienced">경력 1년 6개월</span>
-                                </td>
-                                <td class="ta_l">
-                                    <div class="jobs_dtl_box mt0">
-                                        <span>안무가</span>
-                                        <span>마술사</span>
-                                    </div>
-                                    <div class="jobs_dtl_box">
-                                        <span>연봉 3,000만원 이상</span>
-                                        <span>면접 후 결정</span>
-                                    </div>
-                                    <p class="person_tb_wkplace">서울 송파구</p>
-                                </td>
-                                <td>
-                                    <p class="person_tb_education">고등학교 졸업</p>
-                                    <p class="person_tb_major">전공영역</p>
-                                </td>
-                                <td class="tdv_md">
-                                    <p class="person_tb_regi-time">2021.01.01</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <a href="" class="jobs_cname">홍길동</a>
-                                    <div class="jobs_dtl_box person_tb_inf">
-                                        <span>남</span>
-                                        <span>45세</span>
-                                    </div>
-                                    <span class="person_tb_career newcomer">신입</span>
-                                </td>
-                                <td class="ta_l">
-                                    <div class="jobs_dtl_box mt0">
-                                        <span>안무가</span>
-                                        <span>마술사</span>
-                                    </div>
-                                    <div class="jobs_dtl_box">
-                                        <span>연봉 3,000만원 이상</span>
-                                        <span>면접 후 결정</span>
-                                    </div>
-                                    <p class="person_tb_wkplace">서울 송파구</p>
-                                </td>
-                                <td>
-                                    <p class="person_tb_education">고등학교 졸업</p>
-                                    <p class="person_tb_major">전공영역</p>
-                                </td>
-                                <td class="tdv_md">
-                                    <p class="person_tb_regi-time">2021.01.01</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <a href="" class="jobs_cname">홍길동</a>
-                                    <div class="jobs_dtl_box person_tb_inf">
-                                        <span>남</span>
-                                        <span>45세</span>
-                                    </div>
-                                    <span class="person_tb_career experienced">경력 1년 6개월</span>
-                                </td>
-                                <td class="ta_l">
-                                    <div class="jobs_dtl_box mt0">
-                                        <span>안무가</span>
-                                        <span>마술사</span>
-                                    </div>
-                                    <div class="jobs_dtl_box">
-                                        <span>연봉 3,000만원 이상</span>
-                                        <span>면접 후 결정</span>
-                                    </div>
-                                    <p class="person_tb_wkplace">서울 송파구</p>
-                                </td>
-                                <td>
-                                    <p class="person_tb_education">고등학교 졸업</p>
-                                    <p class="person_tb_major">전공영역</p>
-                                </td>
-                                <td class="tdv_md">
-                                    <p class="person_tb_regi-time">2021.01.01</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <a href="" class="jobs_cname">홍길동</a>
-                                    <div class="jobs_dtl_box person_tb_inf">
-                                        <span>남</span>
-                                        <span>45세</span>
-                                    </div>
-                                    <span class="person_tb_career newcomer">신입</span>
-                                </td>
-                                <td class="ta_l">
-                                    <div class="jobs_dtl_box mt0">
-                                        <span>안무가</span>
-                                        <span>마술사</span>
-                                    </div>
-                                    <div class="jobs_dtl_box">
-                                        <span>연봉 3,000만원 이상</span>
-                                        <span>면접 후 결정</span>
-                                    </div>
-                                    <p class="person_tb_wkplace">서울 송파구</p>
-                                </td>
-                                <td>
-                                    <p class="person_tb_education">고등학교 졸업</p>
-                                    <p class="person_tb_major">전공영역</p>
-                                </td>
-                                <td class="tdv_md">
-                                    <p class="person_tb_regi-time">2021.01.01</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <a href="" class="jobs_cname">홍길동</a>
-                                    <div class="jobs_dtl_box person_tb_inf">
-                                        <span>남</span>
-                                        <span>45세</span>
-                                    </div>
-                                    <span class="person_tb_career experienced">경력 1년 6개월</span>
-                                </td>
-                                <td class="ta_l">
-                                    <div class="jobs_dtl_box mt0">
-                                        <span>안무가</span>
-                                        <span>마술사</span>
-                                    </div>
-                                    <div class="jobs_dtl_box">
-                                        <span>연봉 3,000만원 이상</span>
-                                        <span>면접 후 결정</span>
-                                    </div>
-                                    <p class="person_tb_wkplace">서울 송파구</p>
-                                </td>
-                                <td>
-                                    <p class="person_tb_education">고등학교 졸업</p>
-                                    <p class="person_tb_major">전공영역</p>
-                                </td>
-                                <td class="tdv_md">
-                                    <p class="person_tb_regi-time">2021.01.01</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <a href="" class="jobs_cname">홍길동</a>
-                                    <div class="jobs_dtl_box person_tb_inf">
-                                        <span>남</span>
-                                        <span>45세</span>
-                                    </div>
-                                    <span class="person_tb_career newcomer">신입</span>
-                                </td>
-                                <td class="ta_l">
-                                    <div class="jobs_dtl_box mt0">
-                                        <span>안무가</span>
-                                        <span>마술사</span>
-                                    </div>
-                                    <div class="jobs_dtl_box">
-                                        <span>연봉 3,000만원 이상</span>
-                                        <span>면접 후 결정</span>
-                                    </div>
-                                    <p class="person_tb_wkplace">서울 송파구</p>
-                                </td>
-                                <td>
-                                    <p class="person_tb_education">고등학교 졸업</p>
-                                    <p class="person_tb_major">전공영역</p>
-                                </td>
-                                <td class="tdv_md">
-                                    <p class="person_tb_regi-time">2021.01.01</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <a href="" class="jobs_cname">홍길동</a>
-                                    <div class="jobs_dtl_box person_tb_inf">
-                                        <span>남</span>
-                                        <span>45세</span>
-                                    </div>
-                                    <span class="person_tb_career experienced">경력 1년 6개월</span>
-                                </td>
-                                <td class="ta_l">
-                                    <div class="jobs_dtl_box mt0">
-                                        <span>안무가</span>
-                                        <span>마술사</span>
-                                    </div>
-                                    <div class="jobs_dtl_box">
-                                        <span>연봉 3,000만원 이상</span>
-                                        <span>면접 후 결정</span>
-                                    </div>
-                                    <p class="person_tb_wkplace">서울 송파구</p>
-                                </td>
-                                <td>
-                                    <p class="person_tb_education">고등학교 졸업</p>
-                                    <p class="person_tb_major">전공영역</p>
-                                </td>
-                                <td class="tdv_md">
-                                    <p class="person_tb_regi-time">2021.01.01</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ta_l">
-                                    <a href="" class="jobs_cname">홍길동</a>
+                                    <a href="/sub/human/search_view.do" class="jobs_cname">홍길동</a>
                                     <div class="jobs_dtl_box person_tb_inf">
                                         <span>남</span>
                                         <span>45세</span>

@@ -43,13 +43,6 @@
         <div class="wrapper">
             <p class="sub_title">취업 뉴스</p>
 
-            <div class="tab_wrap sub_tab">
-                <ul class="tab_wrap_ul child2">
-                    <li class="active"><a href="/sub/news/news_list.do">취업 최신동향 뉴스</a></li>
-                    <li><a href="/sub/news/employ_list.do">고용복지 정책안내</a></li>
-                </ul>
-            </div>
-
             <div class="board_wrap webzine_bo_wrap">
                 <p class="bo_title">취업 최신동향 뉴스</p>
                 <div class="bo_list_top cf">

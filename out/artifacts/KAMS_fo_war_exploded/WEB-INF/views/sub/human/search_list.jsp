@@ -108,22 +108,77 @@
                         <div class="jobs_sch_detail_opt_li cf">
                             <p class="jobs_sch_detail_title mt">전공</p>
                             <div class="jobs_sch_detail_opt">
-                                <input type="text" name="" id="sch_major_inpt" class="i-inpt">
                                 <button type="button" class="sch_major_btn" onclick="popUp('person_major_pop')">전공 선택</button>
                             </div>
                         </div>
 
-                        <div class="jobs_sch_detail_opt_li cf">
+                        <div class="jobs_sch_detail_opt_li mt cf">
+                            <p class="jobs_sch_detail_title">고용형태</p>
+                            <div class="jobs_sch_detail_opt">
+                                <ul class="jobs_sch_option_ul jobs_sch_option_check">
+                                    <li>
+                                        <div class="i-checks">
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chkall">
+                                            <label for="jobs_sch_option_employ_chkall">전체</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-checks">
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk01">
+                                            <label for="jobs_sch_option_employ_chk01">정규직</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-checks">
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk02">
+                                            <label for="jobs_sch_option_employ_chk02">계약직</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-checks">
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk03">
+                                            <label for="jobs_sch_option_employ_chk03">시간선택제</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-checks">
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk04">
+                                            <label for="jobs_sch_option_employ_chk04">인턴</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-checks">
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk05">
+                                            <label for="jobs_sch_option_employ_chk05">파견근로</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-checks">
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk06">
+                                            <label for="jobs_sch_option_employ_chk06">대체인력</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-checks">
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk07">
+                                            <label for="jobs_sch_option_employ_chk07">프리랜서</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="jobs_sch_detail_opt_li mt cf">
                             <p class="jobs_sch_detail_title mt">경력</p>
                             <div class="jobs_sch_detail_opt">
                                 <ul class="jobs_sch_option_ul jobs_sch_option_check">
-                                    <li class="mt">
+                                    <li>
                                         <div class="i-checks">
                                             <input type="checkbox" name="" id="">
                                             <label for="">전체</label>
                                         </div>
                                     </li>
-                                    <li class="mt">
+                                    <li>
                                         <div class="i-checks">
                                             <input type="checkbox" name="" id="">
                                             <label for="">신입</label>
@@ -141,126 +196,178 @@
                             </div>
                         </div>
 
-                        <div class="jobs_sch_detail_opt_li cf">
-                            <p class="jobs_sch_detail_title">학력</p>
+                        <div class="jobs_sch_detail_opt_li mt cf">
+                            <p class="jobs_sch_detail_title mt">학력</p>
                             <div class="jobs_sch_detail_opt">
                                 <ul class="jobs_sch_option_ul jobs_sch_option_check">
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">전체</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_edu_chkall">
+                                            <label for="jobs_sch_option_edu_chkall">전체</label>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">고등학교 졸업</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">대학교 졸업(2/3년)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">대학교 졸업(4년)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">석사</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">박사</label>
-                                        </div>
+                                        <select name="" id="jobs_sch_option_edu_sel" class="i-select">
+                                            <option value="">선택</option>
+                                            <option value="고등학교">고등학교</option>
+                                            <option value="대학교(2~3년)">대학교(2~3년)</option>
+                                            <option value="대학교(4년)">대학교(4년)</option>
+                                            <option value="대학원(석사)">대학원(석사)</option>
+                                            <option value="대학원(박사)">대학원(박사)</option>
+                                        </select>
+                                        <select name="" id="jobs_sch_option_edu_stat_sel" class="i-select">
+                                            <option value="">선택</option>
+                                            <option value="">졸업</option>
+                                            <option value="">졸업예정</option>
+                                            <option value="">재학</option>
+                                            <option value="">수료</option>
+                                            <option value="">휴학</option>
+                                            <option value="">중퇴</option>
+                                        </select>
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="jobs_sch_detail_opt_li cf">
+                        <div class="jobs_sch_detail_opt_li mt cf">
                             <p class="jobs_sch_detail_title mt">희망임금</p>
                             <div class="jobs_sch_detail_opt">
-                                <ul class="jobs_sch_option_ul jobs_sch_option_radio">
+                                <ul class="jobs_sch_option_ul jobs_sch_option_check">
                                     <li>
-                                        <select name="" id="" class="i-select sch_paytype_sel">
+                                        <div class="i-checks">
+                                            <input type="checkbox" name="" id="jobs_sch_option_pay_chkall">
+                                            <label for="jobs_sch_option_pay_chkall">전체</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <select name="" id="jobs_sch_option_paytype" class="i-select">
                                             <option value="">선택</option>
                                             <option value="">연봉</option>
                                             <option value="">월급</option>
                                             <option value="">일급</option>
                                             <option value="">시급</option>
                                         </select>
-                                        <input type="text" class="i-inpt"> 만원 이상 ~&nbsp;
-                                        <input type="text" class="i-inpt"> 만원 이하
+                                        <input type="text" name="" id="jobs_sch_option_pay01" class="i-inpt"> 만원 이상 ~
+                                        <input type="text" name="" id="jobs_sch_option_pay02" class="i-inpt"> 만원 이하
                                     </li>
-                                    <li class="mt">
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">면접 후 결정</label>
-                                        </div>
-                                    </li>
-                                    <li class="mt">
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">회사 내규에 따름</label>
-                                        </div>
+                                    <li>
+                                        <ul class="jobs_sch_option_pay_chkbox">
+                                            <li>
+                                                <div class="i-checks">
+                                                    <input type="checkbox" name="" id="jobs_sch_option_pay_chk01">
+                                                    <label for="jobs_sch_option_pay_chk01">회사 내규에 따름</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="i-checks">
+                                                    <input type="checkbox" name="" id="jobs_sch_option_pay_chk02">
+                                                    <label for="jobs_sch_option_pay_chk02">면접 후 결정</label>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="jobs_sch_detail_opt_li cf">
+                        <div class="jobs_sch_detail_opt_li mt cf">
                             <p class="jobs_sch_detail_title">성별</p>
                             <div class="jobs_sch_detail_opt">
                                 <ul class="jobs_sch_option_ul jobs_sch_option_radio">
                                     <li>
                                         <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">전체</label>
+                                            <input type="radio" name="" id="jobs_sch_option_gender_chkall">
+                                            <label for="jobs_sch_option_gender_chkall">전체</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">남자</label>
+                                            <input type="radio" name="" id="jobs_sch_option_gender_chk01">
+                                            <label for="jobs_sch_option_gender_chk01">남자</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">여자</label>
+                                            <input type="radio" name="" id="jobs_sch_option_gender_chk02">
+                                            <label for="jobs_sch_option_gender_chk02">여자</label>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="jobs_sch_detail_opt_li cf">
+                        <div class="jobs_sch_detail_opt_li mt cf">
                             <p class="jobs_sch_detail_title mt">나이</p>
                             <div class="jobs_sch_detail_opt">
                                 <ul class="jobs_sch_option_ul jobs_sch_option_radio">
                                     <li class="mt">
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">전체</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_age_chkall">
+                                            <label for="jobs_sch_option_age_chkall">전체</label>
                                         </div>
                                     </li>
                                     <li>
-                                        <input type="text" class="i-inpt"> 세 이상 ~&nbsp;
-                                        <input type="text" class="i-inpt"> 세 이하
+                                        <input type="text" name="" id="jobs_sch_option_age_text01" class="i-inpt"> 세 이상 ~&nbsp;
+                                        <input type="text" name="" id="jobs_sch_option_age_text02" class="i-inpt"> 세 이하
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
-                    </div><!--jobs_sch_detail_box-->
+                        <div class="jobs_sch_detail_opt_li mt cf">
+                            <p class="jobs_sch_detail_title mt">등록일</p>
+                            <div class="jobs_sch_detail_opt">
+                                <ul class="jobs_sch_option_ul jobs_sch_option_radio">
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chkall">
+                                            <label for="jobs_sch_option_register_chkall">전체</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chk01">
+                                            <label for="jobs_sch_option_register_chk01">오늘</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chk02">
+                                            <label for="jobs_sch_option_register_chk02">3일</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chk03">
+                                            <label for="jobs_sch_option_register_chk03">1주</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chk04">
+                                            <label for="jobs_sch_option_register_chk04">2주</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chk05">
+                                            <label for="jobs_sch_option_register_chk05">한달</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chk06">
+                                            <label for="jobs_sch_option_register_chk06">직접지정</label>
+                                        </div>
+                                        <div class="jobs_sch_add_option">
+                                            <input type="text" class="date-inpt hasDatepicker" id="dp1617168364782"> ~
+                                            <input type="text" class="date-inpt hasDatepicker" id="dp1617168364783">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="jobs_sch_result">
                         <div class="result_keyword_wrap">
@@ -292,14 +399,12 @@
                     <ul class="bo_view_type_ul">
                         <li class="bo_vsort">
                             <select name="" id="" class="i-select bo_vsort_sel">
-                                <option value="">등록일순 ↓</option>
-                                <option value="">등록일순 ↑</option>
-                                <option value="">제목순 ↓</option>
-                                <option value="">제목순 ↑</option>
-                                <option value="">이름순 ↓</option>
-                                <option value="">이름순 ↑</option>
-                                <option value="">마감일순 ↓</option>
-                                <option value="">마감일순 ↑</option>
+                                <option value="">최근등록일순</option>
+                                <option value="">예전등록일순</option>
+                                <option value="">희망장르순(ㄱ-&gt;ㅎ)</option>
+                                <option value="">희망장르순(ㅎ-&gt;ㄱ)</option>
+                                <option value="">경력많은순</option>
+                                <option value="">경력적은순</option>
                             </select>
                         </li>
                         <li class="bo_vtotal">
@@ -331,7 +436,7 @@
                         <!--loop {-->
                         <tr>
                             <td class="ta_l">
-                                <a href="/sub/human/search_view.do" class="jobs_cname">홍길동</a>
+                                <a href="/sub/human/search_view.do" class="jobs_cname">홍○○</a>
                                 <div class="jobs_dtl_box person_tb_inf">
                                     <span>남</span>
                                     <span>45세</span>
@@ -360,231 +465,7 @@
                         <!--} loop-->
                         <tr>
                             <td class="ta_l">
-                                <a href="/sub/human/search_view.do" class="jobs_cname">홍길동</a>
-                                <div class="jobs_dtl_box person_tb_inf">
-                                    <span>남</span>
-                                    <span>45세</span>
-                                </div>
-                                <span class="person_tb_career newcomer">신입</span>
-                            </td>
-                            <td class="ta_l">
-                                <div class="jobs_dtl_box mt0">
-                                    <span>안무가</span>
-                                    <span>마술사</span>
-                                </div>
-                                <div class="jobs_dtl_box">
-                                    <span>연봉 3,000만원 이상</span>
-                                    <span>면접 후 결정</span>
-                                </div>
-                                <p class="person_tb_wkplace">서울 송파구</p>
-                            </td>
-                            <td>
-                                <p class="person_tb_education">고등학교 졸업</p>
-                                <p class="person_tb_major">전공영역</p>
-                            </td>
-                            <td class="tdv_md">
-                                <p class="person_tb_regi-time">2021.01.01</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <a href="/sub/human/search_view.do" class="jobs_cname">홍길동</a>
-                                <div class="jobs_dtl_box person_tb_inf">
-                                    <span>남</span>
-                                    <span>45세</span>
-                                </div>
-                                <span class="person_tb_career experienced">경력 1년 6개월</span>
-                            </td>
-                            <td class="ta_l">
-                                <div class="jobs_dtl_box mt0">
-                                    <span>안무가</span>
-                                    <span>마술사</span>
-                                </div>
-                                <div class="jobs_dtl_box">
-                                    <span>연봉 3,000만원 이상</span>
-                                    <span>면접 후 결정</span>
-                                </div>
-                                <p class="person_tb_wkplace">서울 송파구</p>
-                            </td>
-                            <td>
-                                <p class="person_tb_education">고등학교 졸업</p>
-                                <p class="person_tb_major">전공영역</p>
-                            </td>
-                            <td class="tdv_md">
-                                <p class="person_tb_regi-time">2021.01.01</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <a href="/sub/human/search_view.do" class="jobs_cname">홍길동</a>
-                                <div class="jobs_dtl_box person_tb_inf">
-                                    <span>남</span>
-                                    <span>45세</span>
-                                </div>
-                                <span class="person_tb_career newcomer">신입</span>
-                            </td>
-                            <td class="ta_l">
-                                <div class="jobs_dtl_box mt0">
-                                    <span>안무가</span>
-                                    <span>마술사</span>
-                                </div>
-                                <div class="jobs_dtl_box">
-                                    <span>연봉 3,000만원 이상</span>
-                                    <span>면접 후 결정</span>
-                                </div>
-                                <p class="person_tb_wkplace">서울 송파구</p>
-                            </td>
-                            <td>
-                                <p class="person_tb_education">고등학교 졸업</p>
-                                <p class="person_tb_major">전공영역</p>
-                            </td>
-                            <td class="tdv_md">
-                                <p class="person_tb_regi-time">2021.01.01</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <a href="/sub/human/search_view.do" class="jobs_cname">홍길동</a>
-                                <div class="jobs_dtl_box person_tb_inf">
-                                    <span>남</span>
-                                    <span>45세</span>
-                                </div>
-                                <span class="person_tb_career experienced">경력 1년 6개월</span>
-                            </td>
-                            <td class="ta_l">
-                                <div class="jobs_dtl_box mt0">
-                                    <span>안무가</span>
-                                    <span>마술사</span>
-                                </div>
-                                <div class="jobs_dtl_box">
-                                    <span>연봉 3,000만원 이상</span>
-                                    <span>면접 후 결정</span>
-                                </div>
-                                <p class="person_tb_wkplace">서울 송파구</p>
-                            </td>
-                            <td>
-                                <p class="person_tb_education">고등학교 졸업</p>
-                                <p class="person_tb_major">전공영역</p>
-                            </td>
-                            <td class="tdv_md">
-                                <p class="person_tb_regi-time">2021.01.01</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <a href="/sub/human/search_view.do" class="jobs_cname">홍길동</a>
-                                <div class="jobs_dtl_box person_tb_inf">
-                                    <span>남</span>
-                                    <span>45세</span>
-                                </div>
-                                <span class="person_tb_career newcomer">신입</span>
-                            </td>
-                            <td class="ta_l">
-                                <div class="jobs_dtl_box mt0">
-                                    <span>안무가</span>
-                                    <span>마술사</span>
-                                </div>
-                                <div class="jobs_dtl_box">
-                                    <span>연봉 3,000만원 이상</span>
-                                    <span>면접 후 결정</span>
-                                </div>
-                                <p class="person_tb_wkplace">서울 송파구</p>
-                            </td>
-                            <td>
-                                <p class="person_tb_education">고등학교 졸업</p>
-                                <p class="person_tb_major">전공영역</p>
-                            </td>
-                            <td class="tdv_md">
-                                <p class="person_tb_regi-time">2021.01.01</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <a href="/sub/human/search_view.do" class="jobs_cname">홍길동</a>
-                                <div class="jobs_dtl_box person_tb_inf">
-                                    <span>남</span>
-                                    <span>45세</span>
-                                </div>
-                                <span class="person_tb_career experienced">경력 1년 6개월</span>
-                            </td>
-                            <td class="ta_l">
-                                <div class="jobs_dtl_box mt0">
-                                    <span>안무가</span>
-                                    <span>마술사</span>
-                                </div>
-                                <div class="jobs_dtl_box">
-                                    <span>연봉 3,000만원 이상</span>
-                                    <span>면접 후 결정</span>
-                                </div>
-                                <p class="person_tb_wkplace">서울 송파구</p>
-                            </td>
-                            <td>
-                                <p class="person_tb_education">고등학교 졸업</p>
-                                <p class="person_tb_major">전공영역</p>
-                            </td>
-                            <td class="tdv_md">
-                                <p class="person_tb_regi-time">2021.01.01</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <a href="/sub/human/search_view.do" class="jobs_cname">홍길동</a>
-                                <div class="jobs_dtl_box person_tb_inf">
-                                    <span>남</span>
-                                    <span>45세</span>
-                                </div>
-                                <span class="person_tb_career newcomer">신입</span>
-                            </td>
-                            <td class="ta_l">
-                                <div class="jobs_dtl_box mt0">
-                                    <span>안무가</span>
-                                    <span>마술사</span>
-                                </div>
-                                <div class="jobs_dtl_box">
-                                    <span>연봉 3,000만원 이상</span>
-                                    <span>면접 후 결정</span>
-                                </div>
-                                <p class="person_tb_wkplace">서울 송파구</p>
-                            </td>
-                            <td>
-                                <p class="person_tb_education">고등학교 졸업</p>
-                                <p class="person_tb_major">전공영역</p>
-                            </td>
-                            <td class="tdv_md">
-                                <p class="person_tb_regi-time">2021.01.01</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <a href="/sub/human/search_view.do" class="jobs_cname">홍길동</a>
-                                <div class="jobs_dtl_box person_tb_inf">
-                                    <span>남</span>
-                                    <span>45세</span>
-                                </div>
-                                <span class="person_tb_career experienced">경력 1년 6개월</span>
-                            </td>
-                            <td class="ta_l">
-                                <div class="jobs_dtl_box mt0">
-                                    <span>안무가</span>
-                                    <span>마술사</span>
-                                </div>
-                                <div class="jobs_dtl_box">
-                                    <span>연봉 3,000만원 이상</span>
-                                    <span>면접 후 결정</span>
-                                </div>
-                                <p class="person_tb_wkplace">서울 송파구</p>
-                            </td>
-                            <td>
-                                <p class="person_tb_education">고등학교 졸업</p>
-                                <p class="person_tb_major">전공영역</p>
-                            </td>
-                            <td class="tdv_md">
-                                <p class="person_tb_regi-time">2021.01.01</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <a href="/sub/human/search_view.do" class="jobs_cname">홍길동</a>
+                                <a href="/sub/human/search_view.do" class="jobs_cname">홍○○</a>
                                 <div class="jobs_dtl_box person_tb_inf">
                                     <span>남</span>
                                     <span>45세</span>

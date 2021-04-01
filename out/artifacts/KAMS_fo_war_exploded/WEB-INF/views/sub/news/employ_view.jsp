@@ -31,7 +31,7 @@
                     </li>
                     <li>
                         <select class="sub_location_sel">
-                            <option value="">취업 뉴스</option>
+                            <option value="">고용복지 정책안내</option>
                         </select>
                     </li>
                 </ul>
@@ -41,14 +41,7 @@
 
     <div class="sub_content">
         <div class="wrapper">
-            <p class="sub_title">취업 뉴스</p>
-
-            <div class="tab_wrap sub_tab">
-                <ul class="tab_wrap_ul child2">
-                    <li><a href="/sub/news/news_list.do">취업 최신동향 뉴스</a></li>
-                    <li class="active"><a href="/sub/news/employ_list.do">고용복지 정책안내</a></li>
-                </ul>
-            </div>
+            <p class="sub_title">고용복지 정책안내</p>
 
             <div class="board_view">
                 <p class="bo_title">고용복지 정책안내</p>

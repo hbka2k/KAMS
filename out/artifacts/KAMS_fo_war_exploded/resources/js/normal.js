@@ -1,3 +1,6 @@
+
+
+
 //숫자 3자리마다 콤마
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -387,10 +390,16 @@ $(document).ready(function(){
     }
     $(this).siblings('.upload-name').val(filename);
   });
-  
 
 	//동일 박스 높이
   $(".i-match > *").matchHeight();
+
+  //게시판 카테고리 click event(.active)
+  var boCate = $(".bo_category");
+
+  boCate.on('click', 'li', function(){
+    $(this).addClass('active').siblings().removeClass('active');
+  });
 
   //통합검색 검색키워드 삭제 기능
   $(".total_search_keyword_ul").on('click','.total_search_remove_btn',function(){
@@ -423,8 +432,10 @@ $(document).ready(function(){
     $(this).stop().fadeToggle(150);
   });
 
-  //메인 헤더 마우스 오버 효과
-  if($(window).width() > 1279){
+  //gnb 반응형
+  var sc_w = window.outerWidth; //창크기
+
+  if(sc_w > 1279){//pc 사이즈일 경우
     $(".main_header").mouseenter(function(){
       $(this).addClass("hd_black");
       $("#fp-nav").addClass("black");
@@ -434,36 +445,12 @@ $(document).ready(function(){
       $("#fp-nav").removeClass("black");
     });
   }
-
-  //헤더 모바일 메뉴
-  if($(window).width() < 1024){
-    $(".gnb_ul").children('li').on("click", function(){
-      //$(this).addClass("active").siblings().removeClass("active");
-      $(this).children(".gnb2_ul").toggleClass("on").parents("li").siblings().children(".gnb2_ul").removeClass("on");
+  if(767 < sc_w && sc_w < 1024){//태블릿 사이즈일 경우
+    $(".gnb_ul > li > a").attr('href','javascript:void(0)').removeClass('gnb_more');//아코디언 기능을 위한 a태그 링크 이동 삭제
+    $(".gnb_ul > li").on('click',function(){//하위메뉴 아코디언 기능
+      $(this).children('.gnb2_ul').show().parents('li').siblings().children('.gnb2_ul').hide();
     });
   }
-
-  $(window).resize(function() {
-    //메인 헤더 마우스 오버 효과
-    if($(window).width() > 1279){
-      $(".main_header").mouseenter(function(){
-        $(this).addClass("hd_black");
-        $("#fp-nav").addClass("black");
-      });
-      $(".main_header").mouseleave(function(){
-        $(this).removeClass("hd_black");
-        $("#fp-nav").removeClass("black");
-      });
-    }
-  
-    //헤더 모바일 메뉴
-    if($(window).width() < 1024){
-      $(".gnb_ul").children('li').on("click", function(){
-        //$(this).addClass("active").siblings().removeClass("active");
-        $(this).children(".gnb2_ul").toggleClass("on").parents("li").siblings().children(".gnb2_ul").removeClass("on");
-      });
-    }
-  });//resize
 
   //메인 fullpage
   $('#main').fullpage({
@@ -770,13 +757,17 @@ $(document).ready(function(){
   //서브 비주얼 타이틀 첫로딩시 효과
   $(".sub_vs_title").addClass("df");
 
-  /*
+  //마이페이지 > LNB
   $(".mp_navi > li").click(function(){
     if($(this).find(".mp_navi_dp2").length > 0){
       $(this).find(".mp_navi_dp2").slideToggle(200);
+      $(this).toggleClass("on").siblings("li").removeClass("on");
     }
   });
-  */
+  var nowWidth = $(window).width();
+  if( nowWidth < 1701 ){
+    $(".mp_navi").find("li").removeClass("on");
+  };
 
   //이미지 업로드 미리보기 기능
   var fileTarget = $('.filebox .upload-hidden');
@@ -921,4 +912,22 @@ $(document).ready(function(){
       }
     });
   });
+
+  //마이페이지 > 자격면허찾기 팝업 > 탭 
+  $(".license_tab_cont").hide();
+  $(".license_tab_cont:first").show();
+
+  $(".license_tab_ul li").click(function () {
+    $(".license_tab_ul li").removeClass("active");
+    $(this).addClass("active");
+    $(".license_tab_cont").hide()
+    var activeTab = $(this).attr("rel");
+    $("#" + activeTab).fadeIn()
+  });
+
+  //마이페이지 > LNB 사진 업로드 트리거
+  $('.pf_photo_upload').click(function(){
+    $('.pf_photo .filebox label').trigger('click');
+  });
+  
 });//document

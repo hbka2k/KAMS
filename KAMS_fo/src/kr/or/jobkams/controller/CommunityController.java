@@ -40,21 +40,21 @@ public class CommunityController extends CommonController {
         return ret_url;
     }
 
-    @RequestMapping(value = "/sub/community/oneToOne_list.do", method = RequestMethod.GET)
-    public String sub_community_oneToOne_list(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/community/oneToOne_list";
+    @RequestMapping(value = "/sub/community/one_to_one_list.do", method = RequestMethod.GET)
+    public String sub_community_one_to_one_list(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/community/one_to_one_list";
 
         return ret_url;
     }
-    @RequestMapping(value = "/sub/community/oneToOne_view.do", method = RequestMethod.GET)
-    public String sub_community_oneToOne_view(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/community/ooneToOne_viewt";
+    @RequestMapping(value = "/sub/community/one_to_one_view.do", method = RequestMethod.GET)
+    public String sub_community_one_to_one_view(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/community/one_to_one_view";
 
         return ret_url;
     }
-    @RequestMapping(value = "/sub/community/oneToOne_write.do", method = RequestMethod.GET)
-    public String sub_community_oneToOne_write(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/community/oneToOne_write";
+    @RequestMapping(value = "/sub/community/one_to_one_write.do", method = RequestMethod.GET)
+    public String sub_community_one_to_one_write(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/community/one_to_one_write";
 
         return ret_url;
     }

@@ -40,57 +40,57 @@ public class NewsController extends CommonController {
         return ret_url;
     }
 
-    @RequestMapping(value = "/sub/news/dataRoom_list.do", method = RequestMethod.GET)
-    public String sub_news_dataRoom_list(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/news/dataRoom_list";
+    @RequestMapping(value = "/sub/news/data_room_list.do", method = RequestMethod.GET)
+    public String sub_news_data_room_list(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/news/data_room_list";
 
         return ret_url;
     }
-    @RequestMapping(value = "/sub/news/dataRoom_view.do", method = RequestMethod.GET)
-    public String sub_news_dataRoom_view(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/news/dataRoom_view";
-
-        return ret_url;
-    }
-
-    @RequestMapping(value = "/sub/news/helpCal.do", method = RequestMethod.GET)
-    public String sub_news_helpCal(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/news/helpCal";
+    @RequestMapping(value = "/sub/news/data_room_view.do", method = RequestMethod.GET)
+    public String sub_news_data_room_view(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/news/data_room_view";
 
         return ret_url;
     }
 
-    @RequestMapping(value = "/sub/news/helpSpell.do", method = RequestMethod.GET)
-    public String sub_news_helpSpell(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/news/helpSpell";
+    @RequestMapping(value = "/sub/news/help_cal.do", method = RequestMethod.GET)
+    public String sub_news_help_cal(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/news/help_cal";
 
         return ret_url;
     }
 
-    @RequestMapping(value = "/sub/news/helpJobWork.do", method = RequestMethod.GET)
-    public String sub_news_helpJobWork(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/news/helpJobWork";
+    @RequestMapping(value = "/sub/news/help_spell.do", method = RequestMethod.GET)
+    public String sub_news_help_spell(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/news/help_spell";
 
         return ret_url;
     }
 
-    @RequestMapping(value = "/sub/news/helpGrade.do", method = RequestMethod.GET)
-    public String sub_news_helpGrade(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/news/helpGrade";
+    @RequestMapping(value = "/sub/news/help_job_work.do", method = RequestMethod.GET)
+    public String sub_news_help_job_work(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/news/help_job_work";
 
         return ret_url;
     }
 
-    @RequestMapping(value = "/sub/news/helpLang.do", method = RequestMethod.GET)
-    public String sub_news_helpLang(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/news/helpLang";
+    @RequestMapping(value = "/sub/news/help_grade.do", method = RequestMethod.GET)
+    public String sub_news_help_grade(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/news/help_grade";
 
         return ret_url;
     }
 
-    @RequestMapping(value = "/sub/news/helpWord.do", method = RequestMethod.GET)
-    public String sub_news_helpWord(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String ret_url = "sub/news/helpWord";
+    @RequestMapping(value = "/sub/news/help_lang.do", method = RequestMethod.GET)
+    public String sub_news_help_lang(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/news/help_lang";
+
+        return ret_url;
+    }
+
+    @RequestMapping(value = "/sub/news/help_word.do", method = RequestMethod.GET)
+    public String sub_news_help_word(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        String ret_url = "sub/news/help_word";
 
         return ret_url;
     }

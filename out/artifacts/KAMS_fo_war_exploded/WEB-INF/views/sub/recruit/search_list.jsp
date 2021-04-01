@@ -27,19 +27,19 @@
 <div id="jobs" class="sub">
     <div class="sub_visual sub_visual02">
         <div class="wrapper">
-            <p class="sub_vs_title">채용정보</p>
+            <p class="sub_vs_title">일자리정보</p>
 
             <div class="sub_location">
                 <ul class="sub_location_ul">
                     <li><a href="/"><img src="/resources/images/home_icon01.png" alt="홈으로"></a></li>
                     <li>
                         <select class="sub_location_sel">
-                            <option value="">채용정보</option>
+                            <option value="">일자리정보</option>
                         </select>
                     </li>
                     <li>
                         <select class="sub_location_sel">
-                            <option value="">채용정보 상세검색</option>
+                            <option value="">일자리 상세검색</option>
                         </select>
                     </li>
                 </ul>
@@ -49,7 +49,7 @@
 
     <div class="sub_content">
         <div class="wrapper">
-            <p class="sub_title">채용정보 상세검색</p>
+            <p class="sub_title">일자리 상세검색</p>
 
             <div class="jobs_sch_wrap">
                 <form action="">
@@ -109,243 +109,148 @@
                                 <ul class="jobs_sch_option_ul jobs_sch_option_check">
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">전체</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chkall">
+                                            <label for="jobs_sch_option_employ_chkall">전체</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="job_type[]" id="job_type_1" value="정규직">
-                                            <label for="job_type_1">정규직</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk01">
+                                            <label for="jobs_sch_option_employ_chk01">정규직</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">계약직</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk02">
+                                            <label for="jobs_sch_option_employ_chk02">계약직</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">시간선택제</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk03">
+                                            <label for="jobs_sch_option_employ_chk03">시간선택제</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">인턴</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk04">
+                                            <label for="jobs_sch_option_employ_chk04">인턴</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">파견근로</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk05">
+                                            <label for="jobs_sch_option_employ_chk05">파견근로</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">대체인력</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk06">
+                                            <label for="jobs_sch_option_employ_chk06">대체인력</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">프리랜서</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_employ_chk07">
+                                            <label for="jobs_sch_option_employ_chk07">프리랜서</label>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="jobs_sch_detail_opt_li cf">
-                            <p class="jobs_sch_detail_title">경력</p>
+                        <div class="jobs_sch_detail_opt_li mt cf">
+                            <p class="jobs_sch_detail_title mt">경력</p>
                             <div class="jobs_sch_detail_opt">
                                 <ul class="jobs_sch_option_ul jobs_sch_option_check">
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">전체</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_career_chkall">
+                                            <label for="jobs_sch_option_career_chkall">전체</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">경력무관</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_career_chk01">
+                                            <label for="jobs_sch_option_career_chk01">경력무관</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">신입</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_career_chk02">
+                                            <label for="jobs_sch_option_career_chk02">신입</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">경력</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_career_chk03">
+                                            <label for="jobs_sch_option_career_chk03">경력</label>
+                                        </div>
+                                        <div class="jobs_sch_add_option">
+                                            <input type="text" class="i-inpt" id="jobs_sch_option_career_text01"> 년 ~&nbsp;
+                                            <input type="text" class="i-inpt" id="jobs_sch_option_career_text02"> 년
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="jobs_sch_detail_opt_li cf">
-                            <p class="jobs_sch_detail_title">최종학력</p>
+                        <div class="jobs_sch_detail_opt_li mt cf">
+                            <p class="jobs_sch_detail_title mt">학력</p>
                             <div class="jobs_sch_detail_opt">
                                 <ul class="jobs_sch_option_ul jobs_sch_option_check">
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">전체</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_edu_chkall">
+                                            <label for="jobs_sch_option_edu_chkall">전체</label>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">학력무관</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">고등학교</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">대학교2/3년제</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">대학교4년제</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">석사</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">박사</label>
-                                        </div>
+                                        <select name="" id="jobs_sch_option_edu_sel" class="i-select">
+                                            <option value="">선택</option>
+                                            <option value="고등학교">고등학교</option>
+                                            <option value="대학교(2~3년)">대학교(2~3년)</option>
+                                            <option value="대학교(4년)">대학교(4년)</option>
+                                            <option value="대학원(석사)">대학원(석사)</option>
+                                            <option value="대학원(박사)">대학원(박사)</option>
+                                        </select>
+                                        <select name="" id="jobs_sch_option_edu_stat_sel" class="i-select">
+                                            <option value="">선택</option>
+                                            <option value="">졸업</option>
+                                            <option value="">졸업예정</option>
+                                            <option value="">재학</option>
+                                            <option value="">수료</option>
+                                            <option value="">휴학</option>
+                                            <option value="">중퇴</option>
+                                        </select>
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="jobs_sch_detail_opt_li cf">
-                            <p class="jobs_sch_detail_title">등록일</p>
-                            <div class="jobs_sch_detail_opt">
-                                <ul class="jobs_sch_option_ul jobs_sch_option_radio">
-                                    <li>
-                                        <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">전체</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">오늘</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">3일</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">1주</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">2주</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">한달</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">직접지정</label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="jobs_sch_detail_opt_li cf">
-                            <p class="jobs_sch_detail_title">임금형태</p>
+                            <p class="jobs_sch_detail_title">기업형태</p>
                             <div class="jobs_sch_detail_opt">
                                 <ul class="jobs_sch_option_ul jobs_sch_option_check">
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">연봉</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_ctype_chkall">
+                                            <label for="jobs_sch_option_ctype_chkall">전체</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">월급</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_ctype_chk01">
+                                            <label for="jobs_sch_option_ctype_chk01">공공</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">일급</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">시급</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">면접 후 결정</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">주급</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">건별</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_ctype_chk02">
+                                            <label for="jobs_sch_option_ctype_chk02">민간</label>
                                         </div>
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
-
-                        <div class="jobs_sch_detail_opt_li cf">
-                            <p class="jobs_sch_detail_title mt">급여조건</p>
-                            <div class="jobs_sch_detail_opt">
-                                <input type="text" class="i-inpt"> 만원 이상 ~&nbsp;
-                                <input type="text" class="i-inpt"> 만원 이하
                             </div>
                         </div>
 
@@ -355,26 +260,52 @@
                                 <ul class="jobs_sch_option_ul jobs_sch_option_radio">
                                     <li>
                                         <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">전체</label>
+                                            <input type="radio" name="jobs_sch_option_condition_chk" id="jobs_sch_option_condition_chkall">
+                                            <label for="jobs_sch_option_condition_chkall">전체</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">청년층</label>
+                                            <input type="radio" name="jobs_sch_option_condition_chk" id="jobs_sch_option_condition_chk01">
+                                            <label for="jobs_sch_option_condition_chk01">청년층</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">장년</label>
+                                            <input type="radio" name="jobs_sch_option_condition_chk" id="jobs_sch_option_condition_chk02">
+                                            <label for="jobs_sch_option_condition_chk02">장년</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-radio">
-                                            <input type="radio" name="" id="">
-                                            <label for="">여성</label>
+                                            <input type="radio" name="jobs_sch_option_condition_chk" id="jobs_sch_option_condition_chk03">
+                                            <label for="jobs_sch_option_condition_chk03">여성</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="jobs_sch_detail_opt_li cf">
+                            <p class="jobs_sch_detail_title">기타우대사항</p>
+                            <div class="jobs_sch_detail_opt">
+                                <ul class="jobs_sch_option_ul jobs_sch_option_check">
+                                    <li>
+                                        <div class="i-checks">
+                                            <input type="checkbox" name="" id="jobs_sch_option_etc_condition_chkall">
+                                            <label for="jobs_sch_option_etc_condition_chkall">영어 우수자</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-checks">
+                                            <input type="checkbox" name="" id="jobs_sch_option_etc_condition_chk01">
+                                            <label for="jobs_sch_option_etc_condition_chk01">차량 소지자</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-checks">
+                                            <input type="checkbox" name="" id="jobs_sch_option_etc_condition_chk02">
+                                            <label for="jobs_sch_option_etc_condition_chk02">운전 가능자</label>
                                         </div>
                                     </li>
                                 </ul>
@@ -387,20 +318,169 @@
                                 <ul class="jobs_sch_option_ul jobs_sch_option_check">
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">장애인 병행채용</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_disorder_chk01">
+                                            <label for="jobs_sch_option_disorder_chk01">장애인 병행채용</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">장애인 우대</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_disorder_chk02">
+                                            <label for="jobs_sch_option_disorder_chk02">장애인 우대</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="i-checks">
-                                            <input type="checkbox" name="" id="">
-                                            <label for="">장애인만 채용</label>
+                                            <input type="checkbox" name="" id="jobs_sch_option_disorder_chk03">
+                                            <label for="jobs_sch_option_disorder_chk03">장애인만 채용</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="jobs_sch_detail_opt_li mt cf">
+                            <p class="jobs_sch_detail_title mt">희망임금</p>
+                            <div class="jobs_sch_detail_opt">
+                                <ul class="jobs_sch_option_ul jobs_sch_option_check">
+                                    <li>
+                                        <div class="i-checks">
+                                            <input type="checkbox" name="" id="jobs_sch_option_pay_chkall">
+                                            <label for="jobs_sch_option_pay_chkall">전체</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <select name="" id="jobs_sch_option_paytype" class="i-select">
+                                            <option value="">선택</option>
+                                            <option value="">연봉</option>
+                                            <option value="">월급</option>
+                                            <option value="">일급</option>
+                                            <option value="">시급</option>
+                                        </select>
+                                        <input type="text" name="" id="jobs_sch_option_pay01" class="i-inpt"> 만원 이상 ~
+                                        <input type="text" name="" id="jobs_sch_option_pay02" class="i-inpt"> 만원 이하
+                                    </li>
+                                    <li>
+                                        <ul class="jobs_sch_option_pay_chkbox">
+                                            <li>
+                                                <div class="i-checks">
+                                                    <input type="checkbox" name="" id="jobs_sch_option_pay_chk01">
+                                                    <label for="jobs_sch_option_pay_chk01">회사 내규에 따름</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="i-checks">
+                                                    <input type="checkbox" name="" id="jobs_sch_option_pay_chk02">
+                                                    <label for="jobs_sch_option_pay_chk02">면접 후 결정</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="jobs_sch_detail_opt_li mt cf">
+                            <p class="jobs_sch_detail_title mt">등록일</p>
+                            <div class="jobs_sch_detail_opt">
+                                <ul class="jobs_sch_option_ul jobs_sch_option_radio">
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chkall">
+                                            <label for="jobs_sch_option_register_chkall">전체</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chk01">
+                                            <label for="jobs_sch_option_register_chk01">오늘</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chk02">
+                                            <label for="jobs_sch_option_register_chk02">3일</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chk03">
+                                            <label for="jobs_sch_option_register_chk03">1주</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chk04">
+                                            <label for="jobs_sch_option_register_chk04">2주</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chk05">
+                                            <label for="jobs_sch_option_register_chk05">한달</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_register_chk" id="jobs_sch_option_register_chk06">
+                                            <label for="jobs_sch_option_register_chk06">직접지정</label>
+                                        </div>
+                                        <div class="jobs_sch_add_option">
+                                            <input type="text" class="date-inpt" id=""> ~
+                                            <input type="text" class="date-inpt" id="">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="jobs_sch_detail_opt_li mt cf">
+                            <p class="jobs_sch_detail_title mt">마감일</p>
+                            <div class="jobs_sch_detail_opt">
+                                <ul class="jobs_sch_option_ul jobs_sch_option_radio">
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_deadline_chk" id="jobs_sch_option_deadline_chkall">
+                                            <label for="jobs_sch_option_deadline_chkall">전체</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_deadline_chk" id="jobs_sch_option_deadline_chk01">
+                                            <label for="jobs_sch_option_deadline_chk01">오늘</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_deadline_chk" id="jobs_sch_option_deadline_chk02">
+                                            <label for="jobs_sch_option_deadline_chk02">3일</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_deadline_chk" id="jobs_sch_option_deadline_chk03">
+                                            <label for="jobs_sch_option_deadline_chk03">1주</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_deadline_chk" id="jobs_sch_option_deadline_chk04">
+                                            <label for="jobs_sch_option_deadline_chk04">2주</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_deadline_chk" id="jobs_sch_option_deadline_chk05">
+                                            <label for="jobs_sch_option_deadline_chk05">한달</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-radio">
+                                            <input type="radio" name="jobs_sch_option_deadline_chk" id="jobs_sch_option_deadline_chk06">
+                                            <label for="jobs_sch_option_deadline_chk06">직접지정</label>
+                                        </div>
+                                        <div class="jobs_sch_add_option">
+                                            <input type="text" class="date-inpt" id=""> ~
+                                            <input type="text" class="date-inpt" id="">
                                         </div>
                                     </li>
                                 </ul>
@@ -410,8 +490,17 @@
 
                     <div class="jobs_sch_result">
                         <div class="result_keyword_wrap">
-                            <span class="result_keyword">정규직<button type="button" id="" class="jobs_rst_remove_btn">삭제</button></span>
-                            <span class="result_keyword">정규직<button type="button" id="" class="jobs_rst_remove_btn">삭제</button></span>
+                            <div class="result_keyword">
+                                <ul class="result_keyword_ul">
+                                    <li>
+                                        <span>키워드 전체</span>
+                                        <span>연극 및 뮤지컬 배우</span>
+                                    </li>
+                                </ul>
+                                <button type="button" id="" class="jobs_rst_remove_btn">삭제</button>
+                            </div>
+                            <div class="result_keyword">정규직<button type="button" id="" class="jobs_rst_remove_btn">삭제</button></div>
+                            <div class="result_keyword">정규직<button type="button" id="" class="jobs_rst_remove_btn">삭제</button></div>
                             <!--검색조건 없을시 노출
                             <p class="result_keyword_empty">검색조건을 선택해 주세요.</p>
                             -->
@@ -431,12 +520,16 @@
                     <ul class="bo_view_type_ul">
                         <li class="bo_vsort">
                             <select name="" id="" class="i-select bo_vsort_sel">
-                                <option value="">등록일순 ↓</option>
-                                <option value="">등록일순 ↑</option>
-                                <option value="">제목순 ↓</option>
-                                <option value="">제목순 ↑</option>
-                                <option value="">기업명 ↓</option>
-                                <option value="">기업명 ↑</option>
+                                <option value="">최근등록일순</option>
+                                <option value="">예전등록일순</option>
+                                <option value="">회사명 ↓</option>
+                                <option value="">회사명 ↑</option>
+                                <option value="">임금높은순</option>
+                                <option value="">임금낮은순</option>
+                                <option value="">학력높은순</option>
+                                <option value="">학력낮은순</option>
+                                <option value="">경력높은순</option>
+                                <option value="">경력낮은순</option>
                                 <option value="">마감일순 ↓</option>
                                 <option value="">마감일순 ↑</option>
                             </select>
@@ -450,7 +543,7 @@
                         </li>
                         <li class="bo_ving i-checks">
                             <input type="checkbox" id="jobs_ving_chk">
-                            <label for="jobs_ving_chk">마감 제외</label>
+                            <label for="jobs_ving_chk">마감/종료 제외</label>
                         </li>
                     </ul>
                 </div>
@@ -477,15 +570,10 @@
                                 <p class="jobs_cname">재 중구문화재단<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_icon.png" alt=""></button></p>
                             </td>
                             <td class="ta_l">
-                                <a href="/sub/recruit/search_view.do" class="jobs_title">경리사무원 모집<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_icon02.png" alt=""></button></a>
-
-                                <div class="jobs_sector_box cf">
-                                    <span class="jobs_sector_text">담당업무 :</span>
-                                    <div class="jobs_sector">
-                                        <span>경리업무</span>
-                                        <span>일반 사무업무(문서작업)</span>
-                                    </div>
-                                </div><!--jobs_sector_box-->
+                                <a href="/sub/recruit/search_view.do" class="jobs_title">
+                                    <span class="jobs_list_state state01">진행중</span>
+                                    경리사무원 모집<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_icon02.png" alt=""></button>
+                                </a>
 
                                 <div class="jobs_dtl_box">
                                     <span class="jobs_career">경력1년</span>
@@ -515,299 +603,10 @@
                                 </div>
                             </td>
                             <td class="ta_l">
-                                <a href="/sub/recruit/search_view.do" class="jobs_title">예약실 및 캐셔 구인(신입/경력)<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_ov_icon02.png" alt=""></button></a>
-
-                                <div class="jobs_sector_box cf">
-                                    <span class="jobs_sector_text">담당업무 :</span>
-                                    <div class="jobs_sector">
-                                        <span>경리업무</span>
-                                        <span>일반 사무업무(문서작업)</span>
-                                    </div>
-                                </div><!--jobs_sector_box-->
-
-                                <div class="jobs_dtl_box">
-                                    <span class="jobs_career">경력무관</span>
-                                    <span class="jobs_edu">대졸(2~3년)~대졸(4년)</span>
-                                    <span class="jobs_wkplace">서울 서초구</span>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="jobs_salary">월급 200만원 ~ 220만원</p>
-                                <div class="jobs_emptype">
-                                    <span class="jobs_regular">계약</span>
-                                    <span class="jobs_wkday">주5일</span>
-                                </div>
-                                <p class="jobs_wktime">09:00 ~ 18:00</p>
-                            </td>
-                            <td>
-                                <p class="jobs_d-day">채용시까지</p>
-                                <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <p class="jobs_cname">재 중구문화재단<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_icon.png" alt=""></button></p>
-                            </td>
-                            <td class="ta_l">
-                                <a href="/sub/recruit/search_view.do" class="jobs_title">경리사무원 모집<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_icon02.png" alt=""></button></a>
-
-                                <div class="jobs_sector_box cf">
-                                    <span class="jobs_sector_text">담당업무 :</span>
-                                    <div class="jobs_sector">
-                                        <span>경리업무</span>
-                                        <span>일반 사무업무(문서작업)</span>
-                                    </div>
-                                </div><!--jobs_sector_box-->
-
-                                <div class="jobs_dtl_box">
-                                    <span class="jobs_career">경력1년</span>
-                                    <span class="jobs_edu">학력무관</span>
-                                    <span class="jobs_wkplace">서울 서초구</span>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="jobs_salary">연봉 2,400만원 ~ 2,500만원</p>
-                                <div class="jobs_emptype">
-                                    <span class="jobs_regular">정규</span>
-                                    <span class="jobs_wkday">주5일</span>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="jobs_d-day">D-15</p>
-                                <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                <p class="jobs_regi_end-time">2021.01.18 마감</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <p class="jobs_cname">리만머핀<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_ov_icon.png" alt=""></button></p>
-                                <div class="jobs_site">
-                                    <span><img src="/resources/images/worknet_logo.png" alt=""></span>
-                                </div>
-                            </td>
-                            <td class="ta_l">
-                                <a href="/sub/recruit/search_view.do" class="jobs_title">예약실 및 캐셔 구인(신입/경력)<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_ov_icon02.png" alt=""></button></a>
-
-                                <div class="jobs_sector_box cf">
-                                    <span class="jobs_sector_text">담당업무 :</span>
-                                    <div class="jobs_sector">
-                                        <span>경리업무</span>
-                                        <span>일반 사무업무(문서작업)</span>
-                                    </div>
-                                </div><!--jobs_sector_box-->
-
-                                <div class="jobs_dtl_box">
-                                    <span class="jobs_career">경력무관</span>
-                                    <span class="jobs_edu">대졸(2~3년)~대졸(4년)</span>
-                                    <span class="jobs_wkplace">서울 서초구</span>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="jobs_salary">월급 200만원 ~ 220만원</p>
-                                <div class="jobs_emptype">
-                                    <span class="jobs_regular">계약</span>
-                                    <span class="jobs_wkday">주5일</span>
-                                </div>
-                                <p class="jobs_wktime">09:00 ~ 18:00</p>
-                            </td>
-                            <td>
-                                <p class="jobs_d-day">채용시까지</p>
-                                <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <p class="jobs_cname">재 중구문화재단<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_icon.png" alt=""></button></p>
-                            </td>
-                            <td class="ta_l">
-                                <a href="/sub/recruit/search_view.do" class="jobs_title">경리사무원 모집<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_icon02.png" alt=""></button></a>
-
-                                <div class="jobs_sector_box cf">
-                                    <span class="jobs_sector_text">담당업무 :</span>
-                                    <div class="jobs_sector">
-                                        <span>경리업무</span>
-                                        <span>일반 사무업무(문서작업)</span>
-                                    </div>
-                                </div><!--jobs_sector_box-->
-
-                                <div class="jobs_dtl_box">
-                                    <span class="jobs_career">경력1년</span>
-                                    <span class="jobs_edu">학력무관</span>
-                                    <span class="jobs_wkplace">서울 서초구</span>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="jobs_salary">연봉 2,400만원 ~ 2,500만원</p>
-                                <div class="jobs_emptype">
-                                    <span class="jobs_regular">정규</span>
-                                    <span class="jobs_wkday">주5일</span>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="jobs_d-day">D-15</p>
-                                <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                <p class="jobs_regi_end-time">2021.01.18 마감</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <p class="jobs_cname">리만머핀<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_ov_icon.png" alt=""></button></p>
-                                <div class="jobs_site">
-                                    <span><img src="/resources/images/worknet_logo.png" alt=""></span>
-                                </div>
-                            </td>
-                            <td class="ta_l">
-                                <a href="/sub/recruit/search_view.do" class="jobs_title">예약실 및 캐셔 구인(신입/경력)<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_ov_icon02.png" alt=""></button></a>
-
-                                <div class="jobs_sector_box cf">
-                                    <span class="jobs_sector_text">담당업무 :</span>
-                                    <div class="jobs_sector">
-                                        <span>경리업무</span>
-                                        <span>일반 사무업무(문서작업)</span>
-                                    </div>
-                                </div><!--jobs_sector_box-->
-
-                                <div class="jobs_dtl_box">
-                                    <span class="jobs_career">경력무관</span>
-                                    <span class="jobs_edu">대졸(2~3년)~대졸(4년)</span>
-                                    <span class="jobs_wkplace">서울 서초구</span>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="jobs_salary">월급 200만원 ~ 220만원</p>
-                                <div class="jobs_emptype">
-                                    <span class="jobs_regular">계약</span>
-                                    <span class="jobs_wkday">주5일</span>
-                                </div>
-                                <p class="jobs_wktime">09:00 ~ 18:00</p>
-                            </td>
-                            <td>
-                                <p class="jobs_d-day">채용시까지</p>
-                                <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <p class="jobs_cname">재 중구문화재단<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_icon.png" alt=""></button></p>
-                            </td>
-                            <td class="ta_l">
-                                <a href="/sub/recruit/search_view.do" class="jobs_title">경리사무원 모집<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_icon02.png" alt=""></button></a>
-
-                                <div class="jobs_sector_box cf">
-                                    <span class="jobs_sector_text">담당업무 :</span>
-                                    <div class="jobs_sector">
-                                        <span>경리업무</span>
-                                        <span>일반 사무업무(문서작업)</span>
-                                    </div>
-                                </div><!--jobs_sector_box-->
-
-                                <div class="jobs_dtl_box">
-                                    <span class="jobs_career">경력1년</span>
-                                    <span class="jobs_edu">학력무관</span>
-                                    <span class="jobs_wkplace">서울 서초구</span>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="jobs_salary">연봉 2,400만원 ~ 2,500만원</p>
-                                <div class="jobs_emptype">
-                                    <span class="jobs_regular">정규</span>
-                                    <span class="jobs_wkday">주5일</span>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="jobs_d-day">D-15</p>
-                                <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                <p class="jobs_regi_end-time">2021.01.18 마감</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <p class="jobs_cname">리만머핀<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_ov_icon.png" alt=""></button></p>
-                                <div class="jobs_site">
-                                    <span><img src="/resources/images/worknet_logo.png" alt=""></span>
-                                </div>
-                            </td>
-                            <td class="ta_l">
-                                <a href="/sub/recruit/search_view.do" class="jobs_title">예약실 및 캐셔 구인(신입/경력)<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_ov_icon02.png" alt=""></button></a>
-
-                                <div class="jobs_sector_box cf">
-                                    <span class="jobs_sector_text">담당업무 :</span>
-                                    <div class="jobs_sector">
-                                        <span>경리업무</span>
-                                        <span>일반 사무업무(문서작업)</span>
-                                    </div>
-                                </div><!--jobs_sector_box-->
-
-                                <div class="jobs_dtl_box">
-                                    <span class="jobs_career">경력무관</span>
-                                    <span class="jobs_edu">대졸(2~3년)~대졸(4년)</span>
-                                    <span class="jobs_wkplace">서울 서초구</span>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="jobs_salary">월급 200만원 ~ 220만원</p>
-                                <div class="jobs_emptype">
-                                    <span class="jobs_regular">계약</span>
-                                    <span class="jobs_wkday">주5일</span>
-                                </div>
-                                <p class="jobs_wktime">09:00 ~ 18:00</p>
-                            </td>
-                            <td>
-                                <p class="jobs_d-day">채용시까지</p>
-                                <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <p class="jobs_cname">재 중구문화재단<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_icon.png" alt=""></button></p>
-                            </td>
-                            <td class="ta_l">
-                                <a href="/sub/recruit/search_view.do" class="jobs_title">경리사무원 모집<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_icon02.png" alt=""></button></a>
-
-                                <div class="jobs_sector_box cf">
-                                    <span class="jobs_sector_text">담당업무 :</span>
-                                    <div class="jobs_sector">
-                                        <span>경리업무</span>
-                                        <span>일반 사무업무(문서작업)</span>
-                                    </div>
-                                </div><!--jobs_sector_box-->
-
-                                <div class="jobs_dtl_box">
-                                    <span class="jobs_career">경력1년</span>
-                                    <span class="jobs_edu">학력무관</span>
-                                    <span class="jobs_wkplace">서울 서초구</span>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="jobs_salary">연봉 2,400만원 ~ 2,500만원</p>
-                                <div class="jobs_emptype">
-                                    <span class="jobs_regular">정규</span>
-                                    <span class="jobs_wkday">주5일</span>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="jobs_d-day">D-15</p>
-                                <p class="jobs_regi_stt-time">2021.01.01 등록</p>
-                                <p class="jobs_regi_end-time">2021.01.18 마감</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ta_l">
-                                <p class="jobs_cname">리만머핀<button type="button" class="jobs_canme_bmark"><img src="/resources/images/heart_ov_icon.png" alt=""></button></p>
-                                <div class="jobs_site">
-                                    <span><img src="/resources/images/worknet_logo.png" alt=""></span>
-                                </div>
-                            </td>
-                            <td class="ta_l">
-                                <a href="/sub/recruit/search_view.do" class="jobs_title">예약실 및 캐셔 구인(신입/경력)<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_ov_icon02.png" alt=""></button></a>
-
-                                <div class="jobs_sector_box cf">
-                                    <span class="jobs_sector_text">담당업무 :</span>
-                                    <div class="jobs_sector">
-                                        <span>경리업무</span>
-                                        <span>일반 사무업무(문서작업)</span>
-                                    </div>
-                                </div><!--jobs_sector_box-->
+                                <a href="/sub/recruit/search_view.do" class="jobs_title">
+                                    <span class="jobs_list_state state02">마감</span>
+                                    예약실 및 캐셔 구인(신입/경력)<button type="button" class="jobs_title_bmark"><img src="/resources/images/star_ov_icon02.png" alt=""></button>
+                                </a>
 
                                 <div class="jobs_dtl_box">
                                     <span class="jobs_career">경력무관</span>
@@ -989,7 +788,7 @@
                     </div>
 
                     <div class="jobs_sch_option">
-                        <p class="jobs_sch_option_title">직종 선택</p>
+                        <p class="jobs_sch_option_title">장르 선택</p>
                         <div class="jobs_sch_option_cont">
                             <ul class="jobs_sch_option_result_ul">
                                 <li>
@@ -1048,44 +847,6 @@
                                     <div class="i-radio">
                                         <input type="radio" name="" id="">
                                         <label for="">감독, 기술업</label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="jobs_sch_option">
-                        <p class="jobs_sch_option_title">장르</p>
-                        <div class="jobs_sch_option_cont">
-                            <ul class="jobs_sch_option_ul jobs_sch_option_radio">
-                                <li>
-                                    <div class="i-radio">
-                                        <input type="radio" name="" id="">
-                                        <label for="">공연예술</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="i-radio">
-                                        <input type="radio" name="" id="">
-                                        <label for="">시각예술</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="i-radio">
-                                        <input type="radio" name="" id="">
-                                        <label for="">영상예술</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="i-radio">
-                                        <input type="radio" name="" id="">
-                                        <label for="">문화예술</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="i-radio">
-                                        <input type="radio" name="" id="">
-                                        <label for="">기타예술</label>
                                     </div>
                                 </li>
                             </ul>
@@ -1157,7 +918,7 @@
                     </div>
 
                     <div class="jobs_sch_option">
-                        <p class="jobs_sch_option_title">직종 선택</p>
+                        <p class="jobs_sch_option_title">업종 선택</p>
                         <div class="jobs_sch_option_cont">
                             <ul class="jobs_sch_option_result_ul">
                                 <li>

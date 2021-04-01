@@ -15,7 +15,6 @@
     });
 </script>
 
-!--Contents {-->
 <div id="employ_welfare" class="sub">
     <div class="sub_visual sub_visual05">
         <div class="wrapper">
@@ -31,7 +30,7 @@
                     </li>
                     <li>
                         <select class="sub_location_sel">
-                            <option value="">취업 뉴스</option>
+                            <option value="">고용복지 정책안내</option>
                         </select>
                     </li>
                 </ul>
@@ -41,12 +40,17 @@
 
     <div class="sub_content">
         <div class="wrapper">
-            <p class="sub_title">취업 뉴스</p>
+            <p class="sub_title">고용복지 정책안내</p>
 
-            <div class="tab_wrap sub_tab">
-                <ul class="tab_wrap_ul child2">
-                    <li><a href="/sub/news/news_list.do">취업 최신동향 뉴스</a></li>
-                    <li class="active"><a href="/sub/news/employ_list.do">고용복지 정책안내</a></li>
+            <div class="bo_category cf">
+                <span class="bo_category_title">정책선택</span>
+                <ul class="bo_category_ul child4">
+                    <li class="active"><a href="">전체</a></li>
+                    <li><a href="">청년</a></li>
+                    <li><a href="">여성</a></li>
+                    <li><a href="">중장년</a></li>
+                    <li><a href="">장애인</a></li>
+                    <li><a href="">외국인</a></li>
                 </ul>
             </div>
 
