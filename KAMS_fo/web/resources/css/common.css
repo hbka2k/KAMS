@@ -45,6 +45,7 @@ i.left{transform: rotate(135deg); -webkit-transform: rotate(135deg); -moz-transf
   appearance: none;
 }
 .i-select::-ms-expand{display: none;}
+.i-select_full{width: 100%;}
 
 .i-inpt{height: 40px; padding: 0 5px; border: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #0f0f0f; background: #fff;}
 .i-inpt::placeholder{color: #999;}
@@ -56,6 +57,13 @@ i.left{transform: rotate(135deg); -webkit-transform: rotate(135deg); -moz-transf
 .date-inpt_full{width: 100%;}
 .date-inpt.disabled{color: #666; background: #f8f8f8;}
 .ui-widget-header .ui-icon{background-image: url('../images/ui-icons_444444_256x240.png');}
+
+.filebox02{font-size: 0;}
+.filebox02 input[type="file"]{position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0;}
+.filebox02 label{display: inline-block; position: relative; width: 40px; height: 40px; background: #999; vertical-align: middle; cursor: pointer;}
+.filebox02 label:before{content: ""; display: block; position: absolute; top: 50%; left: 50%; width: 15px; height: 1px; margin: -0.5px 0 0 -7.5px; background: #fff;}
+.filebox02 label:after{content: ""; display: block; position: absolute; top: 50%; left: 50%; width: 1px; height: 15px; margin: -7.5px 0 0 -0.5px; background: #fff;}
+.filebox02 .upload-name{display: inline-block; width: 220px; height: 40px; max-width: calc(100% - 40px); padding: 0 10px; border: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #666; background: #fff; vertical-align: middle; appearance: none;}
 
 .i-textar{padding: 5px; border: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #0f0f0f; background: #fff;}
 .i-textar_full{width: 100%;}
@@ -86,7 +94,11 @@ i.left{transform: rotate(135deg); -webkit-transform: rotate(135deg); -moz-transf
 .btn01:hover{background: #e32b07;}
 
 .btn02{display: block; width: 200px; height: 50px; line-height: 50px; border: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #999; text-align: center; background: #fff; transition: 0.5s;}
+.btn02:hover{color: #e32b07; border: 1px solid #e32b07;}
+
 .btn03{display: block; width: 200px; height: 50px; line-height: 50px; border: 1px solid #999; font-size: 16px; font-weight: 300; color: #fff; text-align: center; background: #999; transition: 0.5s;}
+
+.btn04{display: block; width: 200px; height: 50px; line-height: 50px; border: 1px solid #e32b07; font-size: 16px; font-weight: 300; color: #fff; text-align: center; background: #e32b07; transition: 0.5s;}
 
 /*notosans font class*/
 .noto{font-family: 'Noto Sans KR', sans-serif;}

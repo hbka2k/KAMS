@@ -50,9 +50,9 @@ function popClose(){
   $popId.fadeOut(100);
 }
 
-//팝업 스크롤바 스타일
+//팝업, 개인정보 처리방침 내용 스크롤바 스타일
 $(window).on("load",function(){
-  $(".popup_cont").mCustomScrollbar({
+  $(".popup_cont, .priv_content").mCustomScrollbar({
     theme:"dark-thick",
     scrollButtons:{
       enable:true
@@ -94,6 +94,8 @@ function fnChkLength(obj, maxlength){
     alert(numberWithCommas(max_length) + " 글자 이상 입력할 수 없습니다.\n초과된 내용은 자동으로 삭제 됩니다. ");
     str2 = str.substr(0, max_length);
     obj.value = str2;
+    str_sibl.innerText = "("+numberWithCommas(max_length)+"/"+numberWithCommas(max_length)+"자)";
+    str_sibl.style.display = 'block';
   }else if(ko_byte <= 0){
     str_sibl.style.display = 'none';
   }else{
@@ -333,6 +335,17 @@ function checkAll(all, child){
   }
 }
 
+//개인정보처리방침 내용 보기
+function privacyView(){
+  var privacyObj = document.getElementById('priv_view_content');
+  if(privacyObj.style.display == 'block'){
+    privacyObj.style.display = 'none';
+  }else{
+    privacyObj.style.display = 'block';
+  }
+  
+}
+
 
 $(document).ready(function(){
   //AOS
@@ -361,8 +374,28 @@ $(document).ready(function(){
 		})();
   }
 
+  //input file style
+  var fileTarget = $('.filebox02 .upload-hidden');
+
+  fileTarget.on('change', function(){
+    if(window.FileReader){
+      var filename = $(this)[0].files[0].name;
+      console.log(filename);
+    } else {
+      var filename = $(this).val().split('/').pop().split('\\').pop();
+      console.log(filename);
+    }
+    $(this).siblings('.upload-name').val(filename);
+  });
+  
+
 	//동일 박스 높이
   $(".i-match > *").matchHeight();
+
+  //통합검색 검색키워드 삭제 기능
+  $(".total_search_keyword_ul").on('click','.total_search_remove_btn',function(){
+    $(this).parent().parent().remove();
+  });
 
   //헤더 메뉴 열기,닫기
   $(".gnb_btn").click(function(){
@@ -382,15 +415,55 @@ $(document).ready(function(){
     }
   });
 
+  //헤더 gnb3 메뉴 열기,닫기
+  $(".gnb_more").hover(function(){
+    $(this).siblings(".gnb3_wr").stop().fadeToggle(150);
+  });
+  $(".gnb3_wr").hover(function(){
+    $(this).stop().fadeToggle(150);
+  });
+
   //메인 헤더 마우스 오버 효과
-  $(".main_header").mouseenter(function(){
-    $(this).addClass("hd_black");
-    $("#fp-nav").addClass("black");
-  });
-  $(".main_header").mouseleave(function(){
-    $(this).removeClass("hd_black");
-    $("#fp-nav").removeClass("black");
-  });
+  if($(window).width() > 1279){
+    $(".main_header").mouseenter(function(){
+      $(this).addClass("hd_black");
+      $("#fp-nav").addClass("black");
+    });
+    $(".main_header").mouseleave(function(){
+      $(this).removeClass("hd_black");
+      $("#fp-nav").removeClass("black");
+    });
+  }
+
+  //헤더 모바일 메뉴
+  if($(window).width() < 1024){
+    $(".gnb_ul").children('li').on("click", function(){
+      //$(this).addClass("active").siblings().removeClass("active");
+      $(this).children(".gnb2_ul").toggleClass("on").parents("li").siblings().children(".gnb2_ul").removeClass("on");
+    });
+  }
+
+  $(window).resize(function() {
+    //메인 헤더 마우스 오버 효과
+    if($(window).width() > 1279){
+      $(".main_header").mouseenter(function(){
+        $(this).addClass("hd_black");
+        $("#fp-nav").addClass("black");
+      });
+      $(".main_header").mouseleave(function(){
+        $(this).removeClass("hd_black");
+        $("#fp-nav").removeClass("black");
+      });
+    }
+  
+    //헤더 모바일 메뉴
+    if($(window).width() < 1024){
+      $(".gnb_ul").children('li').on("click", function(){
+        //$(this).addClass("active").siblings().removeClass("active");
+        $(this).children(".gnb2_ul").toggleClass("on").parents("li").siblings().children(".gnb2_ul").removeClass("on");
+      });
+    }
+  });//resize
 
   //메인 fullpage
   $('#main').fullpage({
@@ -398,7 +471,7 @@ $(document).ready(function(){
     autoScrolling:true,
     navigation: true,
     navigationPosition: 'left',
-    responsiveWidth: 1024,
+    //responsiveWidth: 1024,
     onLeave: function(anchorLink, index){
       if(anchorLink == 3 && index == 4){//푸터스크롤시
         var ft_h = $('#footer').height() + 35;
@@ -510,16 +583,35 @@ $(document).ready(function(){
   function mainRc_timebar_stop(){	$('.main_recruit_timebar .countdown_inner').stop().css({'width':'0'});	} //카운트다운 정지
   mainRc_timebar_start(); // 초기 카운트다운
 
+  var viewportWidth = $(window).width();
+  if( viewportWidth > 1023 ){
+    var Rows = 2;
+    var Scroll = 2;
+  } else {
+    var Rows = 1;
+    var Slides = 1;
+  }
+
   $mainRc_slider.slick({
     autoplay: true,
     autoplaySpeed: 10500,
     infinite: true,
-    rows: 2,
+    rows: Rows,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: Slides,
     variableWidth: true,
     pauseOnHover: false,
-    pauseOnFocus: false
+    pauseOnFocus: false,
+    /*responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          rows: 1,
+          slidesToShow: 1,
+          slidesToScroll: 2
+        }
+      }
+    ]*/
   }).on('beforeChange', function(event, slick, currentSlide, nextSlide, prevSlide){
     mainRc_timebar_stop();
 	}).on('afterChange', function(event, slick, currentSlide, nextSlide, prevSlide){
@@ -576,6 +668,14 @@ $(document).ready(function(){
     $(".main_board_line_bar").css("width",mainBo_tabTit_w2);
   });
 
+  // 메인 게시판 셀렉트박스(모바일)
+  var currentWidth = $(window).width();
+  if( currentWidth < 768 ){
+    $(".main_board_title").click(function(){
+      $(this).siblings(".main_board_tab").slideToggle();
+    });
+  };
+
   //메인 배너존 슬라이더
   var $mainBn_slider = $(".main_bnzone_sl");
 
@@ -623,7 +723,21 @@ $(document).ready(function(){
     slidesToShow: 6,
     slidesToScroll: 1,
     pauseOnHover: false,
-    pauseOnFocus: false
+    pauseOnFocus: false,
+    responsive: [,
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          variableWidth: true
+        }
+      }
+    ]
   });
 
   //> 이전, 다음 기능(trigger)
@@ -796,4 +910,15 @@ $(document).ready(function(){
       $("#totCareer_txt02").text(rstYear+"년 "+rstMonth+"개월");
     });
   });
-});
+
+  //이메일 직접입력
+  $(".i-mail_sel").change(function(){
+    $(this).children("option:selected").each(function(){
+      if($(this).val() == 'etc_w'){
+        $(".i-mail_inpt").attr('disabled', false).removeClass('disabled').val('').focus();
+      }else{
+        $(".i-mail_inpt").attr('disabled', true).addClass('disabled').val($(this).text());
+      }
+    });
+  });
+});//document

@@ -94,7 +94,7 @@
         <div class="recruit_list_box main_recruit_list_box">
             <!--loop {-->
             <div class="recruit_list">
-                <a href="" class="recruit_list_inner">
+                <a href="/sub/recruit/search_view.do" class="recruit_list_inner">
                     <div class="recruit_list_thumb"><img src="/resources/images/t-korea_arts_logo.jpg" alt=""></div>
                     <p class="recruit_list_corp">(재)예술경영지원센터</p>
                     <p class="recruit_list_subj">2021년 신입 및 경력사원 채용 2021년 신입 및 경력사원 채용 2021년 신입 및 경력사원 채용 2021년 신입 및 경력사원 채용</p>
@@ -106,7 +106,7 @@
             </div>
             <!--} loop-->
             <div class="recruit_list">
-                <a href="" class="recruit_list_inner">
+                <a href="/sub/recruit/search_view.do" class="recruit_list_inner">
                     <div class="recruit_list_thumb"><img src="/resources/images/ft_bn_logo01.jpg" alt=""></div>
                     <p class="recruit_list_corp">문화가 있는 날</p>
                     <p class="recruit_list_subj">2021년 신입 및 경력사원 채용</p>
@@ -117,7 +117,7 @@
                 </a>
             </div>
             <div class="recruit_list">
-                <a href="" class="recruit_list_inner">
+                <a href="/sub/recruit/search_view.do" class="recruit_list_inner">
                     <div class="recruit_list_thumb"><img src="/resources/images/ft_bn_logo02.jpg" alt=""></div>
                     <p class="recruit_list_corp">서울문화포털</p>
                     <p class="recruit_list_subj">2021년 신입 및 경력사원 채용</p>
@@ -128,7 +128,7 @@
                 </a>
             </div>
             <div class="recruit_list">
-                <a href="" class="recruit_list_inner">
+                <a href="/sub/recruit/search_view.do" class="recruit_list_inner">
                     <div class="recruit_list_thumb"><img src="/resources/images/ft_bn_logo03.jpg" alt=""></div>
                     <p class="recruit_list_corp">문화체육관광부</p>
                     <p class="recruit_list_subj">2021년 신입 및 경력사원 채용</p>
@@ -139,7 +139,7 @@
                 </a>
             </div>
             <div class="recruit_list">
-                <a href="" class="recruit_list_inner">
+                <a href="/sub/recruit/search_view.do" class="recruit_list_inner">
                     <div class="recruit_list_thumb"><img src="/resources/images/ft_bn_logo04.jpg" alt=""></div>
                     <p class="recruit_list_corp">문화셈터</p>
                     <p class="recruit_list_subj">2021년 신입 및 경력사원 채용</p>
@@ -150,7 +150,7 @@
                 </a>
             </div>
             <div class="recruit_list">
-                <a href="" class="recruit_list_inner">
+                <a href="/sub/recruit/search_view.do" class="recruit_list_inner">
                     <div class="recruit_list_thumb"><img src="/resources/images/ft_bn_logo05.jpg" alt=""></div>
                     <p class="recruit_list_corp">문화포털</p>
                     <p class="recruit_list_subj">2021년 신입 및 경력사원 채용</p>
@@ -161,7 +161,7 @@
                 </a>
             </div>
             <div class="recruit_list">
-                <a href="" class="recruit_list_inner">
+                <a href="/sub/recruit/search_view.do" class="recruit_list_inner">
                     <div class="recruit_list_thumb"><img src="/resources/images/ft_bn_logo03.jpg" alt=""></div>
                     <p class="recruit_list_corp">문화체육관광부</p>
                     <p class="recruit_list_subj">2021년 신입 및 경력사원 채용</p>
@@ -172,7 +172,7 @@
                 </a>
             </div>
             <div class="recruit_list">
-                <a href="" class="recruit_list_inner">
+                <a href="/sub/recruit/search_view.do" class="recruit_list_inner">
                     <div class="recruit_list_thumb"><img src="/resources/images/ft_bn_logo02.jpg" alt=""></div>
                     <p class="recruit_list_corp">서울문화포털</p>
                     <p class="recruit_list_subj">2021년 신입 및 경력사원 채용</p>
@@ -218,7 +218,7 @@
                 <div class="main_board_cont_wr">
                     <!--loop {-->
                     <div class="main_board_list">
-                        <a href="" class="main_board_list_inner">
+                        <a href="/sub/community/notice_view.do" class="main_board_list_inner">
                             <div class="main_board_list_date">
                                 <p class="main_board_date_txt01">01.05</p>
                                 <p class="main_board_date_txt02">2021</p>
@@ -231,7 +231,7 @@
                     </div>
                     <!--} loop-->
                     <div class="main_board_list">
-                        <a href="" class="main_board_list_inner">
+                        <a href="/sub/community/notice_view.do" class="main_board_list_inner">
                             <div class="main_board_list_date">
                                 <p class="main_board_date_txt01">01.05</p>
                                 <p class="main_board_date_txt02">2021</p>
@@ -243,7 +243,7 @@
                         </a>
                     </div>
                     <div class="main_board_list">
-                        <a href="" class="main_board_list_inner">
+                        <a href="/sub/community/notice_view.do" class="main_board_list_inner">
                             <div class="main_board_list_date">
                                 <p class="main_board_date_txt01">01.05</p>
                                 <p class="main_board_date_txt02">2021</p>
@@ -255,7 +255,7 @@
                         </a>
                     </div>
                     <div class="main_board_list">
-                        <a href="" class="main_board_list_inner">
+                        <a href="/sub/community/notice_view.do" class="main_board_list_inner">
                             <div class="main_board_list_date">
                                 <p class="main_board_date_txt01">01.05</p>
                                 <p class="main_board_date_txt02">2021</p>
@@ -313,37 +313,37 @@
                 <div class="main_emp_cont">
                     <div class="main_emp_cont_wr">
                         <div class="main_emp_list">
-                            <a href="" class="main_emp_list_inner">
+                            <a href="/sub/news/helpCal.do" class="main_emp_list_inner">
                                 <img src="/resources/images/emp_icon01.png" alt="">
                                 <p class="main_emp_list_txt">연봉계산기</p>
                             </a>
                         </div>
                         <div class="main_emp_list">
-                            <a href="" class="main_emp_list_inner">
+                            <a href="/sub/news/helpSpell.do" class="main_emp_list_inner">
                                 <img src="/resources/images/emp_icon02.png" alt="">
                                 <p class="main_emp_list_txt">맞춤법 검사</p>
                             </a>
                         </div>
                         <div class="main_emp_list">
-                            <a href="" class="main_emp_list_inner">
+                            <a href="/sub/news/helpJobWork.do" class="main_emp_list_inner">
                                 <img src="/resources/images/emp_icon03.png" alt="">
                                 <p class="main_emp_list_txt">취업활동 증명서</p>
                             </a>
                         </div>
                         <div class="main_emp_list">
-                            <a href="" class="main_emp_list_inner">
+                            <a href="/sub/news/helpGrade.do" class="main_emp_list_inner">
                                 <img src="/resources/images/emp_icon04.png" alt="">
                                 <p class="main_emp_list_txt">학점 변환</p>
                             </a>
                         </div>
                         <div class="main_emp_list">
-                            <a href="" class="main_emp_list_inner">
+                            <a href="/sub/news/helpLang.do" class="main_emp_list_inner">
                                 <img src="/resources/images/emp_icon05.png" alt="">
                                 <p class="main_emp_list_txt">이수학점 변환</p>
                             </a>
                         </div>
                         <div class="main_emp_list">
-                            <a href="" class="main_emp_list_inner">
+                            <a href="/sub/news/helpWord.do" class="main_emp_list_inner">
                                 <img src="/resources/images/emp_icon06.png" alt="">
                                 <p class="main_emp_list_txt">글자 수 세기</p>
                             </a>

@@ -77,54 +77,156 @@
                 <li>
                     <a href="">모아안내</a>
                     <ul class="gnb2_ul">
-                        <li><a href="">아트모아는?</a></li>
-                        <li><a href="">매칭 스토리</a></li>
-                        <li><a href="">이용안내</a></li>
+                        <li><a href="/sub/intro/aboutArtmore.do">아트모아는?</a></li>
+                        <li><a href="/sub/intro/matching_list.do">매칭 스토리</a></li>
+                        <li><a href="/sub/intro/useInfo.do">이용안내</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="">채용정보</a>
+                    <a href="" class="gnb_more">채용정보</a>
                     <ul class="gnb2_ul">
-                        <li><a href="../jobs/jobs.html">채용검색</a></li>
-                        <li><a href="../jobs/jobs.html">장르별</a></li>
-                        <li><a href="../jobs/jobs.html">업종별</a></li>
-                        <li><a href="../jobs/jobs.html">지역별</a></li>
-                        <li><a href="">채용캘린더</a></li>
+                        <li><a href="/sub/recruit/search_list.do">채용검색</a></li>
+                        <li><a href="/sub/recruit/genre_list.do">장르별</a></li>
+                        <li><a href="/sub/recruit/type_list.do">업종별</a></li>
+                        <li><a href="/sub/recruit/area_list.do">지역별</a></li>
+                        <li><a href="/sub/recruit/calendar.do">채용캘린더</a></li>
                     </ul>
+                    <div class="gnb3_wr wrapper">
+                        <div class="gnb3">
+                            <div class="gnb3_top">
+                                <p>장르별</p>
+                                <div class="gnb3_plus">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="gnb3_bt">
+                                <ul class="gnb3_ul">
+                                    <li><a href="">공연예술</a></li>
+                                    <li><a href="">시각분야</a></li>
+                                    <li><a href="">영상예술</a></li>
+                                    <li><a href="">문화예술</a></li>
+                                    <li><a href="">기타/특수분야</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="gnb3 gnb3_x2">
+                            <div class="gnb3_top">
+                                <p>세부장르별</p>
+                                <div class="gnb3_plus">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="gnb3_bt gnb3_bt_2">
+                                <ul class="gnb3_ul">
+                                    <li><a href="">연극/뮤지컬분야</a></li>
+                                    <li><a href="">음악분야</a></li>
+                                    <li><a href="">무용분야</a></li>
+                                    <li><a href="">전통분야</a></li>
+                                    <li><a href="">미술분야</a></li>
+                                    <li><a href="">디자인분야</a></li>
+                                </ul>
+                                <ul class="gnb3_ul">
+                                    <li><a href="">영화/방송분야</a></li>
+                                    <li><a href="">영상디자인분야</a></li>
+                                    <li><a href="">문학분야</a></li>
+                                    <li><a href="">비문학분야</a></li>
+                                    <li><a href="">기타/특수분야</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="gnb3">
+                            <div class="gnb3_top">
+                                <p>업종별</p>
+                                <div class="gnb3_plus">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="gnb3_bt">
+                                <ul class="gnb3_ul">
+                                    <li><a href="">자영예술업</a></li>
+                                    <li><a href="">기획·창작·제작업</a></li>
+                                    <li><a href="">감독·기술업</a></li>
+                                    <li><a href="">관리업</a></li>
+                                    <li><a href="">사무업</a></li>
+                                    <li><a href="">공간·운영업</a></li>
+                                    <li><a href="">유통·소비업</a></li>
+                                    <li><a href="">교육서비스업</a></li>
+                                    <li><a href="">연구·개발업</a></li>
+                                    <li><a href="">기타 서비스업</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="gnb3">
+                            <div class="gnb3_top">
+                                <p>지역별</p>
+                                <div class="gnb3_plus">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="gnb3_bt gnb3_bt_2">
+                                <ul class="gnb3_ul">
+                                    <li><a href="">서울</a></li>
+                                    <li><a href="">경기</a></li>
+                                    <li><a href="">인천</a></li>
+                                    <li><a href="">부산</a></li>
+                                    <li><a href="">대구</a></li>
+                                    <li><a href="">대전</a></li>
+                                    <li><a href="">경남</a></li>
+                                    <li><a href="">전남</a></li>
+                                    <li><a href="">충남</a></li>
+                                </ul>
+                                <ul class="gnb3_ul">
+                                    <li><a href="">광주</a></li>
+                                    <li><a href="">울산</a></li>
+                                    <li><a href="">경북</a></li>
+                                    <li><a href="">전북</a></li>
+                                    <li><a href="">충북</a></li>
+                                    <li><a href="">강원</a></li>
+                                    <li><a href="">제주</a></li>
+                                    <li><a href="">세종</a></li>
+                                    <li><a href="">전국</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <a href="">인재정보</a>
                     <ul class="gnb2_ul">
-                        <li><a href="../person/person.html">인재검색</a></li>
-                        <li><a href="../person/person.html">장르별</a></li>
-                        <li><a href="../person/person.html">업종별</a></li>
-                        <li><a href="../person/person.html">지역별</a></li>
+                        <li><a href="/sub/human/search_list.do">채용검색</a></li>
+                        <li><a href="/sub/human/genre_list.do">장르별</a></li>
+                        <li><a href="/sub/human/type_list.do">업종별</a></li>
+                        <li><a href="/sub/human/area_list.do">지역별</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="">기업/직업 정보</a>
                     <ul class="gnb2_ul">
-                        <li><a href="">기업정보</a></li>
-                        <li><a href="">기업탐방</a></li>
-                        <li><a href="">직업정보</a></li>
-                        <li><a href="">직업 큐레이션</a></li>
+                        <li><a href="/sub/comJob/comInfo_list.do">기업정보</a></li>
+                        <li><a href="/sub/comJob/comVisit_list.do">기업탐방</a></li>
+                        <li><a href="/sub/comJob/jobInfo_list.do">직업정보</a></li>
+                        <li><a href="/sub/comJob/jobCuration_list.do">직업 큐레이션</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="">뉴스/자료</a>
                     <ul class="gnb2_ul">
-                        <li><a href="../employ/news.html">취업뉴스</a></li>
-                        <li><a href="../employ/data.html">자료실</a></li>
-                        <li><a href="">취업 도우미</a></li>
+                        <li><a href="/sub/news/news_list.do">취업뉴스</a></li>
+                        <li><a href="/sub/news/dataRoom_list.do">자료실</a></li>
+                        <li><a href="/sub/news/helpCal.do">취업 도우미</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="">커뮤니티</a>
                     <ul class="gnb2_ul">
-                        <li><a href="">취업 톡톡</a></li>
-                        <li><a href="">자주하는 질문 </a></li>
-                        <li><a href="">1:1 온라인 문의</a></li>
-                        <li><a href="../community/notice.html">공지사항</a></li>
+                        <li><a href="/sub/community/talk_list.do">취업 톡톡</a></li>
+                        <li><a href="/sub/community/faq.do">자주하는 질문 </a></li>
+                        <li><a href="/sub/community/oneToOne_list.do">1:1 온라인 문의</a></li>
+                        <li><a href="/sub/community/notice_list.do">공지사항</a></li>
                     </ul>
                 </li>
             </ul>

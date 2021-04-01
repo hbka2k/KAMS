@@ -661,6 +661,7 @@ body.dark footer{border-top:2px solid transparent;transition:all .2s ease-in 0s;
 body.dark footer .co_blue{color:#fff !important;transition:all .2s ease-in 0s;}
 
 body.dark section.wrap{background:#202428 url('../img/sec_bg_dark.png');transition:all .2s ease-in 0s;}
+body.dark section.wrap.pop{background:#202428;transition:all .2s ease-in 0s;}
 body.dark section.wrap div.container{background:#202428;transition:all .2s ease-in 0s;}
 
 body.dark section.wrap aside.leftMenu ul.menu > li > a.on:after{background:transparent;color:#1e1e1e;transition:all .2s ease-in 0s;}

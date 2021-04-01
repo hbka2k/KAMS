@@ -4,227 +4,284 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <script type="text/javascript">
     $(document).ready(function() {
-        $("#totalSearch").on("keyup", function(event) {
-            if (event.keyCode === 13) {
-                goTotalSearch();
-            }
-        });
-
-        $("#totalSearchMob").on("keyup", function(event) {
-            if (event.keyCode === 13) {
-                goTotalSearchMob();
-            }
-        });
     });
-
-    function goTotalSearch() {
-        //$("#page").val("1");
-        $("#frm_search").submit();
-    }
-
-    function goTotalSearchMob() {
-        //$("#page").val("1");
-        $("#frm_search_mob").submit();
-    }
 </script>
-<!-- 헤더 -->
-<header id="header" class="start">
-    <div class="topUnit">
-        <h1 class="left">
-            <a href="/kor_main/main/main.do">
-                <img src="/artmore_adm/resources/img/gnb_logo_white.png" alt="KIHS 한국 수자원조사기술원 Korea Institute of Hydrological Survey"
-                     class="start">
-                <img src="/artmore_adm/resources/img/gnb_logo.png" alt="KIHS 한국 수자원조사기술원 Korea Institute of Hydrological Survey"
-                     class="scroll">
-            </a>
-        </h1>
-        <nav class="center">
-            <ul class="gnbDepth_01">
+<!--Header {-->
+<h1 class="hd_logo sub_hd_logo">
+    <a href="/">
+        <img src="/resources/images/main_hd_logo.png" alt="artmore" class="hd_logo_white_img">
+        <img src="/resources/images/hd_logo.png" alt="artmore" class="hd_logo_black_img">
+    </a>
+</h1>
+
+<div id="header" class="sub_header"> <!--sub페이지에서만 sub_header 클래스 적용-->
+    <div class="gnb_btn">
+        <div class="gnb_btn_sym">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <p class="gnb_btn_txt">MENU</p>
+    </div>
+
+    <div class="hd_quick_menu">
+        <ul class="hd_quick_menu_ul">
+            <li class="hd_quick_menu_li">
+                <a href="javascript:void(0)" onclick="popUp('total_search')">
+                    <img src="/resources/images/hd_sch_icon.png" alt="" class="hd_quick_icon_w">
+                    <img src="/resources/images/hd_sch_ov_icon.png" alt="" class="hd_quick_icon_b">
+                    <p class="hd_quick_menu_txt">통합검색</p>
+                </a>
+            </li>
+            <li class="hd_quick_menu_li">
+                <a href="">
+                    <img src="/resources/images/hd_news_icon.png" alt="" class="hd_quick_icon_w">
+                    <img src="/resources/images/hd_news_ov_icon.png" alt="" class="hd_quick_icon_b">
+                    <p class="hd_quick_menu_txt">새소식</p>
+                    <span class="hd_news_icon">N</span>
+                </a>
+            </li>
+            <li class="hd_quick_menu_li hide_screen02">
+                <a href="/login/login">
+                    <img src="/resources/images/hd_login_icon.png" alt="" class="hd_quick_icon_w">
+                    <img src="/resources/images/hd_login_ov_icon.png" alt="" class="hd_quick_icon_b">
+                    <p class="hd_quick_menu_txt">로그인</p>
+                </a>
+            </li>
+            <li class="hd_quick_menu_li hide_screen02">
+                <a href="../mypage/individual/home.html"><!--(기업)마이페이지 홈 링크: ../mypage/company/home.html-->
+                    <img src="/resources/images/hd_mypage_icon.png" alt="" class="hd_quick_icon_w">
+                    <img src="/resources/images/hd_mypage_ov_icon.png" alt="" class="hd_quick_icon_b">
+                    <p class="hd_quick_menu_txt">마이페이지</p>
+                </a>
+            </li>
+            <li class="hd_quick_menu_li hide_screen04">
+                <a href="../mypage/company/home.html">
+                    <img src="/resources/images/hd_members_icon.png" alt="" class="hd_quick_icon_w">
+                    <img src="/resources/images/hd_members_ov_icon.png" alt="" class="hd_quick_icon_b">
+                    <p class="hd_quick_menu_txt">기업회원</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="gnb_dim">
+    <div class="gnb_wr">
+        <nav id="gnb">
+            <ul class="gnb_ul wrapper">
                 <li>
-                    <a href="/kor_sub/intro/hello.do">기관소개</a>
-                    <ul class="gnbDepth_02">
-                        <li>
-                            <a href="/kor_sub/intro/hello.do">원장님 인사말</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/intro/vision.do">비전 및 미션</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/intro/overview.do">기관 개요</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/intro/organ.do">조직안내</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/intro/ci.do">CI소개</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/intro/goto.do">찾아오시는 길</a>
-                        </li>
+                    <a href="">모아안내</a>
+                    <ul class="gnb2_ul">
+                        <li><a href="/sub/intro/aboutArtmore.do">아트모아는?</a></li>
+                        <li><a href="/sub/intro/matching_list.do">매칭 스토리</a></li>
+                        <li><a href="/sub/intro/useInfo.do">이용안내</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/kor_sub/biz/gate_survey.do">주요업무</a>
-                    <ul class="gnbDepth_02">
-                        <li>
-                            <a href="/kor_sub/biz/gate_survey.do">수문조사</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/biz/work_edu.do">수문조사 종사자 교육</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/biz/device_test.do">수문조사기기 검정</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/biz/water_survey.do">전국유역조사</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/biz/flood_servey.do">홍수피해 상황조사</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/biz/global_cor.do">국제협력</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/biz/research_list.do">연구사업</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/biz/gate_consult.do">수문조사 컨설팅</a>
-                        </li>
+                    <a href="" class="gnb_more">채용정보</a>
+                    <ul class="gnb2_ul">
+                        <li><a href="/sub/recruit/search_list.do">채용검색</a></li>
+                        <li><a href="/sub/recruit/genre_list.do">장르별</a></li>
+                        <li><a href="/sub/recruit/type_list.do">업종별</a></li>
+                        <li><a href="/sub/recruit/area_list.do">지역별</a></li>
+                        <li><a href="/sub/recruit/calendar.do">채용캘린더</a></li>
+                    </ul>
+                    <div class="gnb3_wr wrapper">
+                        <div class="gnb3">
+                            <div class="gnb3_top">
+                                <p>장르별</p>
+                                <div class="gnb3_plus">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="gnb3_bt">
+                                <ul class="gnb3_ul">
+                                    <li><a href="">공연예술</a></li>
+                                    <li><a href="">시각분야</a></li>
+                                    <li><a href="">영상예술</a></li>
+                                    <li><a href="">문화예술</a></li>
+                                    <li><a href="">기타/특수분야</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="gnb3 gnb3_x2">
+                            <div class="gnb3_top">
+                                <p>세부장르별</p>
+                                <div class="gnb3_plus">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="gnb3_bt gnb3_bt_2">
+                                <ul class="gnb3_ul">
+                                    <li><a href="">연극/뮤지컬분야</a></li>
+                                    <li><a href="">음악분야</a></li>
+                                    <li><a href="">무용분야</a></li>
+                                    <li><a href="">전통분야</a></li>
+                                    <li><a href="">미술분야</a></li>
+                                    <li><a href="">디자인분야</a></li>
+                                </ul>
+                                <ul class="gnb3_ul">
+                                    <li><a href="">영화/방송분야</a></li>
+                                    <li><a href="">영상디자인분야</a></li>
+                                    <li><a href="">문학분야</a></li>
+                                    <li><a href="">비문학분야</a></li>
+                                    <li><a href="">기타/특수분야</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="gnb3">
+                            <div class="gnb3_top">
+                                <p>업종별</p>
+                                <div class="gnb3_plus">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="gnb3_bt">
+                                <ul class="gnb3_ul">
+                                    <li><a href="">자영예술업</a></li>
+                                    <li><a href="">기획·창작·제작업</a></li>
+                                    <li><a href="">감독·기술업</a></li>
+                                    <li><a href="">관리업</a></li>
+                                    <li><a href="">사무업</a></li>
+                                    <li><a href="">공간·운영업</a></li>
+                                    <li><a href="">유통·소비업</a></li>
+                                    <li><a href="">교육서비스업</a></li>
+                                    <li><a href="">연구·개발업</a></li>
+                                    <li><a href="">기타 서비스업</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="gnb3">
+                            <div class="gnb3_top">
+                                <p>지역별</p>
+                                <div class="gnb3_plus">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="gnb3_bt gnb3_bt_2">
+                                <ul class="gnb3_ul">
+                                    <li><a href="">서울</a></li>
+                                    <li><a href="">경기</a></li>
+                                    <li><a href="">인천</a></li>
+                                    <li><a href="">부산</a></li>
+                                    <li><a href="">대구</a></li>
+                                    <li><a href="">대전</a></li>
+                                    <li><a href="">경남</a></li>
+                                    <li><a href="">전남</a></li>
+                                    <li><a href="">충남</a></li>
+                                </ul>
+                                <ul class="gnb3_ul">
+                                    <li><a href="">광주</a></li>
+                                    <li><a href="">울산</a></li>
+                                    <li><a href="">경북</a></li>
+                                    <li><a href="">전북</a></li>
+                                    <li><a href="">충북</a></li>
+                                    <li><a href="">강원</a></li>
+                                    <li><a href="">제주</a></li>
+                                    <li><a href="">세종</a></li>
+                                    <li><a href="">전국</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="">인재정보</a>
+                    <ul class="gnb2_ul">
+                        <li><a href="/sub/human/search_list.do">채용검색</a></li>
+                        <li><a href="/sub/human/genre_list.do">장르별</a></li>
+                        <li><a href="/sub/human/type_list.do">업종별</a></li>
+                        <li><a href="/sub/human/area_list.do">지역별</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/kor_sub/bbs/notice_list.do">알림마당</a>
-                    <ul class="gnbDepth_02">
-                        <li>
-                            <a href="/kor_sub/bbs/notice_list.do">공지사항</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/bbs/recruit_list.do">채용공고</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/bbs/bid_list.do">입찰공고</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/bbs/faq_list.do">FAQ</a>
-                        </li>
+                    <a href="">기업/직업 정보</a>
+                    <ul class="gnb2_ul">
+                        <li><a href="/sub/comJob/comInfo_list.do">기업정보</a></li>
+                        <li><a href="/sub/comJob/comVisit_list.do">기업탐방</a></li>
+                        <li><a href="/sub/comJob/jobInfo_list.do">직업정보</a></li>
+                        <li><a href="/sub/comJob/jobCuration_list.do">직업 큐레이션</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/kor_sub/oper/disclosure.do">열린경영</a>
-                    <ul class="gnbDepth_02">
-                        <li>
-                            <a href="/kor_sub/oper/disclosure.do">경영공시</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/oper/open_data.do">공공데이터 개방</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/oper/realname_list.do">사업실명제</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/oper/information_notice_list.do">사전정보공표</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/oper/admin_work.do">적극행정</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/oper/info_open_list.do">정보공개</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/oper/major_active.do">윤리·인권·안정경영</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/oper/comm_center_apply.do">소통센터</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/oper/clean_center.do">클린신고센터</a>
-                        </li>
+                    <a href="">뉴스/자료</a>
+                    <ul class="gnb2_ul">
+                        <li><a href="/sub/news/news_list.do">취업뉴스</a></li>
+                        <li><a href="/sub/news/dataRoom_list.do">자료실</a></li>
+                        <li><a href="/sub/news/helpCal.do">취업 도우미</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/kor_sub/comm/pr_list.do">홍보마당</a>
-                    <ul class="gnbDepth_02">
-                        <li>
-                            <a href="/kor_sub/comm/pr_list.do">홍보자료</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/comm/newsletter_list.do">뉴스레터</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/comm/comm_contb_list.do">지역사회공헌</a>
-                        </li>
-                        <li>
-                            <a href="/kor_sub/comm/comm_sns.do">SNS 소통</a>
-                        </li>
+                    <a href="">커뮤니티</a>
+                    <ul class="gnb2_ul">
+                        <li><a href="/sub/community/talk_list.do">취업 톡톡</a></li>
+                        <li><a href="/sub/community/faq.do">자주하는 질문 </a></li>
+                        <li><a href="/sub/community/oneToOne_list.do">1:1 온라인 문의</a></li>
+                        <li><a href="/sub/community/notice_list.do">공지사항</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
-        <div class="right">
-            <div class="zoomUnit">
-                <p class="text">화면</p>
-                <a href="#none" class="zoomIn">
-                    <img src="/artmore_adm/resources/img/main_visual_plus.png" alt="텍스트 크게보기">
-                </a>
-                <a href="#none" class="zoomOut">
-                    <img src="/artmore_adm/resources/img/main_visual_minus.png" alt="텍스트 작게보기">
-                </a>
+    </div>
+</div>
+
+<div id="total_search" class="popup_dim">
+    <div class="popup_wrap">
+        <div class="popup_top">
+            <span class="popup_title">통합검색</span>
+            <button type="button" class="popup_close_btn" onclick="popClose()">닫기</button>
+        </div>
+
+        <div class="popup_cont">
+            <div class="popup_cont_inner">
+                <div class="total_search_wrap">
+                    <form action="../etc/search_result.html">
+                        <label for="" class="sound_only">통합검색 입력</label>
+                        <input type="text" name="" id="" class="total_search_inpt" placeholder="검색 내용을 입력하세요">
+                        <button type="button" class="total_search_btn"><img src="/resources/images/search-icon.png" srcset="/resources/images/search-icon@2x.png 2x,/resources/images/search-icon@3x.png 3x" class="search_icon"></button>
+                    </form>
+                </div>
+                <div class="total_search_keyword_wrap">
+                    <ul class="total_search_keyword_ul">
+                        <li>
+                            <span class="total_search_keyword">
+                                학점계산기
+                                <button type="button" id="" class="total_search_remove_btn">삭제</button>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="total_search_keyword">
+                                예술경영
+                                <button type="button" id="" class="total_search_remove_btn">삭제</button>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="total_search_keyword">
+                                뮤지컬배우
+                                <button type="button" id="" class="total_search_remove_btn">삭제</button>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="total_search_keyword">
+                                자영예술업
+                                <button type="button" id="" class="total_search_remove_btn">삭제</button>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="total_search_keyword">
+                                자기소개서 등록
+                                <button type="button" id="" class="total_search_remove_btn">삭제</button>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <form name="frm_search" id="frm_search" method="post" action="/kor_sub/search/search_list.do">
-            <div class="contUnit">
-                <span class="schFormUnit gnb">
-                    <span class="inputArea">
-                        <input type="search" class="searchClearInput" placeholder="검색어를 입력하세요." title="검색" id="totalSearch">
-                        <a href="#none" class="searchClearBtn" tabindex="0" title="검색어 지움">
-                            <img src="/artmore_adm/resources/img/icon_input_clear.png" alt="">
-                        </a>
-                    </span>
-                    <a href="#none" title="검색" class="btnGnbSch">
-                        <img src="/artmore_adm/resources/img/gnb_icon_zoom_w.png" alt="" class="start">
-                        <img src="/artmore_adm/resources/img/gnb_icon_zoom.png" alt="" class="scroll">
-                    </a>
-                </span>
-                <a href="#none" title="검색" class="btnGnbSch js_popOpen for_MI" id="popup_gnbSchMobile">
-                    <img src="/artmore_adm/resources/img/gnb_icon_zoom_w.png" alt="" class="start">
-                    <img src="/artmore_adm/resources/img/gnb_icon_zoom.png" alt="" class="scroll">
-                </a>
-                <c:choose>
-                    <c:when test="${sessionScope.loginVo ne null}">
-                        <a href="#none" title="로그인" class="btnGnbLogin on">
-                            <img src="/artmore_adm/resources/img/gnb_icon_user_w.png" alt="" class="start">
-                            <img src="/artmore_adm/resources/img/gnb_icon_user.png" alt="" class="scroll">
-                        </a>
-                        <span class="selMypageUnit">
-                            <a href="/kor_sub/mypage/edu_apy_list.do" title="마이페이지" class="link">마이페이지</a>
-                            <a href="/kor_sub/login/logout.do" title="로그아웃" class="link">로그아웃</a>
-                        </span>
-                    </c:when>
-                    <c:otherwise>
-                        <a href="/kor_sub/login/member_login.do" title="로그인" class="btnGnbLogin">
-                            <img src="/artmore_adm/resources/img/gnb_icon_user_w.png" alt="" class="start">
-                            <img src="/artmore_adm/resources/img/gnb_icon_user.png" alt="" class="scroll">
-                        </a>
-                    </c:otherwise>
-                </c:choose>
-                <a href="#none" title="언어선택" class="btnGnbLang">
-                    <img src="/artmore_adm/resources/img/gnb_icon_langKor_w.png" alt="" class="start">
-                    <img src="/artmore_adm/resources/img/gnb_icon_langKor.png" alt="" class="scroll">
-                </a>
-                <span class="selLangUnit">
-                    <a href="/kor_main/main/main.do" title="한국어" class="kor on">KOR</a>
-                    <a href="#none" title="영어" class="eng">ENG</a>
-                </span>
-                <a href="#none" title="전체메뉴" class="btnGnbAllMenu js_popOpen" id="popup_allMenu">
-                    <img src="/artmore_adm/resources/img/gnb_icon_allMenu_w.png" alt="" class="start">
-                    <img src="/artmore_adm/resources/img/gnb_icon_allMenu.png" alt="" class="scroll">
-                </a>
-            </div>
-            </form>
         </div>
     </div>
-    <div class="subMenuBg">
-        <div class="leftImg">
-            <p></p>
-        </div>
-    </div>
-</header>
+</div>
+<!--} Header-->

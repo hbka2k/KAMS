@@ -57,4 +57,4 @@
 
 	<script src="/artmore_adm/resources/js/dialog.js"></script>
 </head>
-<body>
+<body class="dark">

@@ -1,5 +1,5 @@
 /*헤더*/
-.hd_logo{position: fixed; top: 17px; left: 50%; z-index: 950; transform: translateX(-50%); transition: 0.5s;}
+.hd_logo{position: fixed; top: 17px; left: 50%; z-index: 960; transform: translateX(-50%); transition: 0.5s;}
 .hd_logo_black_img{display: none;}
 .sub_hd_logo{position: absolute;}
 .sub_hd_logo .hd_logo_white_img{display: none;}
@@ -56,19 +56,53 @@
 /*>메뉴(GNB)*/
 .gnb_dim{overflow: hidden; position: fixed; top: 0; left: -100%; z-index: 900; width: 100%; height: 100%; border-radius: 0 50% 50% 0; background: #e32b07; opacity: 0; transition: 0.5s ease-out;}
 .gnb_dim.on{left: 0; border-radius: 0; background: #fff url('../images/menu_bg.jpg') no-repeat bottom right/ calc(100% - 90px) auto; opacity: 1;}
+
+.hd_mb_box{position: absolute; top: 32px; left: 0; z-index: 10; width: 100%;}
+.hd_mb_wr{font-size: 0; text-align: right;}
+.hd_mb_type{display: inline-block; width: 70px; height: 27px; line-height: 27px; margin-right: 12px; border: 1px solid #ddd; font-size: 14px; font-weight: 300; color: #999; background: #fff; text-align: center; vertical-align: middle;}
+.hd_mb_name{display: inline-block; font-size: 16px; font-weight: 400; color: #0f0f0f; vertical-align: middle;}
+.hd_mb_btn_box{display: none; float: right; margin-top: 4px;}
+.hd_mb_btn_ul{margin: 0 -10px; font-size: 0;}
+.hd_mb_btn_ul > li{display: inline-block; padding: 0 10px; vertical-align: middle;}
+.hd_mb_btn_ul > li.hd_mb_company_btn{display: none;}
+.hd_mb_btn_txt{display: inline-block; margin-left: 7px; font-size: 14px; font-weight: 300; color: #999; vertical-align: middle;}
+
 .gnb_wr{padding-top: 250px;}
 #gnb{position: relative;}
 #gnb:after{content: ""; display: block; width: 0; height: 2px; position: absolute; top: 90px; left: 0; z-index: 1; background: #e32b07; transition: 1s;}
 .gnb_dim.on #gnb:after{width: 100%; background: #ddd;}
 .gnb_ul{font-size: 0; text-align: center;}
-.gnb_ul > li{display: inline-block; width: 16.666%; vertical-align: top; margin-top: 30px; opacity: 0;}
+.gnb_ul > li{display: inline-block; width: 16.666%; vertical-align: top; margin-top: 30px; opacity: 0; height: 100vh;}
 .gnb_ul > li > a{display: inline-block; position: relative; height: 90px; line-height: 90px; font-size: 30px; font-weight: 300; color: #0f0f0f;}
-.gnb2_ul{padding-top: 25px;}
+.gnb_ul > li > a:after{content: ""; width: 100%; height: 6px; position: absolute; bottom: -4px; left: 0; z-index: 5; background: #e32b07; opacity: 0; transition: 0.2s;}
+.gnb2_ul{padding-top: 25px; border-left: 1px solid #ddd; height: 100%;}
 .gnb2_ul > li{}
 .gnb2_ul > li > a{display: block; padding: 8px 0; font-size: 18px; font-weight: 300; color: #666;}
+.gnb_ul > li:last-child .gnb2_ul{border-right: 1px solid #ddd;}
 
-.gnb_ul > li:hover > a:after{content: ""; display: block; width: 100%; height: 6px; position: absolute; bottom: -4px; left: 0; z-index: 5; background: #e32b07;}
+.gnb_ul > li:hover > a:after{ /*display: block;*/ opacity: 1;}
 .gnb2_ul > li > a:hover{font-weight: 400; color: #e32b07;}
+
+.gnb3_wr{position: absolute; top: 90px; left: 50%; transform: translateX(-50%); border: 2px solid #e32b07; z-index: 3; font-size: 0; display: none;}
+.gnb3{text-align: center; display: inline-block; vertical-align: top; width: 20%; border-right: 1px solid #ddd; background: #fff; transition: 0.2s ease-out;}
+.gnb3.gnb3_x2{width: 40%;}
+.gnb3:last-child{border-right: none;}
+.gnb3_top{padding-top: 30px; padding-bottom: 25px;}
+.gnb3_top > p{font-size: 20px; font-weight: 300; color: #0f0f0f; margin-bottom: 15px;}
+.gnb3_plus{position: relative; display: inline-block;}
+.gnb3_plus > span{width: 2px; height: 20px; background: #999; display: inline-block; transition: 0.2s ease-out;}
+.gnb3_plus > span:first-child{transform: translateX(2px);}
+.gnb3_plus > span:last-child{transform: rotate(90deg);}
+.gnb3_bt{font-size: 0;}
+.gnb3_ul{padding-bottom: 25px; width: 100%; display: inline-block; vertical-align: top; min-height: 385px;}
+.gnb3_bt.gnb3_bt_2 > .gnb3_ul{width: 50%;}
+.gnb3_bt.gnb3_bt_2 > .gnb3_ul:first-child{border-right: 1px solid #ddd;}
+.gnb3_ul > li{}
+.gnb3_ul > li > a{font-size: 16px; font-weight: 300; color: #666; padding: 6px 0; display: block;}
+
+.gnb3:hover{background: #f8f8f8;}
+.gnb3:hover .gnb3_plus > span{background: #e32b07;}
+.gnb3_ul > li > a:hover{font-weight: 400; color: #e32b07;}
 
 #total_search .popup_wrap{height: auto;}
 #total_search .popup_cont_inner{width: 1130px; max-width: 100%; margin: 0 auto;}
@@ -158,9 +192,9 @@
 .main_visual_link a{display: block; margin-top: 12px; font-size: 16px; font-weight: 300; color: #ddd;}
 
 .main_visual_tgcont{position: absolute; top: 50%; left: 0; width: 500px; max-width: 100%; min-height: 604px; margin-left: 240px; padding-top: 35px; transform: translateY(-50%);}
-.main_visual_tgtxt01{font-size: 64px; font-weight: 300; color: #fff; line-height: 1.2; transition: 0.5s; opacity: 0; text-indent: -20px;}
-.main_visual_tgtxt02{margin-top: 5px; font-size: 64px; font-weight: 500; color: #fff; line-height: 1.2; transition: 0.5s; opacity: 0; text-indent: -10px;}
-.main_visual_tglink{opacity: 0;}
+.main_visual_tgtxt01{font-size: 64px; font-weight: 300; color: #fff; line-height: 1.2; transition: 0.5s; opacity: 0; text-indent: -20px; text-shadow: 3px 3px 2px rgba(0,0,0,0.2);}
+.main_visual_tgtxt02{margin-top: 5px; font-size: 64px; font-weight: 500; color: #fff; line-height: 1.2; transition: 0.5s; opacity: 0; text-indent: -10px; text-shadow: 3px 3px 2px rgba(0,0,0,0.2);}
+.main_visual_tglink{opacity: 0; text-shadow: 3px 3px 2px rgba(0,0,0,0.2);}
 .main_visual_tglink a{display: block; margin-top: 12px; font-size: 16px; font-weight: 300; color: #ddd;}
 .main_visual_tgtxt01.active{opacity: 1; text-indent: 0;}
 .main_visual_tgtxt02.active{opacity: 1; text-indent: 0;}
@@ -198,7 +232,7 @@
 .main_recruit_list_box{margin: -7.5px;}
 .main_recruit_list_box .slick-arrow{display: none !important;}
 .recruit_list{padding: 7.5px;}
-.recruit_list_inner{display: block; position: relative; width: 298px !important; height: 280px; padding: 18px 18px 40px 18px; border: 1px solid #fff; background: rgba(255,255,255,0.8);}
+.recruit_list_inner{display: block; position: relative; width: 298px !important; height: 280px; padding: 18px 18px 40px 18px; border: 1px solid #fff; background: rgba(255,255,255,0.8); box-shadow: 5px 5px 10px rgba(0,0,0,0.3);}
 .recruit_list_thumb{overflow: hidden; position: relative; width: 100%; height: 100px; line-height: 100px; text-align: center; background: #fff;}
 .recruit_list_thumb img{display: inline-block; max-width: 100%; max-height: 100%;}
 .recruit_list_corp{margin-top: 10px; font-size: 16px; font-weight: 400; color: #0f0f0f;}
@@ -289,7 +323,9 @@
 .sub_visual01{background: url('../images/sub_visual01.jpg') no-repeat center/cover;}
 .sub_visual02{background: url('../images/sub_visual02.jpg') no-repeat center/cover;}
 .sub_visual03{background: url('../images/sub_visual03.jpg') no-repeat center/cover;}
+.sub_visual04{background: url('../images/sub_visual04.jpg') no-repeat center/cover;}
 .sub_visual05{background: url('../images/sub_visual05.jpg') no-repeat center/cover;}
+.sub_visual06{background: url('../images/sub_visual06.jpg') no-repeat center/cover;}
 .sub_visual .wrapper{display: flex; flex-direction: column; justify-content: center; height: 100%; position: relative;}
 .sub_vs_title{margin-top: 100px; font-size: 50px; font-weight: 400; color: #fff; line-height: 1.2; opacity: 0; transition: 0.5s;}
 .sub_vs_title.df{margin-top: -15px; opacity: 1;}
@@ -306,6 +342,7 @@
 .sub_location_ul > li:after{content: ""; display: block; position: absolute; top: 50%; right: -0.5px; width: 1px; height: 17px; margin-top: -8.5px; background: #acacac;}
 .sub_location_sel{min-width: 190px; padding-right: 20px; border: 0; font-size: 16px; font-weight: 300; color: #fff; background: transparent url('../images/select_arrow2.png') no-repeat center right; appearance: none;}
 .sub_location_sel::-ms-expand{display: none;}
+.sub_location_sel option{font-size: 15px; color: #666;}
 
 .tab_wrap{text-align: center;}
 .tab_wrap.sub_tab{margin-bottom: 45px;}
@@ -327,6 +364,10 @@
 .tab_wrap_ul > li.active > a{font-weight: 400; color: #0f0f0f;}
 .tab_wrap_ul > li.active > a:after{display: block;}
 
+.priv_content_btn{border: 0; font-size: 16px; font-weight: 300; color: #666; background: none;}
+.priv_content{display: none; width: 100%; height: 150px; margin-top: 10px; padding: 10px; border: 1px solid #ddd; font-size: 14px; color: #666; background: #f8f8f8;}
+.inq_talk_priv input[type="checkbox"] + label{font-size: 16px; font-weight: 400; color: #0f0f0f;}
+
 /*popup(팝업)*/
 .popup_dim{display: none; position: fixed; top: 0; left: 0; z-index: 990; width: 100%; height: 100%; background: rgba(0,0,0,0.7);}
 .popup_wrap{overflow: hidden; position: absolute; top: 50%; left: 50%; z-index: 995; width: 1300px; height: 750px; max-width: 96%; max-height: 96%; background: #fff; transform: translate(-50%, -50%);}
@@ -335,9 +376,94 @@
 .popup_close_btn{position: absolute; top: 0; right: 0; z-index: 5; width: 70px; height: 70px; border: 0; font-size: 0; background: #e32b07 url('../images/close_icon01.png') no-repeat center;}
 
 .popup_cont{height: calc(100% - 70px);}
-.popup_cont_inner{overflow: hidden; position: relative; padding: 40px 65px;}
+.popup_cont_inner{overflow: hidden; position: relative; padding: 40px 65px 43px;}
 .popup_cont:after{content: ""; display: block; width: 100%; height: 40px; position: absolute; bottom: 0; left: 0; z-index: 1; background: #fff;}
 .popup_cont .mCSB_scrollTools{z-index: 10;}
+
+/*자격증,면허 찾기 팝업*/
+#license_pop .popup_wrap{height: auto;}
+.license_sch_box{padding: 15px 65px; background: #f8f8f8; margin-bottom: 20px;}
+.license_sch_subj{display: block; float: left; width: 110px; font-size: 16px; font-weight: 400; color: #0f0f0f; margin-top: 9px;}
+.license_sch_cont{float: left; width: calc(100% - 110px); padding-left: 10px; font-size: 0px;}
+.license_sch_inpt {display: inline-block; vertical-align: middle; width: calc(100% - 132px); padding: 0 15px;}
+.license_sch_btn{display: inline-block; width: 130px; height: 40px; margin-left: 2px; font-size: 16px; font-weight: 300; color: #fff; text-align: center; vertical-align: middle; border-width: 0px; border-style: initial; border-color: initial; border-image: initial; background: #999;}
+
+.license_tab{text-align: center; margin-bottom: 10px;}
+.license_tab_ul{font-size: 0;}
+.license_tab_ul > li{display: inline-block; border: 1px solid #ddd; border-left: 0; font-size: 16px; vertical-align: top;}
+.license_tab_ul > li:first-child{border-left: 1px solid #ddd;}
+.license_tab_ul.child3 > li{width: 33.333%;}
+.license_tab_ul > li > a{display: flex; flex-direction: column; justify-content: center; position: relative; height: 40px; font-size: 16px; font-weight: 300; color: #999;}
+.license_tab_ul > li > a:after{content: ""; display: none; width: 100%; height: 3px; position: absolute; bottom: 0; left: 0; z-index: 1; background: #e32b07;}
+.license_tab_ul > li.active > a{font-weight: 400; color: #0f0f0f;}
+.license_tab_ul > li.active > a:after{display: block;}
+
+.license_sch_letter_cont{margin-bottom: 10px;}
+.license_sch_letter_ul{font-size: 0; margin: -1px;}
+.license_sch_letter_ul > li{display: inline-block; vertical-align: middle; padding: 1px;}
+.license_sch_letter_ul > li.license_sch_letter_act a{background: #e32b07; border: 1px solid #e32b07; color: #fff;}
+.license_sch_letter_ul > li > a{min-width: 30px; height: 30px; text-align: center; line-height: 30px; border: 1px solid #ddd; font-size: 14px; font-weight: 300; color: #999; display: block; padding: 0 8px;}
+
+.license_sch_option_cont{padding: 20px 25px; border: 1px solid #ddd;}
+.license_sch_option_ul{margin: -10px 0; font-size: 0;}
+.license_sch_option_ul li{display: inline-block; padding: 10px 0; font-size: 16px; vertical-align: top; width: 50%;}
+
+.license_sch_txt_wr{margin-top: 10px;}
+.license_sch_txt{font-size: 16px; font-weight: 300; color: #666; margin-top: 5px;}
+.license_btn{margin: 20px auto 0;}
+
+/*주소찾기 팝업*/
+.address_sch_box{padding: 25px 35px; background: #f8f8f8; margin-bottom: 22px;}
+.address_sch_txt_wr{padding-bottom: 10px;}
+.address_sch_txt{margin-bottom: 7px; padding-left: 10px; position: relative;}
+.address_sch_txt:before{content:""; width: 4px; height: 4px; border-radius: 50%; display: block; position: absolute; top: 10px; left: 0; background: #e32b07;}
+
+.address_comp_sch{padding: 0;background: #f8f8f8;}
+.address_comp_sch:after{content: ""; display: table; clear: both;}
+.address_comp_sch_box_wr{clear:both; padding-top: 5px; width: 100%; font-size: 0;}
+.address_comp_sch_box_wr .address_comp_sch_box{width: 50%; display: inline-block; vertical-align: middle;}
+.address_comp_sch_subj{display: block; float: left; width: 65px; padding-top: 9px; font-size: 16px; font-weight: 400; color: #0f0f0f;}
+.address_comp_sch_cont{float: left; width: calc(100% - 65px); padding-left: 10px; font-size: 0;}
+.address_comp_sch_cont .i-select{width: 300px; max-width: 100%; margin-left: 2px;}
+.address_comp_sch_cont .i-select:first-child{margin-left: 0;}
+.address_comp_sch_cont .i-select:last-child{width: calc(100% - 302px);}
+.address_comp_sch_inpt{display: inline-block; width: calc(100% - 30px); vertical-align: middle;}
+.address_comp_zip_inpt{display: inline-block; vertical-align: middle; width: 175px;}
+.address_comp_zip_chk_wr{font-size: 16px; display: inline-block; vertical-align: middle; padding-left: 17px; width: calc(100% - 307px);}
+.address_comp_sch_btn{display: inline-block; width: 130px; height: 40px; margin-left: 2px; border: 0; font-size: 16px; font-weight: 300; color: #fff; background: #999; text-align: center; vertical-align: middle; float: right;}
+.address_sch_btn{margin: 30px auto 0;}
+
+.address_tb_wr{height: 300px; overflow-y: auto;}
+.address_list_tb{margin-top: 0;}
+.board_tb th.address_th_chk {width: 70px;}
+.address_list_tb.board_tb td:nth-child(1){width: 5%;}
+.address_list_tb.board_tb td:nth-child(2){width: 10%;}
+.address_list_tb.board_tb td:nth-child(3){width: 20%;}
+.address_list_tb.board_tb td:nth-child(4){width: 20%;}
+
+/*면접제의,수락,거절 메시지 팝업*/
+.offer_msg_popup .popup_wrap{width: 700px;}
+#mp_join_msg_popup .popup_wrap{height: 510px;}
+.offer_msg_content{font-size: 16px; font-weight: 300; color: #0f0f0f;}
+.offer_msg_job_wrap{margin-top: 20px; padding-top: 15px; border-top: 1px solid #ddd;}
+.offer_msg_job_tit{font-size: 18px; font-weight: 400; color: #0f0f0f;}
+.offer_msg_job_post{margin-top: 8px; padding: 20px; background: #f8f8f8;}
+.offer_msg_job_subj{display: block; font-size: 16px; font-weight: 300; color: #666;}
+.offer_msg_info{margin-top: 18px;}
+.offer_msg_info_ul{}
+.offer_msg_info_ul > li{margin-top: 10px; font-size: 0;}
+.offer_msg_info_ul > li:first-child{margin-top: 0;}
+.offer_msg_info_tit{display: inline-block; width: 70px; font-size: 16px; font-weight: 400; color: #0f0f0f; vertical-align: top;}
+.offer_msg_info_txt{display: inline-block; width: calc(100% - 70px); font-size: 16px; font-weight: 300; color: #666; vertical-align: top;}
+
+.offer_msg_reason_li .offer_msg_info_tit{display: block; width: 100%;}
+.offer_msg_reason_li .offer_msg_info_txt{display: block; width: 100%; margin-top: 4px;}
+
+.offer_msg_info_chk_ul{display: inline-block; margin: 0 -11px; font-size: 0; vertical-align: middle;}
+.offer_msg_info_chk_ul > li{display: inline-block; padding: 0 11px; font-size: 16px; vertical-align: middle;}
+.offer_msg_info_chk_txt{margin-top: 7px; font-size: 16px; font-weight: 300; color: #999;}
+
+.offer_msg_popup_check{margin: 20px auto 0;}
 
 .required{display: inline-block; margin-top: -2px; font-family: "Noto Sans KR", sans-serif; font-size: 20px; font-weight: 400; color: #e32b07; vertical-align: top;}
 
@@ -403,7 +529,7 @@
 .signup_parents_name input[type='text']{width: 350px; max-width: 100%;}
 .signup_cont_wrap{border-top: 2px solid #222; border-bottom: 1px solid #ddd;}
 .step02 .signup_cont_wrap{border-bottom: 0;}
-.step05 .signup_cont_wrap{border-bottom: 0;}
+.step05 .signup_cont_wrap{border-top: 0; border-bottom: 0;}
 .signup_cont_half{font-size: 0;}
 .signup_cont_st{padding: 30px 0; text-align: center;}
 .step06 .signup_cont_st{padding: 55px 0 40px;}
@@ -435,29 +561,43 @@
 .signup_terms_ul > li.active .signup_terms_arrow{top: 13px; transform: rotate(-180deg);}
 .signup_terms_ul > li.active .signup_terms_arrow i.arrow{border-color: #e32b07;}
 
-.signup_fm_tb{width: 100%;}
+.signup_fm_sec{margin-top: 16px;}
+.signup_fm_sec:first-child{margin-top: 0;}
+.signup_fm_sec_tit{margin-bottom: 3px; font-size: 18px; font-weight: 400; color: #0f0f0f;}
+.signup_fm_tb{width: 100%; border-top: 2px solid #222; border-bottom: 1px solid #ddd;}
 .signup_fm_tb caption{padding: 0; font-size: 0; line-height: 0; overflow: hidden;}
 .signup_fm_tb tr{border-bottom: 1px solid #ddd;}
 .signup_fm_tb th{width: 190px; padding: 0 10px 0 25px; border-right: 1px solid #ddd; font-size: 16px; font-weight: 400; color: #0f0f0f; text-align: left;}
 .signup_fm_tb th label{font-size: 16px; font-weight: 400; color: #0f0f0f;}
+.signup_fm_tb th .signup_fm_tb_subtit{font-size: 16px; font-weight: 400; color: #0f0f0f;}
 .signup_fm_tb td{padding: 10px; font-size: 16px; font-weight: 300; color: #0f0f0f; vertical-align: top;}
+.signup_fm_cau{display: inline-block; margin-left: 20px; font-size: 16px; font-weight: 300; color: #999;}
 #signup_id{width: 300px; max-width: 100%;}
 #signup_pw{width: 300px; max-width: 100%;}
 #signup_pw_re{width: 300px; max-width: 100%;}
-#signup_name{width: 700px; max-width: 100%;}
+#signup_name{width: 300px; max-width: 100%;}
 #signup_tel1{width: 150px; max-width: 33.333%;}
 #signup_cell1{width: 150px; max-width: 33.333%;}
 #signup_mail1{width: 220px; max-width: 50%;}
 #signup_mail2{width: 220px; max-width: 50%;}
+#signup_mail3{width: 220px; max-width: 50%;}
 #signup_addr1{width: 220px; max-width: calc(100% - 150px);}
 #signup_addr2{width: 700px; max-width: 100%; margin-top: 3px;}
 #signup_addr3{width: 700px; max-width: 100%; margin-top: 3px;}
+#signup_manager_name{width: 300px; max-width: 100%;}
+#signup_fm_license{width: 300px; max-width: 100%;}
+#signup_fm_head_company{width: 300px; max-width: 100%; margin-right: 10px;}
+#signup_fm_branch_company{width: 300px; max-width: 100%; margin-left: 10px;}
+#signup_fm_ceo{width: 300px; max-width: 100%;}
+#signup_fm_employee{width: 300px; max-width: 100%;}
+#signup_fm_capital{width: 300px; max-width: 100%;}
+#signup_fm_revenue{width: 300px; max-width: 100%;}
 .signup_fm_raio_txt{margin-bottom: 8px; font-size: 16px; font-weight: 300; color: #666;}
 .signup_fm_raio{margin: 0 -23px; font-size: 0;}
 .signup_fm_raio li{display: inline-block; padding: 0 23px; font-size: 16px; vertical-align: middle;}
 .signup_fm_name_fs0{font-size: 0;}
 .signup_fm_addr_fs0{font-size: 0;}
-.signup_fm_btn{width: 150px; height: 40px; line-height: 40px; border: 0; font-size: 16px; font-weight: 300; color: #fff; text-align: center; background: #999; vertical-align: top; transition: 0.5s;}
+.signup_fm_btn{display: inline-block; width: 150px; height: 40px; line-height: 40px; border: 0; font-size: 16px; font-weight: 300; color: #fff; text-align: center; background: #999; vertical-align: top; transition: 0.5s;}
 .signup_fm_btn:hover{background: #e32b07;}
 
 .signup_fm_submit_box{margin-top: 20px; text-align: center;}
@@ -466,6 +606,50 @@
 #signup_fm_cancle{line-height: 50px;}
 
 .signup_result_icon{margin-bottom: 35px;}
+
+.signup_license_number{display: block; width: 100%; text-align: center; padding: 30px 0px; border-bottom: 1px solid rgb(221, 221, 221); font-size: 16px; background: rgb(248, 248, 248);}
+.signup_license_number label{margin-right: 85px; font-size: 16px; font-weight: 400; color: #0f0f0f;}
+.signup_fm_cname_chkbox{margin: 0 -10px; font-size: 0;}
+.signup_fm_cname_chkbox li{display: inline-block; padding: 0 10px; font-size: 16px; vertical-align: middle;}
+
+/*>아이디/비밀번호 찾기*/
+.find_company_pw_wrap{margin-top: 35px;}
+.find_title{margin-bottom: 8px; font-size: 22px; font-weight: 400; color: #0f0f0f;}
+.find_cont{border-top: 2px solid #222; border-bottom: 1px solid #ddd; font-size: 0; text-align: center;}
+#find_id_result .find_cont{padding: 25px 0 30px;}
+.find_inner_lt{display: inline-block; width: 50%; min-height: 280px; padding: 25px 0 10px; font-size: 16px; vertical-align: top;}
+.find_inner_rt{display: inline-block; width: 50%; min-height: 280px; padding: 25px 0 10px; border-left: 1px solid #ddd; font-size: 16px; vertical-align: top;}
+.find_indiv_pw_wrap .find_inner_lt{min-height: 330px;}
+.find_company_pw_wrap .find_inner_rt{min-height: 330px;}
+.find_inner_title{font-size: 20px; font-weight: 400; color: #0f0f0f;}
+.find_inf_inpt{display: flex; flex-direction: column; justify-content: center; margin: 20px auto 25px; padding: 0 10px; background: #f8f8f8; text-align: left;}
+.find_indiv_pw_wrap .find_inf_inpt{height: 100px;}
+.find_company_pw_wrap .find_inf_inpt{height: 145px;}
+.find_inf_inpt_wr{width: 510px; max-width: 100%; margin: 0 auto; font-size: 0;}
+.find_inf_inpt_wr label{display: inline-block; width: 160px; font-size: 16px; font-weight: 400; color: #0f0f0f; vertical-align: middle;}
+.find_inf_inpt_wr .find_inf_inpt_ct{display: inline-block; width: calc(100% - 160px); vertical-align: middle;}
+.find_inner_btn_ul .find_inner_lt{margin: -1px; font-size: 0;}
+.find_indiv_pw_wrap .find_inner_lt .find_inner_btn_ul{margin-top: 90px;}
+.find_inner_btn_ul > li{display: inline-block; padding: 1px; font-size: 16px; vertical-align: middle;}
+.find_inf_regi_num_ul{font-size: 0;}
+.find_company_pw_wrap .find_inner_rt .find_inf_regi_num_ul{margin-top: 5px;}
+.find_inf_regi_num_ul > li{display: inline-block; font-size: 16px; vertical-align: middle;}
+.find_inf_regi_num_ul > li.find_inf_regi_num_bar{padding: 0 11px;}
+.find_inf_regi_num01{width: 110px;}
+.find_inf_regi_num02{width: 80px;}
+.find_inf_regi_num03{width: 110px;}
+
+.find_id_rst_txt{padding: 20px 0; font-size: 16px; font-weight: 300; color: #666;}
+.find_pw_result_caution{margin-top: 15px;}
+.find_pw_result_caution_title{font-size: 16px; font-weight: 400; color: #e32b07;}
+.find_pw_result_caution_txt{margin-top: 2px; font-size: 16px; font-weight: 300; color: #666;}
+.find_pw_result_caution_txt > li{margin-top: 4px;}
+.find_pw_result_caution_txt > li:first-child{margin-top: 0;}
+.find_pw_result_caution_txt > li:before{content: ""; display: inline-block; width: 4px; height: 4px; margin: -4px 4px 0 0; border-radius: 50%; background: #e32b07; vertical-align: middle;}
+
+#find_pw{width: 300px; max-width: 100%;}
+#find_pw_chk{width: 300px; max-width: 100%;}
+#find_pw_result .signup_fm_submit_box{margin-top: 45px;}
 
 /*board(text) / 공지사항*/
 /*>list*/
@@ -481,21 +665,30 @@
 .board_tb{width: 100%; margin-top: 10px; border-top: 2px solid #222;}
 .board_tb caption{padding: 0; font-size: 0; line-height: 0; overflow: hidden;}
 .board_tb th{height: 60px; border-bottom: 1px solid #ddd; font-size: 16px; font-weight: 400; color: #0f0f0f; background: #fbfbfb;}
-.board_tb td{padding: 18px 0; border-bottom: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #666; text-align: center;}
+.board_tb td{padding: 18px 5px; border-bottom: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #666; text-align: center;}
 .board_tb td.ta_l{text-align: left;}
-.board_tb tbody tr:hover{background: #f8f8f8;}
-.board_tb tbody tr:hover td{font-weight: 400; color: #0f0f0f;}
+
+.bo_subj{display: block; font-size: 0;}
+.bo_subj_txt{display: inline-block; font-size: 16px; font-weight: 300; color: #666; vertical-align: top;}
+.bo_cate{padding-right: 5px; font-size: 16px; font-weight: 400; color: #e32b07; vertical-align: top;}
+.bo_icon_ul{display: inline-block; padding-left: 5px; font-size: 0; vertical-align: top;}
+.bo_icon_ul > li{display: inline-block; padding: 0 5px; vertical-align: middle;}
 #jobs_view .board_tb tbody tr:hover td{font-weight: 300; color: #0f0f0f;}
 #person_view .board_tb tbody tr:hover td{font-weight: 300; color: #0f0f0f;}
+
+.notice_tb.board_tb td:first-child{width: 7%;}
+.notice_tb.board_tb td:nth-child(2){width: 70%;}
+.notice_tb.board_tb td:nth-child(3){width: 7%;}
+.notice_tb.board_tb td:last-child{width: 7%;}
+
+.board_tb tbody tr:hover{background: #f8f8f8;}
+.board_tb tbody tr:hover td,
+.board_tb tbody tr:hover .bo_subj_txt{font-weight: 400; color: #0f0f0f;}
 
 .board_tb2{width: 100%; margin-top: 10px; border-top: 2px solid #222;}
 .board_tb2 caption{padding: 0; font-size: 0; line-height: 0; overflow: hidden;}
 .board_tb2 th{padding: 0 25px; height: 60px; border-bottom: 1px solid #ddd; font-size: 16px; font-weight: 400; color: #0f0f0f; background: #fbfbfb; text-align: left;}
 .board_tb2 td{padding: 18px 25px; border-bottom: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #666; text-align: left;}
-
-.write_tb{width: 100%; border-top: 2px solid #222;}
-.write_tb th{width: 190px; padding: 0 25px; height: 60px; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; font-size: 16px; font-weight: 400; color: #0f0f0f; background: #fff; text-align: left;}
-.write_tb td{padding: 10px; border-bottom: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #666; background: #fff; text-align: left;}
 
 .board_list_bot{position: relative;}
 .paging{margin-top: 20px; text-align: center;}
@@ -511,6 +704,10 @@
 .bo_btn_ul{margin: 0 -3px; font-size: 0;}
 .bo_btn_ul > li{display: inline-block; padding: 0 3px; font-size: 16px; vertical-align: middle;}
 .bo_write_btn{display: block; width: 165px; height: 50px; max-width: 100%; line-height: 50px; border: 1px solid #222; font-size: 16px; font-weight: 400; color: #fff; text-align: center; background: #222; outline: none;}
+
+.board_mng_btn_box{margin-top: 20px;}
+.board_mng_btn_ul{margin: -1px; font-size: 0; text-align: right;}
+.board_mng_btn_ul > li{display: inline-block; padding: 1px; font-size: 16px; vertical-align: middle; text-align: center;}
 
 /*>view*/
 .bo_v_top{padding: 15px 25px; border-top: 2px solid #222; border-bottom: 1px solid #ddd; background: #f8f8f8;}
@@ -535,6 +732,27 @@
 .bo_v_next i.arrow{position: absolute; top: 18px; right: 21px;}
 .bo_v_list{margin: 0 2px;}
 .bo_v_list a{display: block; width: 200px; height: 50px; line-height: 50px; font-size: 16px; font-weight: 400; color: #fff; background: #222;}
+
+.bo_top_inf:after{content: ""; display: table; clear: both;}
+.bo_list_cnt{float: left;}
+.bo_list_cnt_ul:after{content: ""; display: table; clear: both;}
+.bo_list_cnt_ul > li{float: left; position: relative; margin-left: 25px; font-size: 16px; font-weight: 300; color: #666;}
+.bo_list_cnt_ul > li:first-child{margin-left: 0;}
+.bo_list_cnt_ul > li:after{content: ""; display: block; position: absolute; top: 50%; left: -12.5px; width: 1px; height: 16px; margin-top: -8px; background: #999;}
+.bo_list_cnt_ul > li:first-child:after{display: none;}
+.bo_list_cnt_ul > li b{font-weight: 400; color: #0f0f0f;}
+.bo_view_type{text-align: right;}
+.bo_top_inf .bo_view_type{float: right;}
+.bo_view_type_ul{font-size: 0;}
+.bo_view_type_ul > li{display: inline-block; font-size: 16px; vertical-align: middle;}
+.bo_vsort_sel{min-width: 220px;}
+.bo_vtotal_sel{min-width: 220px; margin-left: 2px;}
+.bo_ving{margin-left: 10px;}
+
+/*>write*/
+.write_tb{width: 100%; border-top: 2px solid #222;}
+.write_tb th{width: 190px; padding: 0 25px; height: 60px; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; font-size: 16px; font-weight: 400; color: #0f0f0f; background: #fff; text-align: left;}
+.write_tb td{padding: 10px; border-bottom: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #666; background: #fff; text-align: left;}
 
 /*board(webzine) / (취업뉴스)취업 최신동향 뉴스*/
 /*>list*/
@@ -563,6 +781,188 @@
 .card_list_inner:hover{border-color: #e32b07; background: #f8f8f8;}
 .card_list_inner:hover .card_more_icon:before{background: #e32b07;}
 .card_list_inner:hover .card_more_icon:after{background: #e32b07;}
+
+/*board(gallery) / 매칭스토리*/
+/*>list*/
+.gallery_list_wrap{margin: 10px -7px -30px; font-size: 0; clear: both;}
+.gallery_list{display: inline-block; width: 25%; padding: 0 7px 30px; font-size: 16px; vertical-align: top;}
+.gallery_thumb{display: block; overflow: hidden; position: relative; width: 100%; height: 0; padding-bottom: 73.132%;}
+.gallery_thumb img{position: absolute; top: 50%; left: 50%; z-index: 1; transform: translate(-50%, -50%) scale(1); transition: 0.5s;}
+.gallery_title{display: block; padding: 15px 0 10px; font-size: 18px; font-weight: 400; color: #666;}
+.gallery_date{display: block; font-size: 16px; font-weight: 300; color: #666;}
+.gallery_over_box{display: block; position: absolute; top: 0; left: 0; z-index: 2; width: 0; height: 0; background: rgba(0,0,0,0.4); }
+.gallery_over_box:before{content: ""; display: block; position: absolute; top: 50%; left: 50%; width: 30px; height: 2px; background: #fff; margin: -1px 0 0 -15px; opacity: 0; transition: 0.3s; transition-delay: 0.3s;}
+.gallery_over_box:after{content: ""; display: block; position: absolute; top: 50%; left: 50%; width: 2px; height: 30px; background: #fff; margin: -15px 0 0 -1px; opacity: 0; transition: 0.3s; transition-delay: 0.3s;}
+
+.gallery_list_inner:hover .gallery_thumb img{transform: translate(-50%, -50%) scale(1.2);}
+.gallery_list_inner:hover .gallery_title{color: #0f0f0f;}
+.gallery_list_inner:hover .gallery_over_box{width: 100%; height: 100%; border: 1px solid #e32b07;}
+.gallery_list_inner:hover .gallery_over_box:before{opacity: 1;}
+.gallery_list_inner:hover .gallery_over_box:after{opacity: 1;}
+
+/* 취업도우미 */
+.em_cont_wrap{}
+.em_title_01{font-size: 22px; font-weight: 400; color: #0f0f0f; margin-bottom: 13px;}
+.em_title_02{font-size: 20px; font-weight: 400; color: #0f0f0f; margin-bottom: 5px;}
+
+/*> (취업도우미) 연봉계산기 */
+#salary_calc{}
+.calc_cont{border-top: 2px solid #222; border-bottom: 1px solid #ddd; font-size: 0; display: table; width: 100%;}
+.calc_input{display: table-cell; vertical-align: top; padding: 30px 150px 30px 25px; width: 50%;}
+.calc_output{display: table-cell; vertical-align: top; background: #f8f8f8; width: 50%; padding: 30px 50px;}
+.calc_input_box{padding: 15px 0; border-bottom: 1px solid #ddd;}
+.calc_input_row{margin-bottom: 5px;}
+.calc_input_row:last-child{margin-bottom: 0;}
+.calc_input_col{}
+.calc_input_col_tit{display: inline-block; vertical-align: middle; width: 175px;}
+.calc_input_txt{font-size: 16px; font-weight: 400; color: #0f0f0f;}
+.calc_input_col_con{display: inline-block; vertical-align: middle; width: calc(100% - 175px); position: relative;}
+.calc_input_rd_wr{font-size: 0;}
+.calc_input_rd_col{display: inline-block; vertical-align: middle;}
+.calc_input_rd_col input[type="radio"]{display: none;}
+.calc_input_rd_lbl{width: 70px; height: 40px; line-height: 40px; border: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #999; display: block; text-align: center; cursor: pointer;}
+.calc_input_rd_col input[type="radio"]:checked + label{background: #e32b07; border: 1px solid #e32b07; color: #fff;}
+.i-inpt.i-inpt_num{width: 100%; padding: 0 43px; text-align: right; position: relative; font-weight: 400;}
+.i-inpt.i-inpt_num:after{content:"원"; font-size: 16px; font-weight: 300; color: #666; position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: block;}
+.calc_price_txt{font-size: 16px; font-weight: 300; color: #666; position: absolute; right: 17px; top: 50%; transform: translateY(-50%);}
+
+.calc_gray_box{padding: 20px 28px; background: #f8f8f8; margin: 15px 0 13px;}
+.calc_gray_txt{font-size: 16px; font-weight: 300; color: #666; display: block; position: relative; padding-left: 8px;}
+.calc_gray_txt:before{content:""; width: 4px; height: 4px; background: #e32b07; border-radius: 50%; position: absolute; left: 0; top: 10px;}
+
+.calc_output{}
+.calc_output .em_title_02{margin-bottom: 15px;}
+.calc_output_box{border-top: 1px solid #ddd; padding: 18px 20px 17px;}
+.calc_output_row{}
+.calc_output_col{font-size: 0;}
+.calc_output_col_tit{display: inline-block; vertical-align: middle; width: 50%;}
+.calc_output_col_con{display: inline-block; vertical-align: middle; width: 50%; text-align: right;}
+.calc_output_txt{font-size: 16px; font-weight: 400; color: #0f0f0f;}
+.calc_output_num{font-size: 16px; font-weight: 400; color: #0f0f0f;}
+.calc_output_num span{font-size: 16px; font-weight: 400; color: #0f0f0f;}
+
+.calc_output_detail{margin-top: 15px;}
+.calc_output_detail .calc_output_row{margin-top: 5px;}
+.calc_output_detail .calc_output_txt{font-weight: 300; color: #666;}
+.calc_output_detail .calc_output_num{font-weight: 300; color: #666;}
+.calc_output_detail .calc_output_num span{font-weight: 300; color: #666;}
+
+.calc_rst_box{border: 1px solid #e32b07; background: #fff; padding: 13px 20px; font-size: 0; margin-top: 30px;}
+.calc_rst_col{display: inline-block; vertical-align: middle; width: 50%;}
+.calc_rst_col_tit{}
+.calc_rst_col_con{text-align: right;}
+.calc_rst_txt{font-size: 16px; font-weight: 400; color: #0f0f0f;}
+.calc_rst_num{font-size: 18px; font-weight: 500; color: #e32b07;}
+.calc_rst_total{font-size: 18px; font-weight: 500; color: #e32b07;}
+
+/*> (취업도우미) 맞춤법 검사 */
+#spell_check{}
+.spell_cont{border-top: 2px solid #222; border-bottom: 1px solid #ddd; font-size: 0; display: table; width: 100%;}
+
+.spell_input{display: table-cell; vertical-align: top; padding: 30px 35px 30px 25px; width: 50%;}
+.spell_txt_wr{}
+#spell_textar{padding: 5px; border: none; font-size: 16px; font-weight: 300; color: #0f0f0f; background: #fff; width: 100%; height: 300px; min-height: 300px; resize : vertical;}
+#spell_textar::placeholder{color: #666;}
+.spell_btn_wr{font-size: 0; margin-top: 30px;}
+.spell_btn_box{display: inline-block; vertical-align: bottom; width: 50%;}
+.spell_fin_box{}
+#spell_fin_btn{display: inline-block; vertical-align: middle;}
+.spell_reset_box{text-align: right;}
+#spell_reset_btn{font-size: 16px; font-weight: 400; color: #999999; display: inline-block; vertical-align: middle; border: none; background: none;}
+#spell_reset_btn img{margin-right: 5px;}
+
+.spell_output{display: table-cell; vertical-align: top; padding: 30px 35px; background: #f8f8f8; width: 50%;}
+.spell_rst_txt{font-size: 16px; font-weight: 300; color: #666; height: 300px; overflow-y: auto; line-height: 1.75;}
+.spell_edit_box{margin-top: 30px;}
+#spell_edit_btn{font-weight: 400;}
+
+/*> (취업도우미) 취업활동증명서 */
+#activity_cert{}
+.em_cert_list_sch{padding: 20px 25px; background: #f8f8f8; font-size: 0;}
+.em_cert_list_sch_subj{display: inline-block; vertical-align: middle; width: 93px; font-size: 16px; font-weight: 400; color: #0f0f0f;}
+.em_cert_list_sch_cont{display: inline-block; vertical-align: middle; width: calc(100% - 93px); font-size: 0; overflow: hidden;}
+.em_cert_list_sch_radio{font-size: 0; display: inline-block; vertical-align: middle;}
+.em_cert_list_sch_radio > li{display: inline-block; padding-right: 25px; font-size: 16px; vertical-align: middle;}
+
+.em_cert_list_date_wr{display: inline-block; vertical-align: middle;}
+.em_cert_list_date{display: inline-block; font-size: 0; vertical-align: middle;}
+.em_cert_list_date > li{display: inline-block; font-size: 16px; font-weight: 300; color: #666; vertical-align: middle;}
+.em_cert_list_date_hypen{margin: 0 10px; font-family: "Noto Sans KR", sans-serif;}
+.em_cert_month-inpt{width: 150px; max-width: 100%; padding-left: 20px; background: #fff url("../images/calendar_icon01.png") no-repeat center right 12px; font-size: 14px;}
+.em_cert_list_sch_btn{display: inline-block; width: 130px; height: 40px; border: 0; font-size: 16px; font-weight: 300; color: #fff; background: #999; text-align: center; vertical-align: middle; float: right;}
+
+.em_cert_list_tb{margin-top: 30px;}
+.board_tb th.em_cert_th_chk {width: 70px;}
+.em_cert_list_bt{text-align: right; margin-top: 20px;}
+.em_cert_list_print{display: inline-block;}
+
+.em_cert_list_tb.board_tb td:nth-child(1){width: 3%;}
+.em_cert_list_tb.board_tb td:nth-child(2){width: 15%;}
+.em_cert_list_tb.board_tb td:nth-child(3){width: 20%;}
+.em_cert_list_tb.board_tb td:nth-child(4){width: 10%;}
+.em_cert_list_tb.board_tb td:nth-child(5){width: 10%;}
+
+/*> (취업도우미) 학점변환 */
+#grade_converter{}
+
+.grade_cont{border-top: 2px solid #222; border-bottom: 1px solid #ddd; font-size: 0; display: table; width: 100%;}
+.grade_input{display: table-cell; vertical-align: top; padding: 30px 25px; width: 50%;}
+.grade_output{display: table-cell; vertical-align: top; background: #f8f8f8; width: 50%; padding: 30px 50px;}
+.grade_box_in{min-height: 75px; margin-top: 15px;}
+
+#grade_type_sel{min-width: 200px; margin-right: 2px; display: inline-block; vertical-align: middle;}
+.grade_inpt_wr{position: relative; display: inline-block; vertical-align: middle;}
+#grade_inpt{min-width: 200px; text-align: right; position: relative; padding-right: 45px; color: #0f0f0f; font-weight: 400;}
+.grade_inpt_txt{position: absolute; font-size: 16px; font-weight: 300; color: #666666; right: 15px; top: 50%; transform: translateY(-50%);}
+
+.grade_box_item{width: 50%; display: inline-block; vertical-align: middle; margin-bottom: 5px;}
+.grade_cvt_inpt{display: inline-block; vertical-align: middle;}
+.grade_cvt_total{font-size: 16px; font-weight: 300; color: #666; display: inline-block; vertical-align: middle; margin-left: 7px;}
+
+.grade_btn_wr{margin-top: 30px; text-align: left;}
+.grade_btn{display: inline-block;}
+
+/*> (취업도우미) 어학점수 변환 */
+#score_converter{}
+
+.score_cont{border-top: 2px solid #222; border-bottom: 1px solid #ddd; font-size: 0; display: table; width: 100%;}
+.score_input{display: table-cell; vertical-align: top; padding: 30px 25px; width: 50%;}
+.score_output{display: table-cell; vertical-align: top; background: #f8f8f8; width: 50%; padding: 30px 50px;}
+.score_box_in{min-height: 75px; margin-top: 15px;}
+
+#score_type_sel{min-width: 200px; margin-right: 2px; display: inline-block; vertical-align: middle;}
+.score_inpt_wr{position: relative; display: inline-block; vertical-align: middle;}
+#score_inpt{min-width: 200px; text-align: right; position: relative; padding-right: 45px; color: #0f0f0f; font-weight: 400;}
+.score_inpt_txt{position: absolute; font-size: 16px; font-weight: 300; color: #666666; right: 15px; top: 50%; transform: translateY(-50%);}
+
+.score_box_row{font-size: 0; margin-bottom: 5px;}
+.score_box_row:last-child{margin-bottom: 0;}
+.score_box_col{display: inline-block; vertical-align: middle;}
+.score_box_col_tit{width: 145px;}
+.score_cvt_subj{font-size: 16px; font-weight: 300; color: #666;}
+.score_box_col_con{position: relative;}
+.score_cvt_inpt{display: inline-block; vertical-align: middle; width: 200px; padding-right: 40px; text-align: right; color: #0f0f0f; font-weight: 400;}
+.score_cvt_txt{font-size: 16px; font-weight: 300; color: #666; display: inline-block; vertical-align: middle; position: absolute; right: 17px; top: 50%; transform: translateY(-50%);}
+
+.score_btn_wr{margin-top: 30px; text-align: left;}
+.score_btn{display: inline-block;}
+
+/*> (취업도우미) 글자 수 세기 */
+#text_count{}
+.text_count_wr{}
+.text_count_top{padding: 17px 25px 16px; border-top: 2px solid #222; border-bottom: 1px solid #ddd; background: #f8f8f8; font-size: 0;}
+.text_count_item{font-size: 16px; font-weight: 400; color: #0f0f0f; display: inline-block; vertical-align: middle;}
+.text_count_item_01{padding-right: 25px; position: relative;}
+.text_count_item_01:after{width: 1px; height: 16px; background: #999; content:""; display: block; position: absolute; right: -1px; top: 50%; margin-top: -8px; background: #ddd;}
+.text_count_item_02{padding-left: 25px;}
+.text_count_item span{display: inline-block; font-size: 16px; font-weight: 400; color: #e32b07;}
+.text_space_len{}
+.text_space_byte{}
+.text_nospace_len{}
+.text_nospace_byte{}
+.text_count_con{padding: 25px 20px; border-bottom: 1px solid #ddd;}
+#text_count_textar{padding: 5px; border: none; font-size: 16px; font-weight: 300; color: #0f0f0f; background: #fff; width: 100%; height: 320px; min-height: 320px; resize : vertical;}
+#spell_textar::placeholder{color: #666;}
 
 /*채용정보*/
 /*>상세검색*/
@@ -608,26 +1008,13 @@
 .jobs_rst_reset_btn img{margin: -4px 8px 0 0;}
 
 .result_sch_text{position: absolute; top: 20px; right: 25px; font-size: 18px; font-weight: 400; color: #0f0f0f;}
+.result_sch_text br{display: none;}
 #result_sch_total_cnt{font-size: 24px; font-weight: 600; color: #e32b07;}
 #result_sch_btn{position: absolute; bottom: 20px; right: 25px;}
 
-.jobs_sch_tb_wrap{margin-top: 50px;}
-.bo_top_inf:after{content: ""; display: table; clear: both;}
-.bo_list_cnt{float: left;}
-.bo_list_cnt_ul:after{content: ""; display: table; clear: both;}
-.bo_list_cnt_ul > li{float: left; position: relative; margin-left: 25px; font-size: 16px; font-weight: 300; color: #666;}
-.bo_list_cnt_ul > li:first-child{margin-left: 0;}
-.bo_list_cnt_ul > li:after{content: ""; display: block; position: absolute; top: 50%; left: -12.5px; width: 1px; height: 16px; margin-top: -8px; background: #999;}
-.bo_list_cnt_ul > li:first-child:after{display: none;}
-.bo_list_cnt_ul > li b{font-weight: 400; color: #0f0f0f;}
-.bo_view_type{text-align: right;}
-.bo_top_inf .bo_view_type{float: right;}
-.bo_view_type_ul{font-size: 0;}
-.bo_view_type_ul > li{display: inline-block; font-size: 16px; vertical-align: middle;}
-.bo_vsort_sel{min-width: 220px;}
-.bo_vtotal_sel{min-width: 220px; margin-left: 2px;}
-.bo_ving{margin-left: 10px;}
+.jobs_sch_btn_mo{display: none;}
 
+.jobs_sch_tb_wrap{margin-top: 50px;}
 .jobs_sch_tb td{vertical-align: top;}
 .jobs_sch_tb td.ta_l{padding-left: 25px;}
 .jobs_sch_tb tbody tr:hover td{font-weight: 300; color: #666;}
@@ -737,6 +1124,8 @@
 .jobs_dt_cont_tit span b{font-weight: 400; color: #e32b07;}
 .jobs_dt_expl_wrap{min-height: 180px; margin-top: 10px; padding: 25px; border-top: 2px solid #222; border-bottom: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #666;}
 
+#inq_talk_writer{width: 300px; max-width: 100%;}
+.inq_talk_priv{margin-top: 10px;}
 .inq_talk_btn{display: block; width: 130px; height: 40px; max-width: 100%; line-height: 40px; margin: 5px auto 0; border: 0; font-size: 16px; font-weight: 300; color: #fff; text-align: center; background: #999;}
 
 .jobs_dt_current_wrap{margin-top: 10px; border-top: 2px solid #222; border-bottom: 1px solid #ddd; font-size: 0;}
@@ -771,14 +1160,82 @@
 .jobs_apply_compl_txt01{font-size: 18px; font-weight: 300; color: #0f0f0f;}
 .jobs_apply_compl_btn{margin: 20px auto 0; line-height: 50px;}
 
+/*캘린더(달력형)*/
+.calendar_month{padding: 24px 40px; text-align: center; background: #f8f8f8; text-align: center;}
+.calendar_month_ul{font-size: 0;}
+.calendar_month_ul > li{display: inline-block; vertical-align: middle;}
+.calendar_month_current{font-size: 34px; font-weight: 600; color: #0f0f0f;}
+.calendar_month_arrow{cursor: pointer;}
+.calendar_month_prev{margin-right: 35px;}
+.calendar_month_next{margin-left: 35px;}
+.calendar_month_arrow i.arrow{padding: 4px; border-width: 0 2px 2px 0;}
+
+.calendar_day_tb{width:100%; border-bottom: 1px solid #ddd; table-layout: fixed;}
+.calendar_day_tb td{height: 60px; border-right: 1px solid #ddd; font-size: 16px; font-weight: 400; color: #0f0f0f; background: #fbfbfb; text-align: center;}
+.calendar_day_tb td.sun{color: #e32b07;}
+.calendar_day_tb td.sat{color: #2a82da;}
+.calendar_day_tb td:last-child{border-right: 0;}
+
+.calendar_week{overflow: hidden; position: relative; border-bottom: 1px solid #ddd;}
+
+.calendarTable_bg{position: absolute; top: 0; left: 0; z-index: -1; width:100%; table-layout: fixed; border-bottom: 1px solid #ddd;}
+.calendarTable_bg td{height: 160px; border-right: 1px solid #ddd;}
+.calendarTable_bg td:last-child{border-right: 0;}
+.calendarTable_bg td.today{position: relative; border: 3px solid red;}
+.calendarTable_bg td.today:after{content: ""; display: block; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: red;}
+
+.calendarTable{clear:both; width:100%; table-layout: fixed}
+.calendarTable caption{overflow: hidden; width: 1px; height: 1px; margin-top: -1px; font-size: 0; line-height: 0; text-indent: -9999px; color: transparent; background: none;}
+
+.calendar_date td{padding: 17px 15px 0 17px; font-size: 18px; font-weight: 500; color: #0f0f0f; text-align: left; vertical-align: top;}
+.calendar_date td.sun{color: #e32b07;}
+.calendar_date td.sat{color: #2a82da;}
+.calendar_more_btn{float: right; font-size: 14px; font-weight: 300; color: #999;}
+
+.calendar_data td{height: 29px; vertical-align: top;}
+.calendar_data_in{}
+.calendar_data_in > a{display: block; width: 100%; height: 29px; line-height: 29px; margin-left: -1px; padding-left: 18px; background: #fff;}
+.calendar_data_in > a.calendar_data_color_a{background: #ffe5e0;}
+.calendar_data_in > a.calendar_data_color_b{background: #ddeeff;}
+.calendar_data_time{font-size: 16px; font-weight: 400; color: #666;}
+.calendar_data_txt{font-size: 16px; font-weight: 300; color: #666;}
+
+/*채용캘린더*/
+.jobs_calendar_list{display: block; padding-left: 15px; font-size: 0;}
+.jobs_calendar_state{display: inline-block; width: 45px; height: 24px; line-height: 24px; font-size: 14px; font-weight: 300; text-align: center; vertical-align: middle;}
+.jobs_calendar_state_st01{border: 1px solid #a72405; color: #a72405; background: #fff;}
+.jobs_calendar_state_st02{border: 1px solid #064b90; color: #064b90; background: #fff;}
+.jobs_calendar_state_st03{border: 1px solid #999; color: #999; background: #fff;}
+.jobs_calendar_subj{display: inline-block; width: calc(100% - 45px); padding-left: 5px; font-size: 16px; font-weight: 300; color: #666; vertical-align: middle; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+
+.jobs_calendar_wrap .calendar_month:after{content: ""; display: table; clear: both;}
+.jobs_calendar_wrap .calendar_month_ul{float: left;}
+.jobs_calendar_filter{float: right; margin-top: 5px; font-size: 0;}
+.jobs_calendar_filter > li{display: inline-block; font-size: 16px; vertical-align: middle;}
+.jobs_calendar_filter > li > a{display: block; width: 70px; height: 40px; line-height: 40px; border: 1px solid #ddd; border-left: 0; font-size: 16px; font-weight: 300; color: #999; text-align: center; background: #fff;}
+.jobs_calendar_filter > li:first-child > a{border-left: 1px solid #ddd;}
+.jobs_calendar_filter > li.active > a{color: #fff; border-color: #e32b07; background: #e32b07;}
+.jobs_calendar_filter > li.jobs_calendar_datepick{margin-left: 20px;}
+.jobs_calendar_filter > li.jobs_calendar_datepick .date-inpt{width: 150px; max-width: 100%; padding-left: 12px; background: #fff url('../images/calendar_icon01.png') no-repeat center right 12px;}
+
+.jobs_calendar_wrap .calendar_date td{padding: 12px 15px 9px 17px; height: 28px;}
+.jobs_calendar_wrap .calendar_data td{height: 28px;}
+
+.calendar_more_tb td.jobs_calendar_more_td_subj{padding-left: 25px; text-align: left;}
+.jobs_calendar_td_state{display: inline-block; height: 24px; line-height: 24px; padding: 0 8px; font-size: 14px; font-weight: 300; border: 1px solid #999; color: #999; vertical-align: top;}
+.jobs_calendar_td_state.state01{border-color: #a72405; color: #a72405;}
+.jobs_calendar_td_state.state02{border-color: #064b90; color: #064b90;}
+.jobs_calendar_td_title{display: inline-block; margin-left: 4px; font-size: 16px; font-weight: 300; color: #666; vertical-align: top;}
+.calendar_more_tb tbody tr:hover .jobs_calendar_td_title{font-weight: 400; color: #0f0f0f;}
+
 /*인재정보*/
 /*>상세검색*/
 #sch_major_inpt{width: 300px; vertical-align: middle;}
 .sch_major_btn{width: 130px; height: 40px; border: 0; font-size: 16px; font-weight: 300; color: #fff; background: #999; text-align: center; vertical-align: middle;}
 .sch_paytype_sel{width: 220px;}
 
-
 .person_sch_tb_wrap{margin-top: 50px;}
+.person_sch_tb{margin-top: 0;}
 .person_sch_tb td{vertical-align: top;}
 .person_sch_tb td.ta_l{padding-left: 25px;}
 .person_sch_tb td.tdv_md{vertical-align: middle;}
@@ -831,7 +1288,135 @@
 .btn_sms_icon{display: inline-block; width: 18px; height: 17px; vertical-align: middle; background: url('../images/sms_icon01.png') no-repeat center/contain; margin: -4px 10px 0px 0px;}
 .btn_mail_icon{display: inline-block; width: 18px; height: 17px; vertical-align: middle; background: url('../images/mail_icon01.png') no-repeat center/contain; margin: -4px 10px 0px 0px;}
 
+#person_mag_pop .popup_wrap{height: 520px;}
+.person_mag_radio_ul{margin: -10px 0; font-size: 0;}
+.person_mag_radio_ul > li{display: inline-block; width: 50%; padding: 10px 0; font-size: 16px; vertical-align: middle;}
+.person_mag_radio_ul > li.person_mag_request_write_li{display: block; width: 100%;}
+
+.person_mag_sel{margin-top: 18px;}
+.person_mag_sel_ul{}
+.person_mag_sel_ul > li{margin-top: 10px; font-size: 0;}
+.person_mag_sel_ul > li:first-child{margin-top: 0;}
+.person_mag_sel_tit{display: inline-block; width: 140px; font-size: 16px; font-weight: 400; color: #0f0f0f; vertical-align: top;}
+.person_mag_sel_tit_mt{margin-top: 8px;}
+.person_mag_sel_txt{display: inline-block; width: calc(100% - 140px); font-size: 16px; font-weight: 300; color: #666; vertical-align: top;}
+.person_mag_sel_chk_ul{display: inline-block; margin: 0 -15px; font-size: 0; vertical-align: middle;}
+.person_mag_sel_chk_ul > li{display: inline-block; padding: 0 15px; font-size: 16px; vertical-align: middle;}
+#person_mag_jobs_select{width: 500px; max-width: 100%;}
+.person_mag_pop_submit{margin: 25px auto 0;}
+
+/*기업/직업정보*/
+/*>기업정보*/
+/*>기업정보 > 목록*/
+.em_comp_sch{padding: 20px 25px; background: #f8f8f8;}
+.em_comp_sch:after{content: ""; display: table; clear: both;}
+.em_comp_sch_box{}
+.em_comp_sch_genre{float: left;}
+.em_comp_sch_business{float: right;}
+.em_comp_schbar{clear:both; padding-top: 5px; width: 100%;}
+.em_comp_sch_subj{display: block; float: left; width: 57px; padding-top: 9px; font-size: 16px; font-weight: 400; color: #0f0f0f;}
+.em_comp_schbar .mp_join_list_sch_subj{margin-top: 9px;}
+.em_comp_sch_cont{float: left; width: calc(100% - 57px); padding-left: 37px; font-size: 0;}
+.em_comp_sch_cont .i-select{width: 250px; max-width: 100%; margin-left: 2px;}
+.em_comp_sch_cont .i-select:first-child{margin-left: 0;}
+.em_comp_sch_inpt{display: inline-block; width: calc(100% - 132px); vertical-align: middle;}
+.em_comp_sch_btn{display: inline-block; width: 130px; height: 40px; margin-left: 2px; border: 0; font-size: 16px; font-weight: 300; color: #fff; background: #999; text-align: center; vertical-align: middle;}
+
+.card2_bo_wrap{margin-top: 10px;}
+.card2_list_wrap{margin: 10px -7px -30px; font-size: 0; clear: both;}
+.card2_list{display: inline-block; width: 25%; padding: 0 7px 30px; font-size: 16px; vertical-align: top;}
+.card2_list_inner{border: 1px solid #ddd; text-align: center;}
+.card2_thumb{display: block; overflow: hidden; position: relative; width: 100%; height: 0; padding-bottom: 70.4%;}
+.card2_thumb img{position: absolute; top: 50%; left: 50%; z-index: 1; transform: translate(-50%, -50%) scale(1); transition: 0.5s;}
+.card2_title{display: block; padding: 0 0 31px; font-size: 18px; font-weight: 400; color: #666;}
+.card2_list_inner:hover{border-color: #e32b07;}
+
+/*>기업정보 > 상세*/
+.comp_inf_v_cont{margin-top: 40px;}
+.comp_inf_v_cont01{margin-top: 0;}
+.comp_inf_v_cont_tit{font-size: 20px; font-weight: 400; color: #0f0f0f;}
+.comp_inf_v_cont_stit{margin-top: 5px; font-size: 16px; font-weight: 300; color: #666;}
+.comp_inf_v_cont_wrap{margin-top: 7px; border-top: 2px solid #222; border-bottom: 1px solid #ddd;}
+.comp_inf_v_pf{position: relative; padding: 10px 210px 10px 0; border-bottom: 1px solid #ddd; font-size: 0;}
+.comp_inf_v_pf_img{overflow: hidden; display: inline-block; position: relative; width: 300px; height: 0; padding-bottom: 7.5%; border: 1px solid #ddd; font-size: 16px; vertical-align: middle;}
+.comp_inf_v_pf_img img{max-width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.comp_inf_v_pf_text{display: inline-block; margin-left: 26px; font-size: 16px; vertical-align: middle;}
+.comp_inf_v_pf_cname{font-size: 20px; font-weight: 400; color: #0f0f0f;}
+.comp_inf_v_pf_ctype{font-size: 16px; font-weight: 300; color: #666;}
+.comp_inf_v_pf_ctype:before{content: " ｜ "; display: inline-block;}
+.comp_inf_v_pf_addr{margin-top: 8px; font-size: 16px; font-weight: 300; color: #666;}
+.comp_inf_v_pf_scrap_btn{position: absolute; top: 50%; right: 25px; width: 160px; height: 45px; line-height: 45px; margin-top: -22.5px;}
+.comp_inf_v_pf_scrap_btn img{margin: -4px 10px 0 0;}
+.comp_inf_v_pf_scrap_btn.active{border-color: #e32b07; color: #e32b07;}
+
+.comp_inf_v_inf{padding: 20px 25px; border-bottom: 1px solid #ddd; font-size: 0;}
+.comp_inf_v_inf_inner{float: left; width: 50%;}
+.comp_inf_v_inf_cont{}
+.comp_inf_v_inf_cont > li{margin-top: 5px;}
+.comp_inf_v_inf_cont > li:first-child{margin-top: 0;}
+.comp_inf_v_inf_cont > li:after{content: ""; display: table; clear: both;}
+.comp_inf_v_inf_stitle{display: block; float: left; width: 135px; font-size: 16px; font-weight: 400; color: #0f0f0f;}
+.comp_inf_v_inf_expl{display: block; float: left; width: calc(100% - 135px); font-size: 16px; font-weight: 300; color: #666;}
+.comp_inf_v_genre > li{float: left; font-size: 16px; font-weight: 300; color: #666;}
+.comp_inf_v_genre > li:before{content: ""; display: block; float: left; width: 6px; height: 11px; margin: 6px 8px 0; background: url('../images/arrow_right01.png') no-repeat center/contain;}
+.comp_inf_v_genre > li:first-child:before{display: none;}
+
+.comp_inf_v_introd{padding: 20px 25px;}
+.comp_inf_v_introd_title{font-size: 16px; font-weight: 400; color: #0f0f0f;}
+.comp_inf_v_introd_expl{margin-top: 10px; font-size: 16px; font-weight: 300; color: #666;}
+
+.comp_inf_v_cont02 .comp_inf_v_cont_wrap{border-bottom: 0;}
+.comp_inf_v_tb{margin-top: 0; border: 0;}
+.comp_inf_v_jobs_subj{padding-left: 50px;}
+.comp_inf_v_jobs_state{display: inline-block; width: 70px; height: 24px; line-height: 24px; margin-right: 10px; font-size: 14px; font-weight: 300; text-align: center; background: #fff; vertical-align: top;}
+.comp_inf_v_jobs_state.state01{color: #a72405; border: 1px solid #a72405;}
+.comp_inf_v_jobs_state.state02{color: #064b90; border: 1px solid #064b90;}
+
+/*자주하는 질문*/
+.qna_list_warp{margin-top: 10px; border-top: 2px solid #222;}
+.qna_list_ul{}
+.qna_list_ul > li{border-bottom: 1px solid #ddd;}
+.qna_q{position: relative; padding: 20px 25px; font-size: 16px; font-weight: 400; color: #0f0f0f; background: #fff; cursor: pointer;}
+.qna_q_sym{margin-right: 9px;  font-size: 18px; font-weight: 400;}
+.qna_q i.arrow{position: absolute; top: 22px; right: 30px; padding: 6px; border-color: #999;}
+.qna_a{display: none; padding: 20px 25px; border-top: 1px solid #ddd; font-size: 16px; font-weight: 400; color: #666;}
+.qna_a_sym{margin-right: 9px; font-size: 18px; font-weight: 400; color: #e32b07;}
+.qna_txt{padding-left: 32px; text-indent: -32px; padding-right: 35px;}
+.qna_q.active{background: #f8f8f8;}
+.qna_q.active i.arrow{top: 30px; border-color: #e32b07; transform: rotate(-135deg); -webkit-transform: rotate(-135deg); -moz-transform: rotate(-135deg); -ms-transform: rotate(-135deg); -o-transform: rotate(-135deg);}
+.qna_q:hover{background: #f8f8f8;}
+
+/*1:1 온라인 문의*/
+/*list*/
+.inq_tb.board_tb td:nth-child(1){width: 7.5%;}
+.inq_tb.board_tb td:nth-child(2){width: 60%;}
+.inq_tb.board_tb td:nth-child(3){width: 13.333%;}
+.inq_tb.board_tb td:nth-child(4){width: 13.333%;}
+.inq_tb.board_tb td:nth-child(5){width: 13.333%;}
+
+/*>write*/
+.inq_w_raio{margin: 0 -16px; font-size: 0;}
+.inq_w_raio li{display: inline-block; padding: 0 16px; font-size: 16px; vertical-align: middle;}
+#inq_w_cate{width: 220px; max-width: 100%;}
+#inq_w_writer{width: 220px; max-width: 100%;}
+#inq_w_pw{width: 220px; max-width: 100%;}
+#inq_w_email01{width: 220px; max-width: 100%;}
+#inq_w_email02{width: 220px; max-width: 100%;}
+#inq_w_email03{width: 220px; max-width: 100%;}
+.inq_w_btn_box{margin-top: 20px; text-align: center; clear: both;}
+.inq_w_btn_ul{margin: 0px -1px; font-size: 0px;}
+.inq_w_btn_ul > li{display: inline-block; vertical-align: middle; padding: 0px 1px;}
+
 /*마이페이지*/
+.mo_scr_txt{display: none;}
+
+.mypage .i-inpt{padding: 0 15px; vertical-align: middle;}
+.mypage .i-inpt.mt10{margin-top: 10px;}
+.mypage .i-select{min-width: 150px; vertical-align: middle;}
+.mypage .i-select.mt10{margin-top: 10px;}
+.mypage .i-textar{height: 100px; vertical-align: middle;}
+.mypage .i-textar.autosize{height: 40px;}
+
 .mp_lnb{float: left; width: 200px;}
 
 .pf_photo_wrap{padding: 24px 0 14px; border: 1px solid #ddd;}
@@ -899,7 +1484,15 @@
 
 .mp_ai_tb{margin-top: 0;}
 
+.filebox03{font-size: 0;}
+.filebox03 input[type="file"]{position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0;}
+.filebox03 label{display: inline-block; position: relative; width: 130px; height: 40px; background: #999; vertical-align: middle; cursor: pointer; font-size: 16px; color: #fff; font-weight: 300; line-height: 40px; text-align: center; margin-left: 2px;}
+.filebox03 .upload-name{display: inline-block; width: 338px; height: 40px; max-width: calc(100% - 40px); padding: 0 10px; border: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #666; background: #fff; vertical-align: middle; appearance: none;}
+.upload_file_txt{font-size: 14px; font-weight: 300; color: #999; line-height: 1.5; margin-top: 10px;}
+.upload_file_btn{margin: 15px auto 0;}
+
 /*>이력서 등록*/
+#mypage_resume .mp_sec_cont{margin-top: 0;}
 #mp_resume_subj{height: 80px; padding: 0 25px; border: 0;}
 
 .mp_resume_tb{width: 100%;}
@@ -917,6 +1510,15 @@
 .mp_resume_tb td.pd0{padding: 0;}
 .mp_resume_tb td.pd_tbr0{padding-top: 0; padding-bottom: 0; padding-right: 0;}
 .mp_resume_tb_in tr:last-child{border-bottom: 0;}
+
+.mp_resume_photo_box{position: relative; width: 150px; max-width: 100%; margin: 0 auto; padding-bottom: 44px;}
+.mp_resume_photo_box .filebox{width: 100%; height: 200px; max-width: 100%; background: #efefef;}
+.mp_resume_photo_box .filebox input[type="file"]{position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0;}
+.mp_resume_photo_box .filebox label{display: block; position: absolute; bottom: 0; left: 0; z-index: 5; width: 100%; height: 40px; line-height: 40px; font-size: 16px; font-weight: 300; color: #fff; text-align: center; background: #999; cursor: pointer;}
+.mp_resume_photo_box .filebox label:hover{background: #e32b07;}
+.mp_resume_photo_box .filebox .upload-display{display: block; overflow: hidden; position: relative; width: 100%; height: 100%;}
+.mp_resume_photo_box .filebox .upload-thumb-wrap{display: block;}
+.mp_resume_photo_box .filebox .upload-display img{display: block; position: absolute; top: 50%; left: 50%; z-index: 1; transform: translate(-50%, -50%); max-width: 100%; width: 100%; height: auto;}
 
 .mp_sec_add_cont{margin-top: 15px; border-top: 2px solid #222; border-bottom: 1px solid #ddd;}
 
@@ -946,12 +1548,6 @@
 .mp_resume_pop_btn{display: inline-block; width: 130px; height: 40px; line-height: 40px; border: 0; font-size: 16px; font-weight: 300; color: #fff; text-align: center; background: #999; vertical-align: top;}
 .mp_resume_pop_btn.mt10{margin-top: 10px;}
 
-.mypage .i-inpt{padding: 0 15px; vertical-align: middle;}
-.mypage .i-inpt.mt10{margin-top: 10px;}
-.mypage .i-select{min-width: 150px; vertical-align: middle;}
-.mypage .i-select.mt10{margin-top: 10px;}
-.mypage .i-textar{height: 100px; vertical-align: middle;}
-.mypage .i-textar.autosize{height: 40px;}
 .mp_resume_radio{display: inline-block; margin: 0 -13px; font-size: 0; vertical-align: middle;}
 .mp_resume_radio > li{display: inline-block; padding: 0 13px; font-size: 16px; vertical-align: middle;}
 .mp_resume_chk{display: inline-block; margin: 0 -13px; font-size: 0; vertical-align: middle;}
@@ -967,7 +1563,7 @@
 .mp_resume_fm_add_inf > li{display: inline-block; font-size: 16px; font-weight: 300; color: #666; vertical-align: middle;}
 .mp_resume_fm_add_inf_hypen{margin: 0 10px; font-family: "Noto Sans KR", sans-serif;}
 .mp_resume_date-inpt{width: 150px; max-width: 100%; padding-left: 12px; background: url('../images/calendar_icon01.png') no-repeat center right 12px;}
-.mp_resume_month-inpt{width: 119px; max-width: 100%; padding-left: 12px; background: url('../images/calendar_icon01.png') no-repeat center right 12px;}
+.mp_resume_month-inpt{width: 119px; height: 40px; max-width: 100%; padding-left: 12px; border: 1px solid #ddd; font-size: 16px; font-weight: 300; color: #0f0f0f; background: url('../images/calendar_icon01.png') no-repeat center right 12px;}
 
 .mp_resume_condition_pay_chkbox{display: block; margin: 10px -10px 0; font-size: 0; vertical-align: middle;}
 .mp_resume_condition_pay_chkbox > li{display: inline-block; padding: 0 10px; font-size: 16px; font-weight: 300; color: #666; vertical-align: middle;}
@@ -1017,6 +1613,11 @@
 .mp_resume_condition_wktime{width: 220px; max-width: 100%;}
 .self_introd_expl{width: 500px; max-width: 100%;}
 
+.mp_resume_jobs_select_ul{margin-top: 10px;}
+.mp_resume_jobs_select_ul > li{margin-top: 6px;}
+.mp_resume_jobs_select_ul > li:first-child{margin-top: 0;}
+.mp_resume_jobs_select_ul .jobs_sch_option_result_remove{margin: -4px 0 0 10px;}
+
 #mp_resume_lastedu_btn{display: inline-block;}
 #lastEdu_txt01{margin-left: 13px; font-size: 16px; font-weight: 400; color: #0f0f0f;}
 #lastEdu_txt02{font-size: 16px; font-weight: 400; color: #0f0f0f;}
@@ -1024,6 +1625,7 @@
 #totCareer_txt01{margin-left: 13px; font-size: 16px; font-weight: 400; color: #0f0f0f;}
 #totCareer_txt02{font-size: 16px; font-weight: 400; color: #0f0f0f;}
 
+#mypage_resume_list .mp_sec_cont {margin-top: 0;}
 .mp_resume_preview{position: absolute; top: 6px; right: 0; width: 230px; max-width: 100%; height: 50px; border: 0; font-size: 16px; font-weight: 400; color: #fff; text-align: center; background: #e32b07;}
 
 .mp_self_introd_list_sec{margin-top: 35px;}
@@ -1050,7 +1652,13 @@
 .mp_resume_list_manage > li{display: inline-block; padding: 1px; font-size: 16px; vertical-align: middle;}
 .mp_resume_list_manage > li > a{display: block; width: 70px; height: 40px; line-height: 44px; font-size: 16px; font-weight: 300; color: #fff; text-align: center; background: #999;}
 
+#upload_pop .popup_wrap{width: auto; height: auto; max-width: 600px;}
+.mp_resume_photo_box .filebox .mp_resume_photo_inpt{display: block; position: absolute; bottom: 0; left: 0; z-index: 5; width: 100%; height: 40px; line-height: 40px; font-size: 16px; font-weight: 300; color: #fff; text-align: center; background: #999; cursor: pointer;}
+.mp_resume_photo_box .filebox .mp_resume_photo_inpt:hover{background: #e32b07;}
+
+/*>입사지원현황+메시지수신현황*/
 #mypage_join_list .sub_tab{margin: 30px 0;}
+#mypage_msg_list .sub_tab{margin: 30px 0;}
 
 .mp_join_list_sch{padding: 20px 25px; background: #f8f8f8;}
 .mp_join_list_sch_box{margin-top: 20px;}
@@ -1074,8 +1682,14 @@
 .mp_join_list_stat_st02 > span{border: 1px solid #064b90; color: #064b90; background: #fff;}
 .mp_join_list_stat_st03 > span{border: 1px solid #999; color: #999; background: #fff;}
 .mp_join_list_stat_st04 > span{color: #fff; background: #e32b07;}
+.mp_join_msg_check{width: auto; height: 24px; line-height: 24px; padding: 0 11px; font-size: 14px; font-weight: 300;}
 .mp_join_list_linkbtn{display: block; width: 100px; height: 40px; line-height: 40px; margin: 0 auto; font-size: 16px; font-weight: 300; color: #fff; text-align: center; background: #999; transition: 0.3s;}
 .mp_join_list_linkbtn:hover{background: #e32b07;}
+
+.mp_msg_mng_btn{margin: 0 -2px; font-size: 0;}
+.mp_msg_mng_btn > li{display: inline-block; padding: 0 2px; font-size: 16px; vertical-align: middle;}
+.mp_msg_mng_btn > li button{width: 80px; height: 40px; line-height: 40px; font-size: 14px;}
+.mp_msg_mng_btn > li button:hover{background: #e32b07;}
 
 .mp_join_list_manage_btn{position: absolute; top: 5px; left: 5px; z-index: 1;}
 .mp_join_list_manage_btn_ul{margin: 0 -1px; font-size: 0;}
@@ -1084,45 +1698,19 @@
 
 /*나의 캘린더*/
 .mp_calendar_wrap{margin-top: 32px;}
-.calendar_month{display: flex; flex-direction: column; justify-content: center; height: 100px; background: #f8f8f8; text-align: center;}
-.calendar_month_ul{font-size: 0;}
-.calendar_month_ul > li{display: inline-block; vertical-align: middle;}
-.calendar_month_current{font-size: 34px; font-weight: 600; color: #0f0f0f;}
-.calendar_month_arrow{cursor: pointer;}
-.calendar_month_prev{margin-right: 35px;}
-.calendar_month_next{margin-left: 35px;}
-.calendar_month_arrow i.arrow{padding: 4px; border-width: 0 2px 2px 0;}
-
 .mp_calendar{position: relative; margin-top: 30px; border-top: 2px solid #222;}
-.calendar_day_tb{width:100%; border-bottom: 1px solid #ddd; table-layout: fixed;}
-.calendar_day_tb td{height: 60px; border-right: 1px solid #ddd; font-size: 16px; font-weight: 400; color: #0f0f0f; background: #fbfbfb; text-align: center;}
-.calendar_day_tb td.sun{color: #e32b07;}
-.calendar_day_tb td.sat{color: #2a82da;}
-.calendar_day_tb td:last-child{border-right: 0;}
 
-.calendar_week{overflow: hidden; position: relative; border-bottom: 1px solid #ddd;}
+/*회원정보수정*/
+#mypage_mbedit .mp_mbedit_tb_wrap{margin-top: 32px;}
+.mp_mbedit_submit_box{margin-top: 20px;}
+.mp_mbedit_submit_ul{margin: -1px; font-size: 0;}
+.mp_mbedit_submit_ul01{float: left;}
+.mp_mbedit_submit_ul02{float: right;}
+.mp_mbedit_submit_ul > li{display: inline-block; padding: 1px; font-size: 16px; vertical-align: middle;}
+.mp_mbedit_submit_ul > li .btn03{width: 150px; height: 40px; line-height: 40px;}
+.mp_mbedit_id{width: 300px; max-width: 100%;}
+.mp_mbedit_pw{width: 300px; max-width: 100%;}
 
-.calendarTable_bg{position: absolute; top: 0; left: 0; z-index: -1; width:100%; table-layout: fixed; border-bottom: 1px solid #ddd;}
-.calendarTable_bg td{height: 160px; border-right: 1px solid #ddd;}
-.calendarTable_bg td:last-child{border-right: 0;}
-.calendarTable_bg td.today{position: relative; border: 3px solid red;}
-.calendarTable_bg td.today:after{content: ""; display: block; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: red;}
-
-.calendarTable{clear:both; width:100%; table-layout: fixed}
-.calendarTable caption{overflow: hidden; width: 1px; height: 1px; margin-top: -1px; font-size: 0; line-height: 0; text-indent: -9999px; color: transparent; background: none;}
-
-.calendar_date td{padding: 17px 15px 0 17px; font-size: 18px; font-weight: 500; color: #0f0f0f; text-align: left; vertical-align: top;}
-.calendar_date td.sun{color: #e32b07;}
-.calendar_date td.sat{color: #2a82da;}
-.calendar_more_btn{float: right; font-size: 14px; font-weight: 300; color: #999;}
-
-.calendar_data td{height: 29px; vertical-align: top;}
-.calendar_data_in{}
-.calendar_data_in > a{display: block; width: 100%; height: 29px; line-height: 29px; margin-left: -1px; padding-left: 18px; background: #fff;}
-.calendar_data_in > a.calendar_data_color_a{background: #ffe5e0;}
-.calendar_data_in > a.calendar_data_color_b{background: #ddeeff;}
-.calendar_data_time{font-size: 16px; font-weight: 400; color: #666;}
-.calendar_data_txt{font-size: 16px; font-weight: 300; color: #666;}
 
 /*>(기업)홈*/
 .mp_comp_quick{background: #f8f8f8;}
@@ -1137,6 +1725,8 @@
 .mp_comp_quick_icon02{background: #fff url('../images/mp_comp_quick_icon02.png') no-repeat center;}
 .mp_comp_quick_txt{display: inline-block; margin-left: 18px; font-size: 20px; font-weight: 300; color: #0f0f0f; vertical-align: middle;}
 .mp_comp_quick_btn{float: right; font-size: 16px; font-weight: 400; color: #e32b07; line-height: 63px;}
+.mp_comp_quick_btn img{display: inline-block; vertical-align: middle; margin-right: 8px;}
+.mp_comp_quick_btn p{display: inline-block; vertical-align: middle;}
 
 .mp_comp_summary_cont{border-top: 2px solid #222;}
 .mp_comp_summary_ul{}
@@ -1200,6 +1790,18 @@
 .mp_announce_list_stat_st03 > span{border: 1px solid #999; color: #999; background: #fff;}
 .mp_announce_list_stat_st04 > span{color: #fff; background: #e32b07;}
 
+#mp_annc_recruit_end .popup_wrap{width: 600px; height: 250px;}
+#mp_annc_not_recruit_end .popup_wrap{width: 700px; height: 430px;}
+.mp_annc_end_txt{font-size: 18px; font-weight: 300; color: #0f0f0f;}
+.mp_annc_end_reason{margin-top: 20px;}
+.mp_annc_end_reason_ul{margin: -7px -23px; font-size: 0;}
+.mp_annc_end_reason_ul > li{display: inline-block; padding: 7px 23px; font-size: 16px; vertical-align: middle;}
+.mp_annc_end_reason_ul > li.mp_annc_reject_reason{display: block; padding: 0 23px; font-size: 16px; vertical-align: middle;}
+.mp_annc_end_btn_box{margin-top: 20px; text-align: center;}
+.mp_annc_end_btn_ul{margin: -1px; font-size: 0;}
+.mp_annc_end_btn_ul > li{display: inline-block; padding: 1px; vertical-align: middle;}
+#mp_annc_recruit_end .mp_annc_end_btn_ul > li button{width: 150px;}
+
 /*>(기업)채용공고 등록*/
 #mp_annc_subj{height: 80px; padding: 0 25px; border: 0;}
 .mp_annc_addr_optbox{padding: 10px 0 20px;}
@@ -1217,3 +1819,269 @@
 .mp_annc_exam{padding-left: 15px; font-size: 16px; font-weight: 300; color: #666;}
 #mp_annc_deadline_inpt{margin-left: 8px;}
 .mp_annc_manager_sec .mp_resume_tb_in th{width: 85px; padding-left: 10px; border-right: 0;}
+
+/*>(기업)지원자 관리*/
+.mp_applicant_posting_wrap{margin-top: 32px; border-top: 2px solid #222;}
+.mp_applicant_posting{border: 1px solid #ddd; border-top: 0;}
+.mp_applicant_posting_subj{position: relative; padding: 15px 25px; background: #fff; cursor: pointer;}
+.mp_applicant_posting_state{display: inline-block; height: 24px; line-height: 24px; padding: 0 11px; font-size: 14px; font-weight: 300;}
+.mp_applicant_posting_state.state01{border: 1px solid #a72405; color: #a72405; background: #fff;}
+.mp_applicant_posting_state.state02{border: 1px solid #064b90; color: #064b90; background: #fff;}
+.mp_applicant_posting_state.state03{border: 1px solid #999; color: #999; background: #fff;}
+.mp_applicant_posting_subj_txt{padding-left: 5px; font-size: 18px; font-weight: 400; color: #0f0f0f;}
+.mp_applicant_posting_arrow{position: absolute; top: 11px; right: 30px;}
+.mp_applicant_posting_arrow.act{position: absolute; top: 22px; right: 30px;}
+.mp_applicant_posting_arrow i.arrow{padding: 8px;}
+.mp_applicant_posting_cont{display: none; padding: 25px; border-top: 1px solid #ddd;}
+.mp_applicant_posting_ing .mp_applicant_posting_cont{display: block;}
+.mp_applicant_list_tb_wrap{margin-top: 20px;}
+.mp_applicant_career{display: inline-block; font-size: 16px; vertical-align: top;}
+.mp_applicant_edu{display: inline-block; font-size: 16px; vertical-align: top;}
+.mp_applicant_edu:before{content: "/"; display: inline-block; padding: 0 2px; vertical-align: top;}
+
+.mp_applicant_mng_btn{width: 100px; height: 40px; line-height: 40px;}
+
+#mp_person_mag_pop .popup_wrap{height: 520px;}
+
+/*(기업) 연락한인재, 스크랩인재, 오늘본인재*/
+.mp_refusal_btn{display: block; width: 80px; height: 30px; line-height: 30px; margin-top: 5px; vertical-align: middle;}
+.mp_apply_state{display: block; width: 80px; height: 30px; line-height: 30px; text-align: center; background: #fff; vertical-align: middle;}
+.mp_apply_state.state01{color: #a72405; border: 1px solid #a72405;}
+.mp_apply_state.state02{color: #064b90; border: 1px solid #064b90;}
+.mp_apply_state.state03{color: #999; border: 1px solid #999;}
+
+.mp_applicant_inf{font-size: 0;}
+.mp_applicant_name{display: inline-block; font-size: 16px; vertical-align: top;}
+.mp_applicant_age{display: inline-block; font-size: 16px; vertical-align: top;}
+.mp_applicant_age:before{content: "/"; display: inline-block; padding: 0 2px; vertical-align: top;}
+
+/*(개인, 기업) 1:1톡*/
+.mp_talk_list_tb_wrap{margin-top: 32px;}
+.mp_bo_th_num{width: 118px;}
+.mp_talk_tb td.mp_bo_td_subj{padding-left: 25px; text-align: left;}
+.mp_talk_state{display: inline-block; width: 70px; height: 24px; line-height: 24px; font-size: 14px; font-weight: 300; text-align: center; background: #fff; vertical-align: top;}
+.mp_talk_state.state01{color: #a72405; border: 1px solid #a72405;}
+.mp_talk_state.state02{color: #064b90; border: 1px solid #064b90;}
+.mp_talk_tit{display: inline-block; margin-left: 7px;}
+.mp_talk_tb tr:hover .mp_join_list_txt01{font-weight: 400; color: #0f0f0f;}
+
+.mp_talk_view{margin-top: 32px;}
+.mp_talk_view_inf{float: right;}
+.mp_talk_view_inf:after{content: ""; display: table; clear: both;}
+.mp_talk_view_inf > li{float: left; position: relative; margin-left: 33px;}
+.mp_talk_view_inf > li:first-child{margin-left: 0;}
+.mp_talk_view_inf > li:before{content: ""; display : block; position: absolute; top: 50%; left: -16.5px; width: 1px; height: 15px; margin-top: -7.5px; background: #ddd;}
+.mp_talk_view_inf > li:first-child:before{display: none;}
+.mp_talk_view_job{padding: 17px 25px; border-bottom: 1px solid #ddd; font-size: 16px; font-weight: 400; color: #666;}
+
+.mp_talk_view_a_title{padding: 36px 0 8px; font-size: 18px; font-weight: 400; color: #0f0f0f;}
+.mp_talk_view_a .mp_talk_view_inf{float: left; padding-top: 9px;}
+.mp_talk_view_state{float: right; display: block; width: 100px; height: 40px; line-height: 40px; font-size: 16px; font-weight: 300; color: #fff; text-align: center; background: #999;}
+
+.mp_talk_view_bot{margin-top: 20px;}
+.mp_talk_view_btn_ul{float: left; margin: -1px; font-size: 0;}
+.mp_talk_view_btn_ul > li{display: inline-block; padding: 1px; font-size: 16px; vertical-align: middle;}
+.mp_talk_view_btn_ul > li button{width: 100px; height: 40px; line-height: 40px;}
+#mp_talk_view_list_btn{float: right;}
+
+.mp_talk_write_tb_wrap{margin-top: 32px;}
+.mp_talk_btn_box{margin-top: 20px; text-align: center; clear: both;}
+.mp_talk_btn_ul{margin: 0px -1px; font-size: 0px;}
+.mp_talk_btn_ul > li{display: inline-block; vertical-align: middle; padding: 0px 1px;}
+
+.mp_comp_talk_view_cont{min-height: auto; padding: 10px 0; border-top: 2px solid #222;}
+.mp_talk_view_confirm{padding: 17px 25px; border-bottom: 1px solid #ddd;}
+.mp_talk_view_confirm_ul{margin: 0 -10px; font-size: 0;}
+.mp_talk_view_confirm_ul > li{display: inline-block; padding: 0 10px; font-size: 16px; vertical-align: middle;}
+.mp_comp_talk_view_bot .mp_talk_view_btn{float: right;}
+.mp_comp_talk_view_bot #mp_talk_view_list_btn{float: none;}
+.mp_comp_talk_view_btn{margin: -1px; font-size: 0;}
+.mp_comp_talk_view_btn > li{display: inline-block; padding: 1px; font-size: 16px; vertical-align: middle;}
+.mp_comp_talk_view_bot #mp_talk_view_list_btn:hover{background: #222}
+
+.mp_compedit_sec{margin-top: 32px;}
+
+/*(기업) 회사소개관리*/
+.mp_comp_introd_tb{width: 100%;}
+.mp_comp_introd_tb table{width: 100%;}
+.mp_comp_introd_tb caption{padding: 0; font-size: 0; line-height: 0; overflow: hidden;}
+.mp_comp_introd_tb tr{border-bottom: 1px solid #ddd;}
+.mp_comp_introd_tb tr:last-child{border-bottom: 0;}
+.mp_comp_introd_tb th{padding: 0 10px 0 25px; border-right: 1px solid #ddd; font-size: 16px; font-weight: 400; color: #0f0f0f; text-align: left;}
+.mp_comp_introd_tb th label{font-size: 16px; font-weight: 400; color: #0f0f0f;}
+.mp_comp_introd_tb th label .required{margin-top: -5px;}
+.mp_comp_introd_tb th .mp_resume_th_txt{font-size: 16px; font-weight: 400; color: #0f0f0f;}
+.mp_comp_introd_tb th .required{margin-top: -5px;}
+.mp_comp_introd_tb td{padding: 10px; font-size: 16px; font-weight: 300; color: #666;}
+.mp_comp_introd_tb td.pd0{padding: 0;}
+.mp_comp_introd_tb td.pd_tbr0{padding-top: 0; padding-bottom: 0; padding-right: 0;}
+.mp_comp_introd_tb_in tr:last-child{border-bottom: 0;}
+.mp_comp_introd_tb_in th{width: 190px;}
+
+.mp_comp_introd_tb td.mp_comp_introd_logo{width: 240px; border-right: 1px solid #ddd; vertical-align: middle;}
+.mp_comp_introd_logo_box{position: relative; width: 200px; max-width: 100%; margin: 0 auto; padding-bottom: 43px;}
+.mp_comp_introd_logo_box .filebox{width: 100%; height: 120px; max-width: 100%; background: #efefef url("../images/comp_pf_img.png") no-repeat center;}
+.mp_comp_introd_logo_box .filebox input[type="file"]{position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0;}
+.mp_comp_introd_logo_box .filebox label{display: block; position: absolute; bottom: 0; left: 0; z-index: 5; width: calc(50% - 1.5px); height: 40px; line-height: 40px; font-size: 16px; font-weight: 300; color: #fff; text-align: center; background: #999; cursor: pointer;}
+.mp_comp_introd_logo_box .filebox label:hover{background: #e32b07;}
+.mp_comp_introd_logo_box #mp_comp_introd_logo_del{position: absolute; bottom: 0; right: 0; z-index: 3; width: calc(50% - 1.5px); height: 40px; line-height: 40px; font-size: 16px; font-weight: 300; color: #fff; text-align: center; border: 0; background: #999; cursor: pointer;}
+.mp_comp_introd_logo_box .filebox .upload-display{display: block; overflow: hidden; position: relative; width: 100%; height: 100%;}
+.mp_comp_introd_logo_box .filebox .upload-thumb-wrap{display: block;}
+.mp_comp_introd_logo_box .filebox .upload-display img{display: block; position: absolute; top: 50%; left: 50%; z-index: 1; transform: translate(-50%, -50%); max-width: 100%; width: 100%; height: auto;}
+
+.mp_comp_introd_tb .mp_comp_introd_expl_th{padding-top: 22px; vertical-align: top;}
+#mp_comp_introd_logo_subj{width: 300px; max-width: 100%;}
+#mp_comp_introd_expl{min-height: 230px;}
+
+#mp_comp_introd_logo_del:hover{background: #e32b07;}
+
+.mp_comp_introd_submit_box{margin-top: 20px;}
+.mp_comp_introd_submit_ul{margin: -1px; font-size: 0;}
+.mp_comp_introd_submit_ul01{float: left;}
+.mp_comp_introd_submit_ul02{float: right;}
+.mp_comp_introd_submit_ul > li{display: inline-block; padding: 1px; font-size: 16px; vertical-align: middle;}
+
+/*통합검색 결과보기*/
+.sch_rst_top{padding: 15px 25px; background: #f8f8f8;}
+.sch_rst_keyword{float: left; padding-top: 6px; font-size: 18px; font-weight: 300; color: #666;}
+.sch_rst_keyword b{font-size: 20px; font-weight: 400; color: #0f0f0f;}
+.sch_rst_sort{float: right;}
+.sch_rst_sort > li{float: left;}
+.sch_rst_sort > li .btn02{width: 120px; height: 40px; line-height: 40px;}
+.sch_rst_sort > li .btn02.active{border-color: #e32b07; color: #fff; background: #e32b07;}
+
+.sch_rst_cont{margin-top: 30px;}
+.sch_rst_cont_tit{font-size: 20px; font-weight: 400; color: #0f0f0f;}
+.sch_rst_cont_tit b{font-weight: 400; color: #e32b07;}
+.sch_rst_cont_wrap{border-top: 2px solid #222; border-bottom: 1px solid #ddd;}
+.sch_rst_job_list{border-top: 1px solid #ddd;}
+.sch_rst_job_list:first-child{border-top: 0;}
+.sch_rst_job_inner{position: relative; padding: 25px 150px 25px 25px;}
+.sch_rst_job_cname{font-size: 16px; font-weight: 300; color: #0f0f0f;}
+.sch_rst_job_subj{margin-top: 3px; font-size: 18px; font-weight: 400; color: #0f0f0f;}
+.sch_rst_job_info{margin: 7px -12px -3px; font-size: 0;}
+.sch_rst_job_info > li{display: inline-block; position: relative; padding: 3px 12px; font-size: 16px; font-weight: 300; color: #666; vertical-align: top;}
+.sch_rst_job_info > li:after{content: ""; display: block; position: absolute; top: 50%; left: -0.5px; width: 1px; height: 16px; margin-top: -8px; background: #ddd;}
+.sch_rst_job_info > li:first-child:after{display: none;}
+.sch_rst_job_addr{margin-top: 2px; font-size: 16px; font-weight: 300; color: #666;}
+.sch_rst_job_date{position: absolute; top: 50%; right: 25px; transform: translateY(-50%); text-align: center;}
+.sch_rst_job_date_txt01{font-size: 18px; font-weight: 400; color: #a72405;}
+.sch_rst_job_date_txt02{margin-top: 5px; font-size: 16px; font-weight: 300; color: #666;}
+.sch_rst_cont_empty{padding: 50px 0; font-size: 16px; font-weight: 300; color: #666; text-align: center;}
+.sch_rst_cont_empty_keyword{font-size: 16px; font-weight: 400; color: #0f0f0f;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*임시 미디어 쿼리*/
+@media screen and (max-width:1700px){
+
+}/* end 1700px */
+
+@media screen and (max-width:1279px){
+
+}/* end 1279px */
+
+
+@media screen and (max-width:1023px){
+  /*>채용담당자 정보관리 > 채용담당자 변경(본인확인)*/
+  #mypage_comp_mn_check #signup_manager_name{margin-bottom: 3px;}
+}/* end 1023px */
+
+
+@media screen and (max-width:767px){
+  /*(개인)마이페이지*/
+  /*>채용공고 등록*/
+  #mypage_announce .mp_resume_tb,
+  #mypage_announce .mp_resume_tb tbody,
+  #mypage_announce .mp_resume_tb tr,
+  #mypage_announce .mp_resume_tb th,
+  #mypage_announce .mp_resume_tb td{display: block; width: 100% !important;}
+  #mypage_announce .mp_resume_tb th{padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+
+  #mypage_announce .i-inpt,
+  #mypage_announce .i-txtar,
+  #mypage_announce .i-select,
+  #mypage_announce .i-radio,
+  #mypage_announce .i-checks{margin-bottom: 4px;}
+  #mypage_announce .mp_resume_keyword_box > li{width: 50%;}
+
+  /*>자기소개서 등록*/
+  #mypage_self_introd .mp_resume_tb,
+  #mypage_self_introd .mp_resume_tb tbody,
+  #mypage_self_introd .mp_resume_tb tr,
+  #mypage_self_introd .mp_resume_tb th,
+  #mypage_self_introd .mp_resume_tb td{display: block; width: 100% !important;}
+  #mypage_self_introd .mp_resume_tb{position: relative;}
+  #mypage_self_introd .mp_resume_tb th{padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+  #mypage_self_introd .mp_resume_tb td.pd_tbr0{padding: 10px;}
+  .mypage .i-select.self_introd_sel{width: 100% !important;}
+  .mypage .i-inpt.self_introd_expl{width: 100% !important;}
+  #mypage_self_introd .mp_control_btnbox{float: none; position: absolute; top: 0; right: 0;}
+  #mypage_self_introd .mp_control_btn{width: 45px; height: 45px;}
+
+  /*>1:1톡*/
+  .mp_talk_view_inf{float: none; display: block; width: 100%; margin-top: 5px;}
+  .mp_talk_view_a .mp_talk_view_inf{float: none; display: block; width: 100%; margin-top: 0;}
+  .mp_talk_view_state{float: none; display: block; margin-top: 5px;}
+
+  .inq_talk_write_tb,
+  .inq_talk_write_tb tbody,
+  .inq_talk_write_tb tr,
+  .inq_talk_write_tb th,
+  .inq_talk_write_tb td{display: block; width: 100% !important;}
+  .inq_talk_write_tb th{padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+  .mp_talk_write_tb_wrap .inq_talk_write_tb td{padding: 10px;}
+
+  
+
+  /*(기업)마이페이지*/
+  /*>기업정보 관리*/
+  .mp_compedit_tb,
+  .mp_compedit_tb tbody,
+  .mp_compedit_tb tr,
+  .mp_compedit_tb th,
+  .mp_compedit_tb td{display: block; width: 100% !important;}
+  .mp_compedit_tb th{padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+
+  /*>기업정보 관리 > 비밀번호 재확인*/
+  .mp_mbedit_tb,
+  .mp_mbedit_tb tbody,
+  .mp_mbedit_tb tr,
+  .mp_mbedit_tb th,
+  .mp_mbedit_tb td{display: block; width: 100% !important;}
+  .mp_mbedit_tb th{padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+
+  /*>회사소개 관리*/
+  .mp_comp_introd_tb,
+  .mp_comp_introd_tb tbody,
+  .mp_comp_introd_tb tr,
+  .mp_comp_introd_tb th,
+  .mp_comp_introd_tb td{display: block; width: 100% !important;}
+  .mp_comp_introd_tb th{padding: 10px; border-bottom: 1px solid #ddd; border-right: 0; background: #f8f8f8;}
+  .mp_comp_introd_tb td.mp_comp_introd_logo{border-right: 0; border-bottom: 1px solid #ddd;}
+
+  /*비밀번호 변경*/
+  .find_pw_result_caution_title{font-size: 14px;}
+  .find_pw_result_caution_txt{padding-left: 8px; text-indent: -8px; font-size: 14px;}
+}/* end 767px */
+
+@media screen and (max-width:480px){
+  .mp_resume_tb th,
+  .mp_resume_tb th label,
+  .mp_talk_write_tb_wrap th label,
+  #mypage_announce .mp_resume_th_txt,
+  .signup_fm_tb th .signup_fm_tb_subtit{font-size: 14px;}
+}/* end 480px */
