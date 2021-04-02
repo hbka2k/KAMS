@@ -15,5 +15,5 @@
     });
 </script>
 
-<h2 style="text-align:center;margin:10rem 0;">아트모아는?</h2>
+<h2 style="text-align:center;margin:10rem 0;">${contMstVo.cont}</h2>
 

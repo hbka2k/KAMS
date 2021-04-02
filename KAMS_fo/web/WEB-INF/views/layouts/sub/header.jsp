@@ -34,6 +34,7 @@
         <script type="text/javascript" src="/resources/lib/morris/morris.js"></script>
         <script type="text/javascript" src="/resources/lib/slick/slick.min.js"></script>
         <script type="text/javascript" src="/resources/js/normal.js"></script>
+        <script type="text/javascript" src="/resources/js/a2k.js"></script>
 
         <link rel="stylesheet" href="/resources/lib/jqueryui/jquery-ui.css">
         <link rel="stylesheet" href="/resources/lib/mcustomscrollbar/jquery.mCustomScrollbar.min.css">

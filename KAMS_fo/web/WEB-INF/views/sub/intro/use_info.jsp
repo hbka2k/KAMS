@@ -15,4 +15,7 @@
     });
 </script>
 
-<h2 style="text-align:center;margin:10rem 0;">이용안내</h2>
+<h2 style="text-align:center;margin:10rem 0;">
+    ${private_terms.cont}
+    ${corp_terms.cont}
+</h2>

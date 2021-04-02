@@ -68,20 +68,22 @@ public class PageLinkTag extends TagSupport {
                 int pageBlockNo = ((page - 1) / pageBlockSize) * pageBlockSize + 1;
                 int pageBlockGroupNo = ((page - 1) / pageBlockSize) + 1;
 
-                sb.append("<div class=\"paging_wrap\">");
-                //sb.append("<div class=\"bttn-area\">");
-                if (page == 1) {
-                    sb.append("	<button type=\"button\" class=\"first\" alt=\"처음\"><span class=\"isico isi_paging\">First</span></button>");
-                } else {
-                    /*sb.append("	<a href=\"?" + paramString + "&amp;page=1\" class=\"first\" alt=\"First\"><span class=\"isico isi_paging\">First</span></a>");*/
-                    sb.append("	<button type=\"button\" class=\"first\" alt=\"First\" onclick=\"goPageNavigation('?" + paramString + "&amp;page=1'); return false;\"><span class=\"isico isi_paging\">First</span></button>");
-                }
+                sb.append("<div class=\"paging\">");
+                sb.append("<ul class=\"paging_ul\">");
+                /*sb.append("<div class=\"paging_wrap\">");*/
+//                if (page == 1) {
+//                    sb.append("	<li class=\"paging_prev\"><a href=\"\"><i class=\"arrow left\"></i></a></li>");
+//                    /*sb.append("	<button type=\"button\" class=\"first\" alt=\"처음\"><span class=\"isico isi_paging\">First</span></button>");*/
+//                } else {
+//                    /*sb.append("	<a href=\"?" + paramString + "&amp;page=1\" class=\"first\" alt=\"First\"><span class=\"isico isi_paging\">First</span></a>");*/
+//                    sb.append("	<li class=\"paging_prev\"><a href=\"\" alt=\"First\" onclick=\"goPageNavigation('?" + paramString + "&amp;page=1'); return false;\"><i class=\"arrow left\"></i></a></li>");
+//                }
                 //----------- 이전 xx개 -----------
                 if (pageBlockGroupNo != 1) {
                     /*sb.append("	<a href=\"?page=" + (pageBlockNo - pageBlockSize) + paramString + "\" class=\"prev\" alt=\"Prev\"><span class=\"isico isi_paging\">Prev</span></a>");*/
-                    sb.append("	<button type=\"button\" class=\"prev\" alt=\"Prev\" onclick=\"goPageNavigation('?page=" + (pageBlockNo - pageBlockSize) + paramString + "'); return false;\"><span class=\"isico isi_paging\">Prev</span></button>");
+                    sb.append("	<li class=\"paging_prev\"><a href=\"#none\" alt=\"Prev\" onclick=\"goPageNavigation('?page=" + (pageBlockNo - pageBlockSize) + paramString + "'); return false;\"><i class=\"arrow left\"></i></a></li>");
                 } else {
-                    sb.append("	<button type=\"button\" class=\"prev\"><span class=\"isico isi_paging\" alt=\"Prev\">Prev</span></button>");
+                    sb.append("	<li class=\"paging_prev\"><a href=\"#none\" alt=\"Prev\"><i class=\"arrow left\"></i></a></li>");
                 }
                 //sb.append("</div>");
                 //sb.append("<ul class=\"center-area\">");
@@ -89,27 +91,35 @@ public class PageLinkTag extends TagSupport {
                 for (int i = pageBlockNo; i < pageBlockNo + pageBlockSize; i++) {
                     if (i == totalPage + 1) break;
                     if (page == i) {
-                        sb.append("<a href=\"#none\" class=\"active\" title=\"selected\" alt=\"" + i + "page\"><span>" + i + "</span></a>");
+                        sb.append("<li class=\"paging_active\"><a href=\"#none\" title=\"선택됨\" alt=\"" + i + "page\">" + i + "</a></li>");
                     } else {
-                        sb.append("<a href=\"?page=" + (i) + paramString + "\" title=\"" + i + "page\" alt=\"" + i + "page\"><span>" + i + "</span></a>");
+                        sb.append("<li><a href=\"?page=" + (i) + paramString + "\" title=\"" + i + "page\" alt=\"" + i + "page\">" + i + "</a></li>");
                     }
                 }
+
+                if (totalPage != page) {
+                    sb.append("	<li class=\"paging_next\"><a href=\"#none\" alt=\"Next\" onclick=\"goPageNavigation('?page=" + (pageBlockNo + pageBlockSize) + paramString + "'); return false;\"><i class=\"arrow right\"></i></a></li>");
+                } else {
+                    sb.append("	<li class=\"paging_next\"><a href=\"#none\"><i class=\"arrow right\"></i></a></li>");
+                }
+
                 //sb.append("</ul>");
                 //sb.append("<div class=\"bttn-area\">");
                 //---------------- 다음 xx개-----------
-                if (pageBlockGroupNo != ((totalPage - 1) / pageBlockSize) * 1 + 1) {
-                    /*sb.append("	<a href=\"?page=" + (pageBlockNo + pageBlockSize) + paramString + "\" title=\"Next\" alt=\"Next\" class=\"next\"><span class=\"isico isi_paging\">Next</span></a>");*/
-                    sb.append("	<button type=\"button\" title=\"Next\" alt=\"Next\" class=\"next\" onclick=\"goPageNavigation('?page=" + (pageBlockNo + pageBlockSize) + paramString + "'); return false;\"><span class=\"isico isi_paging\">Next</span></button>");
+                /*if (pageBlockGroupNo != ((totalPage - 1) / pageBlockSize) * 1 + 1) {
+                    *//*sb.append("	<a href=\"?page=" + (pageBlockNo + pageBlockSize) + paramString + "\" title=\"Next\" alt=\"Next\" class=\"next\"><span class=\"isico isi_paging\">Next</span></a>");*//*
+                    sb.append("	<li class=\"paging_next\"><a href=\"#none\" alt=\"Next\" onclick=\"goPageNavigation('?page=" + (pageBlockNo + pageBlockSize) + paramString + "'); return false;\"><i class=\"arrow right\"></i></a></li>");
                 } else {
-                    sb.append("	<button type=\"button\" class=\"next\"><span class=\"isico isi_paging\">Next</span></button>");
-                }
-                if (page == totalPage) {
+                    sb.append("	<li class=\"paging_next\"><a href=\"#none\"><i class=\"arrow right\"></i></a></li>");
+                }*/
+                /*if (page == totalPage) {
                     sb.append("	<button type=\"button\" class=\"end\" title=\"Last\" alt=\"Last\"><span class=\"isico isi_paging\">Last</span></button>");
                 } else {
-                    /*sb.append("	<a href=\"?page=" + totalPage + paramString + "\" title=\"Last\" alt=\"Last\" class=\"end\"><span class=\"isico isi_paging\">Last</span></a>");*/
+                    *//*sb.append("	<a href=\"?page=" + totalPage + paramString + "\" title=\"Last\" alt=\"Last\" class=\"end\"><span class=\"isico isi_paging\">Last</span></a>");*//*
                     sb.append("	<button type=\"button\" title=\"Last\" alt=\"Last\" class=\"end\" onclick=\"goPageNavigation('?page=" + totalPage + paramString + "'); return false;\"><span class=\"isico isi_paging\">Last</span></button>");
-                }
+                }*/
                 //sb.append("</div>");
+                sb.append("</ul>");
                 sb.append("</div>");
                 out = pageContext.getOut();
                 out.println(sb.toString());
