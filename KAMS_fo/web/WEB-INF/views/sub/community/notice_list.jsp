@@ -7,10 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@taglib uri="/WEB-INF/tlds/common.tld" prefix="common" %>
+<%@ taglib uri="/WEB-INF/tlds/common.tld" prefix="common" %>
 <script type="text/javascript">
     $(document).ready(function () {
         // 공통 - 검색 /////////////////////////////////////////////////
@@ -66,18 +66,18 @@
             <div class="board_tb_wrap notice_tb_wrap">
                 <form name="frm" id="frm" method="post" action="/sub/community/notice_list.do">
                     <input type="hidden" name="page" id="page" value="${page}"/>
-                <div class="bo_list_top cf">
-                    <span class="bo_list_cnt">총 <b><fmt:formatNumber value="${totalCount}" pattern="##,###"/></b>건</span>
-                    <div class="bo_sch_box">
-                            <select name="searchKind3" id="searchKind3" class="i-select bo_sch_sel" title="검색조건">
-                                <option value="ALL" <c:if test="${searchKind3 eq 'ALL'}">selected="selected"</c:if>>제목+내용</option>
-                                <option value="1" <c:if test="${searchKind3 eq '1'}">selected="selected"</c:if>>제목</option>
-                                <option value="2" <c:if test="${searchKind3 eq '2'}">selected="selected"</c:if>>내용</option>
-                            </select>
-                            <input type="text" class="bo_sch_inpt" name="searchVal" id="searchVal" value="${searchVal}" title="검색어 입력">
-                            <button class="bo_sch_btn" id="btn_search"><img src="/resources/images/hd_sch_icon.png" alt="검색 버튼"></button>
+                    <div class="bo_list_top cf">
+                        <span class="bo_list_cnt">총 <b><fmt:formatNumber value="${totalCount}" pattern="##,###"/></b>건</span>
+                        <div class="bo_sch_box">
+                                <select name="searchKind3" id="searchKind3" class="i-select bo_sch_sel" title="검색조건">
+                                    <option value="ALL" <c:if test="${searchKind3 eq 'ALL'}">selected="selected"</c:if>>제목+내용</option>
+                                    <option value="1" <c:if test="${searchKind3 eq '1'}">selected="selected"</c:if>>제목</option>
+                                    <option value="2" <c:if test="${searchKind3 eq '2'}">selected="selected"</c:if>>내용</option>
+                                </select>
+                                <input type="text" class="bo_sch_inpt" name="searchVal" id="searchVal" value="${searchVal}" title="검색어 입력">
+                                <button class="bo_sch_btn" id="btn_search"><img src="/resources/images/hd_sch_icon.png" alt="검색 버튼"></button>
+                        </div>
                     </div>
-                </div>
                 </form>
 
                 <table class="board_tb notice_tb">

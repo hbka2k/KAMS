@@ -25,15 +25,16 @@
                 <ul class="sub_location_ul">
                     <li><a href="/"><img src="/resources/images/home_icon01.png" alt="홈으로"></a></li>
                     <li>
-                        <select class="sub_location_sel">
+                        <select class="sub_location_sel" title="">
                             <option value="">기업/직업 정보</option>
                         </select>
                     </li>
                     <li>
-                        <select class="sub_location_sel">
-                            <option value="">기업정보</option>
-                            <option value="" selected>기업탐방</option>
-                            <option value="">직업정보</option>
+                        <select class="sub_location_sel" onchange="location.href=value" title="">
+                            <option value="/sub/comJob/com_info_list.do">기업정보</option>
+                            <option value="/sub/comJob/com_visit_list.do" selected>기업탐방</option>
+                            <option value="/sub/comJob/job_info_list.do">직업정보</option>
+                            <option value="/sub/comJob/job_curation_list.do">직업 큐레이션</option>
                         </select>
                     </li>
                 </ul>
@@ -47,27 +48,48 @@
 
             <div class="board_view">
                 <div class="bo_v_top cf">
-                    <p class="bo_v_title">게시판 제목 영역입니다.</p>
-                    <span class="bo_v_date">2021.01.01</span>
+                    <p class="bo_v_title">${bbsDetailVo.title}</p>
+                    <span class="bo_v_date">${fn:substring(bbsDetailVo.reg_dt, 0, 10)}</span>
                 </div>
 
                 <div class="bo_v_file">
                     <ul class="bo_v_file_ul">
-                        <li><a href=""><img src="/resources/images/file_icon01.png" alt="첨부파일.jpg">첨부파일.jpg</a></li>
+                        <c:forEach items="${bbsDetailVo.fileList}" var="item" varStatus="status">
+                            <c:if test="${item != null}">
+                                <li>
+                                    <a href="/file/fileDown.do?atchFileId=${item.atch_file_id}&amp;fileNum=${item.file_num}">
+                                        <img src="/resources/images/file_icon01.png" alt="${item.file_ori_nm}">${item.file_ori_nm}
+                                    </a>
+                                </li>
+                            </c:if>
+                        </c:forEach>
                     </ul>
                 </div>
 
                 <div class="bo_v_cont">
-                    게시판 내용이 노출됩니다. <br>
-                    게시판 내용이 노출됩니다.
+                    ${bbsDetailVo.cont}
                 </div>
 
                 <div class="bo_v_bot">
                     <div class="bo_v_btn">
                         <ul class="bo_v_btn_ul">
-                            <li class="bo_v_arrow bo_v_prev"><a href=""><i class="arrow left"></i></a></li>
+                            <c:choose>
+                                <c:when test="${bbsDetailVo.prev ne null}">
+                                    <li class="bo_v_arrow bo_v_prev"><a href="/sub/comJob/com_visit_view.do?bbs_detail_idx=${bbsDetailVo.prev.bbs_detail_idx}"><i class="arrow left"></i></a></li>
+                                </c:when>
+                                <c:otherwise>
+                                    <%--<li class="bo_v_arrow bo_v_prev"><a href="#none"><i class="arrow left"></i></a></li>--%>
+                                </c:otherwise>
+                            </c:choose>
                             <li class="bo_v_list"><a href="/sub/comJob/com_visit_list.do">목록</a></li>
-                            <li class="bo_v_arrow bo_v_next"><a href=""><i class="arrow right"></i></a></li>
+                            <c:choose>
+                                <c:when test="${bbsDetailVo.next ne null}">
+                                    <li class="bo_v_arrow bo_v_next"><a href="/sub/comJob/com_visit_view.do?bbs_detail_idx=${bbsDetailVo.next.bbs_detail_idx}"><i class="arrow right"></i></a></li>
+                                </c:when>
+                                <c:otherwise>
+                                    <%--<li class="bo_v_arrow bo_v_prev"><a href="#none"><i class="arrow left"></i></a></li>--%>
+                                </c:otherwise>
+                            </c:choose>
                         </ul>
                     </div>
                 </div>

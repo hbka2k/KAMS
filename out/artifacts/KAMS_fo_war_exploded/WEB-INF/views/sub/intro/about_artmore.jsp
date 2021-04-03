@@ -15,5 +15,5 @@
     });
 </script>
 
-<h2 style="text-align:center;margin:10rem 0;">${contMstVo.cont}</h2>
+${contMstVo.cont}
 

@@ -22,17 +22,18 @@
 
             <div class="sub_location">
                 <ul class="sub_location_ul">
-                    <li><a href="../main/main.html"><img src="../../images/home_icon01.png" alt="홈으로"></a></li>
+                    <li><a href="/"><img src="/resources/images/home_icon01.png" alt="홈으로"></a></li>
                     <li>
                         <select class="sub_location_sel">
                             <option value="">기업/직업 정보</option>
                         </select>
                     </li>
                     <li>
-                        <select class="sub_location_sel">
-                            <option value="">기업정보</option>
-                            <option value="">기업탐방</option>
-                            <option value="" selected>직업정보</option>
+                        <select class="sub_location_sel" onchange="location.href=value" title="">
+                            <option value="/sub/comJob/com_info_list.do">기업정보</option>
+                            <option value="/sub/comJob/com_visit_list.do">기업탐방</option>
+                            <option value="/sub/comJob/job_info_list.do" selected>직업정보</option>
+                            <option value="/sub/comJob/job_curation_list.do">직업 큐레이션</option>
                         </select>
                     </li>
                 </ul>

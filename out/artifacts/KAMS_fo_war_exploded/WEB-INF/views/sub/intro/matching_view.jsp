@@ -7,8 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -32,10 +32,10 @@
                         </select>
                     </li>
                     <li>
-                        <select class="sub_location_sel">
-                            <option value="">아트모아는?</option>
-                            <option value="" selected>매칭 스토리</option>
-                            <option value="">이용안내</option>
+                        <select class="sub_location_sel" onchange="location.href=value">
+                            <option value="/sub/intro/about_artmore.do">아트모아는?</option>
+                            <option value="/sub/intro/matching_list.do" selected>매칭 스토리</option>
+                            <option value="/sub/intro/use_info.do">이용안내</option>
                         </select>
                     </li>
                 </ul>
@@ -49,27 +49,48 @@
 
             <div class="board_view">
                 <div class="bo_v_top cf">
-                    <p class="bo_v_title">게시판 제목 영역입니다.</p>
-                    <span class="bo_v_date">2021.01.01</span>
+                    <p class="bo_v_title">${bbsDetailVo.title}</p>
+                    <span class="bo_v_date">${fn:substring(bbsDetailVo.reg_dt, 0, 10)}</span>
                 </div>
 
                 <div class="bo_v_file">
                     <ul class="bo_v_file_ul">
-                        <li><a href=""><img src="/resources/images/file_icon01.png" alt="첨부파일.jpg">첨부파일.jpg</a></li>
+                        <c:forEach items="${bbsDetailVo.fileList}" var="item" varStatus="status">
+                            <c:if test="${item != null}">
+                                <li>
+                                    <a href="/file/fileDown.do?atchFileId=${item.atch_file_id}&amp;fileNum=${item.file_num}">
+                                        <img src="/resources/images/file_icon01.png" alt="${item.file_ori_nm}">${item.file_ori_nm}
+                                    </a>
+                                </li>
+                            </c:if>
+                        </c:forEach>
                     </ul>
                 </div>
 
                 <div class="bo_v_cont">
-                    게시판 내용이 노출됩니다. <br>
-                    게시판 내용이 노출됩니다.
+                    ${bbsDetailVo.cont}
                 </div>
 
                 <div class="bo_v_bot">
                     <div class="bo_v_btn">
                         <ul class="bo_v_btn_ul">
-                            <li class="bo_v_arrow bo_v_prev"><a href=""><i class="arrow left"></i></a></li>
+                            <c:choose>
+                                <c:when test="${bbsDetailVo.prev ne null}">
+                                    <li class="bo_v_arrow bo_v_prev"><a href="/sub/intro/matching_view.do?bbs_detail_idx=${bbsDetailVo.prev.bbs_detail_idx}"><i class="arrow left"></i></a></li>
+                                </c:when>
+                                <c:otherwise>
+                                    <%--<li class="bo_v_arrow bo_v_prev"><a href="#none"><i class="arrow left"></i></a></li>--%>
+                                </c:otherwise>
+                            </c:choose>
                             <li class="bo_v_list"><a href="/sub/intro/matching_list.do">목록</a></li>
-                            <li class="bo_v_arrow bo_v_next"><a href=""><i class="arrow right"></i></a></li>
+                            <c:choose>
+                                <c:when test="${bbsDetailVo.next ne null}">
+                                    <li class="bo_v_arrow bo_v_next"><a href="/sub/intro/matching_view.do?bbs_detail_idx=${bbsDetailVo.next.bbs_detail_idx}"><i class="arrow right"></i></a></li>
+                                </c:when>
+                                <c:otherwise>
+                                    <%--<li class="bo_v_arrow bo_v_prev"><a href="#none"><i class="arrow left"></i></a></li>--%>
+                                </c:otherwise>
+                            </c:choose>
                         </ul>
                     </div>
                 </div>

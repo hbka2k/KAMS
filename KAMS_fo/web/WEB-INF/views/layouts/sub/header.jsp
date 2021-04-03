@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>ARTMORE-dev</title>
+        <title>ARTMORE</title>
         <meta name="keywords" content="아트모아,artmore">
         <meta name="description" content="예술분야 기업 일자리 플랫폼">
         <meta name="author" content="artmore">

@@ -30,8 +30,11 @@
                         </select>
                     </li>
                     <li>
-                        <select class="sub_location_sel">
-                            <option value="">취업 뉴스</option>
+                        <select class="sub_location_sel" onchange="location.href=value">
+                            <option value="/sub/news/news_list.do">고용복지 정책안내</option>
+                            <option value="/sub/news/employ_list.do">고용복지 정책안내</option>
+                            <option value="/sub/news/data_room_list.do" selected>자료실</option>
+                            <option value="/sub/news/help_cal.do">취업 도우미</option>
                         </select>
                     </li>
                 </ul>
@@ -45,27 +48,48 @@
 
             <div class="board_view">
                 <div class="bo_v_top cf">
-                    <p class="bo_v_title">게시판 제목 영역입니다.</p>
-                    <span class="bo_v_date">2021.01.01</span>
+                    <p class="bo_v_title">${bbsDetailVo.title}</p>
+                    <span class="bo_v_date">${fn:substring(bbsDetailVo.reg_dt, 0, 10)}</span>
                 </div>
 
                 <div class="bo_v_file">
                     <ul class="bo_v_file_ul">
-                        <li><a href=""><img src="/resources/images/file_icon01.png" alt="첨부파일.jpg">첨부파일.jpg</a></li>
+                        <c:forEach items="${bbsDetailVo.fileList}" var="item" varStatus="status">
+                            <c:if test="${item != null}">
+                                <li>
+                                    <a href="/file/fileDown.do?atchFileId=${item.atch_file_id}&amp;fileNum=${item.file_num}">
+                                        <img src="/resources/images/file_icon01.png" alt="${item.file_ori_nm}">${item.file_ori_nm}
+                                    </a>
+                                </li>
+                            </c:if>
+                        </c:forEach>
                     </ul>
                 </div>
 
                 <div class="bo_v_cont">
-                    게시판 내용이 노출됩니다. <br>
-                    게시판 내용이 노출됩니다.
+                    ${bbsDetailVo.cont}
                 </div>
 
                 <div class="bo_v_bot">
                     <div class="bo_v_btn">
                         <ul class="bo_v_btn_ul">
-                            <li class="bo_v_arrow bo_v_prev"><a href=""><i class="arrow left"></i></a></li>
+                            <c:choose>
+                                <c:when test="${bbsDetailVo.prev ne null}">
+                                    <li class="bo_v_arrow bo_v_prev"><a href="/sub/news/data_room_view.do?bbs_detail_idx=${bbsDetailVo.prev.bbs_detail_idx}"><i class="arrow left"></i></a></li>
+                                </c:when>
+                                <c:otherwise>
+                                    <%--<li class="bo_v_arrow bo_v_prev"><a href="#none"><i class="arrow left"></i></a></li>--%>
+                                </c:otherwise>
+                            </c:choose>
                             <li class="bo_v_list"><a href="/sub/news/data_room_list.do">목록</a></li>
-                            <li class="bo_v_arrow bo_v_next"><a href=""><i class="arrow right"></i></a></li>
+                            <c:choose>
+                                <c:when test="${bbsDetailVo.next ne null}">
+                                    <li class="bo_v_arrow bo_v_next"><a href="/sub/news/data_room_view.do?bbs_detail_idx=${bbsDetailVo.next.bbs_detail_idx}"><i class="arrow right"></i></a></li>
+                                </c:when>
+                                <c:otherwise>
+                                    <%--<li class="bo_v_arrow bo_v_prev"><a href="#none"><i class="arrow left"></i></a></li>--%>
+                                </c:otherwise>
+                            </c:choose>
                         </ul>
                     </div>
                 </div>

@@ -7,15 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="/WEB-INF/tlds/common.tld" prefix="common" %>
 <script type="text/javascript">
     $(document).ready(function () {
     });
 </script>
 
-!--Contents {-->
 <div id="em_comp_info" class="sub">
     <div class="sub_visual sub_visual04">
         <div class="wrapper">
@@ -23,17 +23,18 @@
 
             <div class="sub_location">
                 <ul class="sub_location_ul">
-                    <li><a href="../main/main.html"><img src="/resources/images/home_icon01.png" alt="홈으로"></a></li>
+                    <li><a href="/"><img src="/resources/images/home_icon01.png" alt="홈으로"></a></li>
                     <li>
-                        <select class="sub_location_sel">
-                            <option value="">기업/직업 정보</option>
+                        <select class="sub_location_sel" title="">
+                            <option value="" title="">기업/직업 정보</option>
                         </select>
                     </li>
                     <li>
-                        <select class="sub_location_sel">
-                            <option value="" selected>기업정보</option>
-                            <option value="">기업탐방</option>
-                            <option value="">직업정보</option>
+                        <select class="sub_location_sel" onchange="location.href=value" title="">
+                            <option value="/sub/comJob/com_info_list.do" selected>기업정보</option>
+                            <option value="/sub/comJob/com_visit_list.do">기업탐방</option>
+                            <option value="/sub/comJob/job_info_list.do">직업정보</option>
+                            <option value="/sub/comJob/job_curation_list.do">직업 큐레이션</option>
                         </select>
                     </li>
                 </ul>
@@ -52,7 +53,7 @@
                         <div class="comp_inf_v_pf_img"><img src="/resources/images/t-em_comp_logo01.jpg" alt=""></div>
                         <div class="comp_inf_v_pf_text">
                             <p class="comp_inf_v_pf_subj">
-                                <span class="comp_inf_v_pf_cname">예술경경지원센터</span>
+                                <span class="comp_inf_v_pf_cname">${bbsDetailVo.title}</span>
                                 <span class="comp_inf_v_pf_ctype">공공</span>
                             </p>
                             <p class="comp_inf_v_pf_addr">서울특별시 00로 01 예술빌딩 3층</p>
@@ -116,7 +117,9 @@
 
                     <div class="comp_inf_v_introd">
                         <p class="comp_inf_v_introd_title">회사소개</p>
-                        <div class="comp_inf_v_introd_expl">회사소개 내용입니다.</div>
+                        <div class="comp_inf_v_introd_expl">
+                            ${bbsDetailVo.cont}
+                        </div>
                     </div>
                 </div>
             </div>

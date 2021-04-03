@@ -10,9 +10,27 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="/WEB-INF/tlds/common.tld" prefix="common" %>
 <script type="text/javascript">
     $(document).ready(function () {
-    });
+        // 공통 - 검색 /////////////////////////////////////////////////
+        $("#btn_search").click(function(){
+            // 소속 검색 조건 정리
+            goSearch();
+        });
+
+        $("#searchVal").on("keyup", function(event) {
+            if (event.keyCode === 13) {
+                goSearch();
+            }
+        });
+        /////////////////////////////////////////////////////////////////
+    })
+
+    function goSearch() {
+        $("#page").val("1");
+        $("#frm").submit();
+    }
 </script>
 
 <!--Contents {-->
@@ -25,15 +43,16 @@
                 <ul class="sub_location_ul">
                     <li><a href="/"><img src="/resources/images/home_icon01.png" alt="홈으로"></a></li>
                     <li>
-                        <select class="sub_location_sel">
+                        <select class="sub_location_sel" title="">
                             <option value="">기업/직업 정보</option>
                         </select>
                     </li>
                     <li>
-                        <select class="sub_location_sel">
-                            <option value="">기업정보</option>
-                            <option value="" selected>기업탐방</option>
-                            <option value="">직업정보</option>
+                        <select class="sub_location_sel" onchange="location.href=value" title="">
+                            <option value="/sub/comJob/com_info_list.do">기업정보</option>
+                            <option value="/sub/comJob/com_visit_list.do" selected>기업탐방</option>
+                            <option value="/sub/comJob/job_info_list.do">직업정보</option>
+                            <option value="/sub/comJob/job_curation_list.do">직업 큐레이션</option>
                         </select>
                     </li>
                 </ul>
@@ -46,118 +65,51 @@
             <p class="sub_title">기업 탐방</p>
 
             <div class="board_wrap webzine_bo_wrap">
-                <div class="bo_list_top cf">
-                    <span class="bo_list_cnt">총 <b>40</b>건</span>
-                    <div class="bo_sch_box">
-                        <form action="">
-                            <select name="" id="" class="i-select bo_sch_sel">
-                                <option value="">제목+내용</option>
-                                <option value="">제목</option>
-                                <option value="">내용</option>
+                <form name="frm" id="frm" method="get" action="/sub/comJob/com_visit_list.do">
+                    <input type="hidden" name="page" id="page" value="${page}"/>
+                    <div class="bo_list_top cf">
+                        <span class="bo_list_cnt">총 <b><fmt:formatNumber value="${totalCount}" pattern="##,###"/></b>건</span>
+                        <div class="bo_sch_box">
+                            <select name="searchKind3" id="searchKind3" class="i-select bo_sch_sel" title="검색조건">
+                                <option value="ALL" <c:if test="${searchKind3 eq 'ALL'}">selected="selected"</c:if>>제목+내용</option>
+                                <option value="1" <c:if test="${searchKind3 eq '1'}">selected="selected"</c:if>>제목</option>
+                                <option value="2" <c:if test="${searchKind3 eq '2'}">selected="selected"</c:if>>내용</option>
                             </select>
-                            <input type="text" class="bo_sch_inpt">
-                            <button class="bo_sch_btn"><img src="/resources/images/hd_sch_icon.png" alt="검색 버튼"></button>
-                        </form>
+                            <input type="text" class="bo_sch_inpt" name="searchVal" id="searchVal" value="${searchVal}" title="검색어 입력">
+                            <button class="bo_sch_btn" id="btn_search"><img src="/resources/images/hd_sch_icon.png" alt="검색 버튼"></button>
+                        </div>
                     </div>
-                </div>
+                </form>
 
                 <div class="gallery_list_wrap">
                     <!--loop {-->
-                    <div class="gallery_list">
-                        <div class="gallery_list_inner">
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_thumb">
-                                <img src="/resources/images/t-matching_thumb01.jpg" alt="">
-                                <div class="gallery_over_box"></div>
-                            </a>
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_title">기업 탐방 제목이 출력됩니다. <br>제목이 길어질 경우 “...”으로 표시됩니다.</a>
-                            <p class="gallery_date">2021.01.01</p>
-                        </div>
-                    </div>
+
                     <!--} loop-->
-                    <div class="gallery_list">
-                        <div class="gallery_list_inner">
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_thumb">
-                                <img src="/resources/images/t-matching_thumb02.jpg" alt="">
-                                <div class="gallery_over_box"></div>
-                            </a>
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_title">기업 탐방 제목이 출력됩니다. <br>제목이 길어질 경우 “...”으로 표시됩니다.</a>
-                            <p class="gallery_date">2021.01.01</p>
+
+                    <c:if test="${fn:length(itemList) == 0}">
+                        <div class="gallery_list" style="width:100%;text-align:center;">
+                            등록된 데이터가 없습니다.
                         </div>
-                    </div>
-                    <div class="gallery_list">
-                        <div class="gallery_list_inner">
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_thumb">
-                                <img src="/resources/images/t-matching_thumb01.jpg" alt="">
-                                <div class="gallery_over_box"></div>
-                            </a>
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_title">기업 탐방 제목이 출력됩니다. <br>제목이 길어질 경우 “...”으로 표시됩니다.</a>
-                            <p class="gallery_date">2021.01.01</p>
+                    </c:if>
+                    <c:set var="lno" value="0"/>
+                    <c:forEach items="${itemList}" var="item" varStatus="status">
+                        <c:set var="lno">${lno + 1}</c:set>
+                        <div class="gallery_list">
+                            <div class="gallery_list_inner">
+                                <a href="/sub/comJob/com_visit_view.do?bbs_detail_idx=${item.bbs_detail_idx}" class="gallery_thumb">
+                                    <img src="/resources/images/t-matching_thumb01.jpg">
+<%--                                    <img src="${item.banner_idx}" alt="">--%>
+                                    <div class="gallery_over_box"></div>
+                                </a>
+                                <a href="/sub/comJob/com_visit_view.do?bbs_detail_idx=${item.bbs_detail_idx}" class="gallery_title">${item.title}</a>
+                                <p class="gallery_date">${fn:substring(item.reg_dt, 0, 10)}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="gallery_list">
-                        <div class="gallery_list_inner">
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_thumb">
-                                <img src="/resources/images/t-matching_thumb02.jpg" alt="">
-                                <div class="gallery_over_box"></div>
-                            </a>
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_title">기업 탐방 제목이 출력됩니다. <br>제목이 길어질 경우 “...”으로 표시됩니다.</a>
-                            <p class="gallery_date">2021.01.01</p>
-                        </div>
-                    </div>
-                    <div class="gallery_list">
-                        <div class="gallery_list_inner">
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_thumb">
-                                <img src="/resources/images/t-matching_thumb01.jpg" alt="">
-                                <div class="gallery_over_box"></div>
-                            </a>
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_title">기업 탐방 제목이 출력됩니다. <br>제목이 길어질 경우 “...”으로 표시됩니다.</a>
-                            <p class="gallery_date">2021.01.01</p>
-                        </div>
-                    </div>
-                    <div class="gallery_list">
-                        <div class="gallery_list_inner">
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_thumb">
-                                <img src="/resources/images/t-matching_thumb02.jpg" alt="">
-                                <div class="gallery_over_box"></div>
-                            </a>
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_title">기업 탐방 제목이 출력됩니다. <br>제목이 길어질 경우 “...”으로 표시됩니다.</a>
-                            <p class="gallery_date">2021.01.01</p>
-                        </div>
-                    </div>
-                    <div class="gallery_list">
-                        <div class="gallery_list_inner">
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_thumb">
-                                <img src="/resources/images/t-matching_thumb01.jpg" alt="">
-                                <div class="gallery_over_box"></div>
-                            </a>
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_title">기업 탐방 제목이 출력됩니다. <br>제목이 길어질 경우 “...”으로 표시됩니다.</a>
-                            <p class="gallery_date">2021.01.01</p>
-                        </div>
-                    </div>
-                    <div class="gallery_list">
-                        <div class="gallery_list_inner">
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_thumb">
-                                <img src="/resources/images/t-matching_thumb02.jpg" alt="">
-                                <div class="gallery_over_box"></div>
-                            </a>
-                            <a href="/sub/comJob/com_visit_view.do" class="gallery_title">기업 탐방 제목이 출력됩니다. <br>제목이 길어질 경우 “...”으로 표시됩니다.</a>
-                            <p class="gallery_date">2021.01.01</p>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div><!--gallery_list_wrap-->
 
                 <div class="board_list_bot">
-                    <div class="paging">
-                        <ul class="paging_ul">
-                            <li class="paging_prev"><a href=""><i class="arrow left"></i></a></li>
-                            <li class="paging_active"><a href="">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">4</a></li>
-                            <li><a href="">5</a></li>
-                            <li class="paging_next"><a href=""><i class="arrow right"></i></a></li>
-                        </ul>
-                    </div>
+                    <common:pageLink name="pageholder"/>
                 </div>
             </div><!--board_wrap-->
 

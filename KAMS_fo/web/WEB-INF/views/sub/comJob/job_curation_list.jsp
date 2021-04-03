@@ -15,6 +15,13 @@
     });
 </script>
 
-
-
-<h2 style="text-align:center;margin:10rem 0;" ><a href="/sub/comJob/job_curation_view.do">직업 큐레이션</a></h2>
+<h2 style="text-align:center;margin:10rem 0;" >
+    <a href="/sub/comJob/job_curation_view.do">직업 큐레이션</a>
+    <br><br><br>
+    ${contMstVo.cont}
+    <%--
+    <p>아트모아는&nbsp;</p>
+    <p><br></p>
+    <p>컨텐츠 내용입니다.</p>
+    --%>
+</h2>

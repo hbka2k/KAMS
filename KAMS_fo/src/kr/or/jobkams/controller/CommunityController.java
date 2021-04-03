@@ -54,6 +54,26 @@ public class CommunityController extends CommonController {
     public String sub_community_faq(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
         String ret_url = "sub/community/faq";
 
+        // 파라미터 세팅
+        //SearchVo searchVo = this.getSearch(request, 8);
+        //this.getModel(request, model, 8);
+        SearchVo searchVo = this.getSearch(request);
+        this.getModel(request, model);
+
+        searchVo.setSearchKind("5");
+
+        List<BbsDetailVo> itemList2 = bbsService.selectBbsDetailList(searchVo);
+        for(BbsDetailVo item : itemList2) {
+            //item.setIs_new(Util.getNewYn(item.getReg_dt()));
+        }
+        int totalCount = bbsService.selectBbsDetailListTotal(searchVo);
+        PageHolder pageholder = this.setPageNumRow(request, totalCount);
+        //PageHolder pageholder = this.setPageNumRowEx(request, totalCount, 8);
+
+        model.addAttribute("pageholder", pageholder);
+        model.addAttribute("totalCount", totalCount);
+        model.addAttribute("itemList", itemList2);
+
         return ret_url;
     }
 

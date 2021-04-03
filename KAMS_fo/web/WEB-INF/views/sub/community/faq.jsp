@@ -7,18 +7,34 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="/WEB-INF/tlds/common.tld" prefix="common" %>
 <script type="text/javascript">
-    $(document).ready(function () {
-        //자주묻는 질문 아코디언 기능
-        $(document).ready(function(){
-            $(".qna_list_ul").on("click", ".qna_q", function(){
-                $(this).toggleClass("active").siblings(".qna_a").slideToggle(200).parents("li").siblings().find(".qna_q").removeClass("active").siblings(".qna_a").slideUp(200);
-            })
+    $(document).ready(function(){
+        $(".qna_list_ul").on("click", ".qna_q", function(){
+            $(this).toggleClass("active").siblings(".qna_a").slideToggle(200).parents("li").siblings().find(".qna_q").removeClass("active").siblings(".qna_a").slideUp(200);
         })
-    });
+
+        // 공통 - 검색 /////////////////////////////////////////////////
+        $("#btn_search").click(function(){
+            // 소속 검색 조건 정리
+            goSearch();
+        });
+
+        $("#searchVal").on("keyup", function(event) {
+            if (event.keyCode === 13) {
+                goSearch();
+            }
+        });
+        /////////////////////////////////////////////////////////////////
+    })
+
+    function goSearch() {
+        $("#page").val("1");
+        $("#frm").submit();
+    }
 </script>
 
 <!--Contents {-->
@@ -52,188 +68,57 @@
             <p class="sub_title">자주하는 질문</p>
 
             <div class="board_tb_wrap notice_tb_wrap">
-                <div class="bo_list_top cf">
-                    <span class="bo_list_cnt">총 <b>21</b>건</span>
-                    <div class="bo_sch_box">
-                        <form action="">
-                            <select name="" id="" class="i-select bo_sch_sel">
-                                <option value="">제목+내용</option>
-                                <option value="">제목</option>
-                                <option value="">내용</option>
+                <form name="frm" id="frm" method="get" action="/sub/community/faq.do">
+                    <input type="hidden" name="page" id="page" value="${page}"/>
+                    <div class="bo_list_top cf">
+                        <span class="bo_list_cnt">총 <b><fmt:formatNumber value="${totalCount}" pattern="##,###"/></b>건</span>
+                        <div class="bo_sch_box">
+                            <select name="searchKind3" id="searchKind3" class="i-select bo_sch_sel" title="검색조건">
+                                <option value="ALL" <c:if test="${searchKind3 eq 'ALL'}">selected="selected"</c:if>>제목+내용</option>
+                                <option value="1" <c:if test="${searchKind3 eq '1'}">selected="selected"</c:if>>제목</option>
+                                <option value="2" <c:if test="${searchKind3 eq '2'}">selected="selected"</c:if>>내용</option>
                             </select>
-                            <input type="text" class="bo_sch_inpt">
-                            <button class="bo_sch_btn"><img src="/resources/images/hd_sch_icon.png" alt="검색 버튼"></button>
-                        </form>
+                            <input type="text" class="bo_sch_inpt" name="searchVal" id="searchVal" value="${searchVal}" title="검색어 입력">
+                            <button class="bo_sch_btn" id="btn_search"><img src="/resources/images/hd_sch_icon.png" alt="검색 버튼"></button>
+                        </div>
                     </div>
-                </div>
+                </form>
 
                 <div class="qna_list_warp">
                     <ul class="qna_list_ul">
-                        <li>
-                            <div class="qna_q">
-                                <div class="qna_txt">
-                                    <span class="qna_q_sym">Q.</span>
-                                    면접은 어떤 방식으로 진행되나요?
+                        <c:if test="${fn:length(itemList) == 0}">
+                            <li>
+                                <div class="qna_a" style="display:block;text-align:center;">
+                                    <div class="qna_txt">
+                                        등록된 데이터가 없습니다.
+                                    </div>
                                 </div>
-                                <i class="arrow down"></i>
-                            </div>
-                            <div class="qna_a">
-                                <div class="qna_txt">
-                                    <span class="qna_a_sym">A.</span>
-                                    자주하는 질문의 답변이 출력됩니다.
+                            </li>
+                        </c:if>
+                        <c:set var="lno" value="0"/>
+                        <c:forEach items="${itemList}" var="item" varStatus="status">
+                            <c:set var="lno">${lno + 1}</c:set>
+                            <li>
+                                <div class="qna_q">
+                                    <div class="qna_txt">
+                                        <span class="qna_q_sym">Q.</span>
+                                        ${item.title}
+                                    </div>
+                                    <i class="arrow down"></i>
                                 </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="qna_q">
-                                <div class="qna_txt">
-                                    <span class="qna_q_sym">Q.</span>
-                                    자주하는 질문의 제목이 출력됩니다.
+                                <div class="qna_a">
+                                    <div class="qna_txt">
+                                        <span class="qna_a_sym">A.</span>
+                                        ${item.cont}
+                                    </div>
                                 </div>
-                                <i class="arrow down"></i>
-                            </div>
-                            <div class="qna_a">
-                                <div class="qna_txt">
-                                    <span class="qna_a_sym">A.</span>
-                                    자주하는 질문의 답변이 출력됩니다.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="qna_q">
-                                <div class="qna_txt">
-                                    <span class="qna_q_sym">Q.</span>
-                                    자주하는 질문의 제목이 출력됩니다.
-                                </div>
-                                <i class="arrow down"></i>
-                            </div>
-                            <div class="qna_a">
-                                <div class="qna_txt">
-                                    <span class="qna_a_sym">A.</span>
-                                    자주하는 질문의 답변이 출력됩니다.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="qna_q">
-                                <div class="qna_txt">
-                                    <span class="qna_q_sym">Q.</span>
-                                    자주하는 질문의 제목이 출력됩니다.
-                                </div>
-                                <i class="arrow down"></i>
-                            </div>
-                            <div class="qna_a">
-                                <div class="qna_txt">
-                                    <span class="qna_a_sym">A.</span>
-                                    자주하는 질문의 답변이 출력됩니다.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="qna_q">
-                                <div class="qna_txt">
-                                    <span class="qna_q_sym">Q.</span>
-                                    자주하는 질문의 제목이 출력됩니다.
-                                </div>
-                                <i class="arrow down"></i>
-                            </div>
-                            <div class="qna_a">
-                                <div class="qna_txt">
-                                    <span class="qna_a_sym">A.</span>
-                                    자주하는 질문의 답변이 출력됩니다.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="qna_q">
-                                <div class="qna_txt">
-                                    <span class="qna_q_sym">Q.</span>
-                                    자주하는 질문의 제목이 출력됩니다.
-                                </div>
-                                <i class="arrow down"></i>
-                            </div>
-                            <div class="qna_a">
-                                <div class="qna_txt">
-                                    <span class="qna_a_sym">A.</span>
-                                    자주하는 질문의 답변이 출력됩니다.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="qna_q">
-                                <div class="qna_txt">
-                                    <span class="qna_q_sym">Q.</span>
-                                    자주하는 질문의 제목이 출력됩니다.
-                                </div>
-                                <i class="arrow down"></i>
-                            </div>
-                            <div class="qna_a">
-                                <div class="qna_txt">
-                                    <span class="qna_a_sym">A.</span>
-                                    자주하는 질문의 답변이 출력됩니다.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="qna_q">
-                                <div class="qna_txt">
-                                    <span class="qna_q_sym">Q.</span>
-                                    자주하는 질문의 제목이 출력됩니다.
-                                </div>
-                                <i class="arrow down"></i>
-                            </div>
-                            <div class="qna_a">
-                                <div class="qna_txt">
-                                    <span class="qna_a_sym">A.</span>
-                                    자주하는 질문의 답변이 출력됩니다.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="qna_q">
-                                <div class="qna_txt">
-                                    <span class="qna_q_sym">Q.</span>
-                                    자주하는 질문의 제목이 출력됩니다.
-                                </div>
-                                <i class="arrow down"></i>
-                            </div>
-                            <div class="qna_a">
-                                <div class="qna_txt">
-                                    <span class="qna_a_sym">A.</span>
-                                    자주하는 질문의 답변이 출력됩니다.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="qna_q">
-                                <div class="qna_txt">
-                                    <span class="qna_q_sym">Q.</span>
-                                    자주하는 질문의 제목이 출력됩니다.
-                                </div>
-                                <i class="arrow down"></i>
-                            </div>
-                            <div class="qna_a">
-                                <div class="qna_txt">
-                                    <span class="qna_a_sym">A.</span>
-                                    자주하는 질문의 답변이 출력됩니다.
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                        </c:forEach>
                     </ul>
                 </div>
 
                 <div class="board_list_bot">
-                    <div class="paging">
-                        <ul class="paging_ul">
-                            <li class="paging_prev"><a href=""><i class="arrow left"></i></a></li>
-                            <li class="paging_active"><a href="">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">4</a></li>
-                            <li><a href="">5</a></li>
-                            <li class="paging_next"><a href=""><i class="arrow right"></i></a></li>
-                        </ul>
-                    </div>
+                    <common:pageLink name="pageholder"/>
                 </div>
 
             </div>

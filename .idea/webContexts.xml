@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/KAMS_fo/web/WEB-INF/views/layouts/sub/menu.jsp" value="file://$PROJECT_DIR$/KAMS_fo/web/WEB-INF/views/layouts/sub" />
         <entry key="file://$PROJECT_DIR$/KAMS_fo/web/WEB-INF/views/main/main.jsp" value="file://$PROJECT_DIR$/KAMS_fo/web/WEB-INF/views/main" />
+        <entry key="file://$PROJECT_DIR$/KAMS_fo/web/WEB-INF/views/sub/community/faq.jsp" value="file://$PROJECT_DIR$/KAMS_fo/web/WEB-INF/views/sub/community" />
         <entry key="file://$PROJECT_DIR$/KAMS_fo/web/WEB-INF/views/sub/login/find.jsp" value="file://$PROJECT_DIR$/KAMS_fo/web/WEB-INF/views/sub/login" />
         <entry key="file://$PROJECT_DIR$/KAMS_fo/web/WEB-INF/views/sub/mypage/message_list.jsp" value="file://$PROJECT_DIR$/KAMS_fo/web/WEB-INF/views/sub/mypage" />
       </map>
